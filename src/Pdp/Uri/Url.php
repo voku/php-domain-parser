@@ -99,7 +99,7 @@ class Url
      */
     public function getSchemeless()
     {
-        return preg_replace(Parser::SCHEME_PATTERN, '//', $this->__toString(), 1);
+        return preg_replace(Parser::SCHEME_PATTERN, '//', (string)$this, 1);
     }
 
     /**
@@ -109,7 +109,7 @@ class Url
      */
     public function __toString()
     {
-        $url = null;
+        $url = '';
 
         if ($this->scheme) {
             $url .= $this->scheme . '://';
@@ -123,7 +123,7 @@ class Url
             $url .= '@';
         }
 
-        $host = $this->host->__toString();
+        $host = (string)$this->host;
 
         if ($host) {
             $url .= $host;
@@ -159,7 +159,7 @@ class Url
             'scheme' => $this->getScheme(),
             'user' => $this->getUser(),
             'pass' => $this->getPass(),
-            'host' => $this->getHost()->__toString(),
+            'host' => (string)$this->getHost(),
             'subdomain' => $this->getHost()->getSubdomain(),
             'registrableDomain' => $this->getHost()->getRegistrableDomain(),
             'publicSuffix' => $this->getHost()->getPublicSuffix(),

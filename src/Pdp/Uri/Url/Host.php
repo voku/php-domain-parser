@@ -33,7 +33,7 @@ class Host
     /**
      * @var string host Entire host part
      */
-    protected $host;
+    protected $host = '';
 
     /**
      * Public constructor.
@@ -43,7 +43,7 @@ class Host
      * @param string|null $publicSuffix      Public suffix portion of host
      * @param string      $host              OPTIONAL Entire host part
      */
-    public function __construct($subdomain, $registrableDomain, $publicSuffix, $host = null)
+    public function __construct($subdomain, $registrableDomain, $publicSuffix, $host = '')
     {
         $this->subdomain = $subdomain;
         $this->registrableDomain = $registrableDomain;
@@ -96,7 +96,7 @@ class Host
      */
     public function __toString()
     {
-        if ($this->host !== null) {
+        if ($this->host) {
             return $this->host;
         }
 

@@ -47,7 +47,7 @@ class PublicSuffixListManager
      */
     public function __construct($cacheDir = null)
     {
-        if (is_null($cacheDir)) {
+        if (null === $cacheDir) {
             $cacheDir = realpath(
                 dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'data'
             );
@@ -205,6 +205,7 @@ class PublicSuffixListManager
      */
     protected function write($filename, $data)
     {
+        /** @noinspection PhpUsageOfSilenceOperatorInspection */
         $result = @file_put_contents($this->cacheDir . '/' . $filename, $data);
 
         if ($result === false) {
