@@ -119,13 +119,6 @@ $publicSuffix = $url->host->publicSuffix;
 support was added in version `1.4.0`. Both unicode domains and their ASCII
 equivalents are supported.
 
-**IMPORTANT**:
-
-* PHP's [intl](http://php.net/manual/en/book.intl.php) extension is
-required for the [IDN functions](http://php.net/manual/en/ref.intl.idn.php).
-* PHP's [mb_string](http://php.net/manual/en/book.mbstring.php) extension is
-required for [mb_strtolower](http://php.net/manual/en/function.mb-strtolower.php).
-
 #### Unicode
 
 Parsing IDNA hosts is no different that parsing standard hosts. Setting `$host
