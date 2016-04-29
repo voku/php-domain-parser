@@ -97,13 +97,24 @@ class PublicSuffixListManager
    *
    * @return array Associative, multidimensional array representation of the
    *               public suffx list
+   *
+   * @throws \Exception Throws \Exception if unable to read file
    */
   public function parseListToArray($textFile)
   {
+    /** @noinspection PhpUsageOfSilenceOperatorInspection */
+    $fp = @fopen($textFile, 'r');
+    if (!$fp || !flock($fp, LOCK_SH)) {
+      throw new \Exception("Cannot read '$textFile'");
+    }
+
     $data = file(
         $textFile,
         FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
     );
+
+    flock($fp, LOCK_UN);
+    fclose($fp);
 
     $data = array_filter(
         $data,
@@ -185,23 +196,50 @@ class PublicSuffixListManager
    * Gets Public Suffix List.
    *
    * @return PublicSuffixList Instance of Public Suffix List
+   *
+   * @throws \Exception Throws \Exception if unable to read file
    */
   public function getList()
   {
-    if (!file_exists($this->cacheDir . '/' . self::PDP_PSL_PHP_FILE)) {
+    $phpFile = $this->cacheDir . '/' . self::PDP_PSL_PHP_FILE;
+
+    if (!file_exists($phpFile)) {
       $this->refreshPublicSuffixList();
     }
 
-    /** @noinspection PhpIncludeInspection */
-    $this->list = new PublicSuffixList(
-        require $this->cacheDir . '/' . self::PDP_PSL_PHP_FILE
-    );
+    $this->list = $this->getListFromFile($phpFile);
 
     return $this->list;
   }
 
   /**
-   * Writes to file.
+   * Retrieves public suffix list from file after obtaining a shared lock.
+   *
+   * @return PublicSuffixList Instance of Public Suffix List
+   *
+   * @throws \Exception Throws \Exception if unable to read file
+   */
+  public function getListFromFile($phpFile)
+  {
+    /** @noinspection PhpUsageOfSilenceOperatorInspection */
+    $fp = @fopen($phpFile, 'r');
+    if (!$fp || !flock($fp, LOCK_SH)) {
+      throw new \Exception("Cannot read '$phpFile'");
+    }
+
+    /** @noinspection PhpIncludeInspection */
+    $list = new PublicSuffixList(
+        require $phpFile
+    );
+
+    flock($fp, LOCK_UN);
+    fclose($fp);
+
+    return $list;
+  }
+
+  /**
+   * Writes to file after obtaining an exclusive lock.
    *
    * @param string $filename Filename in cache dir where data will be written
    * @param mixed  $data     Data to write
@@ -212,12 +250,24 @@ class PublicSuffixListManager
    */
   protected function write($filename, $data)
   {
+    $filePath = $this->cacheDir . '/' . $filename;
+    
+    // open with 'c' and truncate file only after obtaining a lock
     /** @noinspection PhpUsageOfSilenceOperatorInspection */
-    $result = @file_put_contents($this->cacheDir . '/' . $filename, $data);
+    $fp = @fopen($filePath, 'c');
+    $result = $fp
+              && flock($fp, LOCK_EX)
+              && ftruncate($fp, 0)
+              && fwrite($fp, $data) !== false
+              && fflush($fp);
 
-    if ($result === false) {
-      throw new \Exception("Cannot write '" . $this->cacheDir . '/' . "$filename'");
+    if (!$result) {
+      $fp && fclose($fp);
+      throw new \Exception("Cannot write to '$filePath'");
     }
+
+    flock($fp, LOCK_UN);
+    fclose($fp);
 
     return $result;
   }
