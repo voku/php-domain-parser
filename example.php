@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Pdp\PublicSuffixListManager;
 use Pdp\Parser;
+use Pdp\PublicSuffixListManager;
 
 // Obtain an instance of the parser
 $pslManager = new PublicSuffixListManager();

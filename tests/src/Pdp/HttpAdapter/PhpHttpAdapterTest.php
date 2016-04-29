@@ -3,11 +3,11 @@
 namespace Pdp\HttpAdapter;
 
 /**
- * Class CurlHttpAdapterTest
+ * Class PhpHttpAdapterTest
  *
  * @package Pdp\HttpAdapter
  */
-class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
+class PhpHttpAdapterTest extends \PHPUnit_Framework_TestCase
 {
   /**
    * @var HttpAdapterInterface
@@ -16,11 +16,7 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
 
   protected function setUp()
   {
-    if (!function_exists('curl_init')) {
-      self::markTestSkipped('cURL has to be enabled.');
-    }
-
-    $this->adapter = new CurlHttpAdapter();
+    $this->adapter = new PhpHttpAdapter();
   }
 
   protected function tearDown()

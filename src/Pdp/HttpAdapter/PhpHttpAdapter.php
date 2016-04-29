@@ -8,25 +8,27 @@
  * @copyright Copyright (c) 2014 Jeremy Kendall (http://about.me/jeremykendall)
  * @license   http://github.com/jeremykendall/php-domain-parser/blob/master/LICENSE MIT License
  */
-namespace Pdp;
+namespace Pdp\HttpAdapter;
 
 /**
- * Public Suffix List.
+ * php http adapter
  */
-class PublicSuffixList extends \ArrayObject
+class PhpHttpAdapter implements HttpAdapterInterface
 {
   /**
-   * Public constructor.
-   *
-   * @param mixed $list Array representing Public Suffix List or PHP Public Suffix List file
+   * {@inheritdoc}
    */
-  public function __construct($list)
+  public function getContent($url, $timeout = 5)
   {
-    if (!is_array($list)) {
-      /** @noinspection PhpIncludeInspection */
-      $list = require $list;
-    }
+    $ctx = stream_context_create(
+        array(
+            'http' =>
+                array(
+                    'timeout' => $timeout,
+                ),
+        )
+    );
 
-    parent::__construct($list);
+    return file_get_contents($url, false, $ctx);
   }
 }
