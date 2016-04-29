@@ -230,7 +230,7 @@ class PublicSuffixListManager
   public function getHttpAdapter()
   {
     if ($this->httpAdapter === null) {
-      if (!extension_loaded('curl')) {
+      if (extension_loaded('curl')) {
         $this->httpAdapter = new HttpAdapter\CurlHttpAdapter();
       } else {
         $this->httpAdapter = new HttpAdapter\PhpHttpAdapter();
