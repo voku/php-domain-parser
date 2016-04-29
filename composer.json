@@ -1,10 +1,10 @@
 {
-    "name": "jeremykendall/php-domain-parser",
-    "description": "Public Suffix List based URL parsing implemented in PHP.",
-    "homepage": "https://github.com/jeremykendall/php-domain-parser",
+    "name": "voku/php-domain-parser",
+    "description": "Fork: Public Suffix List based URL parsing implemented in PHP.",
+    "homepage": "https://github.com/voku/php-domain-parser",
     "support": {
-        "issues": "https://github.com/jeremykendall/php-domain-parser/issues",
-        "source": "https://github.com/jeremykendall/php-domain-parser"
+        "issues": "https://github.com/voku/php-domain-parser/issues",
+        "source": "https://github.com/voku/php-domain-parser"
     },
     "license": "MIT",
     "authors": [
