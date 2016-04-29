@@ -24,7 +24,7 @@ class PublicSuffixList extends \ArrayObject
     {
         if (!is_array($list)) {
             /** @noinspection PhpIncludeInspection */
-            $list = include $list;
+            $list = require $list;
         }
 
         parent::__construct($list);

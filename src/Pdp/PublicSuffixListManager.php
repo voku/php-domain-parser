@@ -106,7 +106,7 @@ class PublicSuffixListManager
         );
 
         $data = array_filter($data, function ($line) {
-            return strstr($line, '//') === false;
+            return false === strpos($line, '//');
         });
 
         $publicSuffixListArray = array();
@@ -151,7 +151,7 @@ class PublicSuffixListManager
             $isDomain = false;
         }
 
-        if (!array_key_exists($part, $publicSuffixListArray)) {
+        if (!isset($publicSuffixListArray[$part])) {
             if ($isDomain) {
                 $publicSuffixListArray[$part] = array();
             } else {
@@ -189,8 +189,9 @@ class PublicSuffixListManager
             $this->refreshPublicSuffixList();
         }
 
+        /** @noinspection PhpIncludeInspection */
         $this->list = new PublicSuffixList(
-            include $this->cacheDir . '/' . self::PDP_PSL_PHP_FILE
+            require $this->cacheDir . '/' . self::PDP_PSL_PHP_FILE
         );
 
         return $this->list;

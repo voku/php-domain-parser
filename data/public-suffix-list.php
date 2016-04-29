@@ -1,5 +1,5 @@
 <?php
-return array (
+static $data = array (
   'ac' => 
   array (
     'com' => 
@@ -23698,3 +23698,8 @@ return array (
   array (
   ),
 );
+
+$result =& $data;
+unset($data);
+
+return $result;
