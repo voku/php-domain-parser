@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/voku/php-domain-parser.svg?branch=master)](https://travis-ci.org/voku/php-domain-parser)
+
 # PHP Domain Parser
 
 WARNING: this is only a Fork of "https://github.com/jeremykendall/php-domain-parser"
