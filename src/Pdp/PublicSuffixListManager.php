@@ -176,7 +176,7 @@ class PublicSuffixListManager
    */
   public function writePhpCache(array $publicSuffixList)
   {
-    $data = '<?php' . PHP_EOL . 'return ' . var_export($publicSuffixList, true) . ';';
+    $data = '<?php' . PHP_EOL . 'static $data = ' . var_export($publicSuffixList, true) . '; $result =& $data; unset($data); return $result;';
 
     return $this->write(self::PDP_PSL_PHP_FILE, $data);
   }
