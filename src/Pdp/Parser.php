@@ -13,6 +13,8 @@ namespace Pdp;
 use Pdp\Exception\SeriouslyMalformedUrlException;
 use Pdp\Uri\Url;
 use Pdp\Uri\Url\Host;
+use TrueBV\Punycode;
+use voku\helper\UTF8;
 
 /**
  * Parser.
@@ -120,7 +122,7 @@ class Parser
      */
     public function parseHost($host)
     {
-        $host = mb_strtolower($host, 'UTF-8');
+        $host = UTF8::strtolower($host);
 
         return new Host(
             $this->getSubdomain($host),
@@ -304,7 +306,8 @@ class Parser
         $punycoded = (strpos($part, 'xn--') !== false);
 
         if ($punycoded === false) {
-            $part = idn_to_ascii($part);
+            $punycode = new Punycode();
+            $part = $punycode->encode($part);
             $this->isNormalized = true;
         }
 
@@ -322,7 +325,8 @@ class Parser
     protected function denormalize($part)
     {
         if ($this->isNormalized === true) {
-            $part = idn_to_utf8($part);
+            $punycode = new Punycode();
+            $part = $punycode->decode($part);
             $this->isNormalized = false;
         }
 

@@ -23,6 +23,7 @@ class PublicSuffixList extends \ArrayObject
     public function __construct($list)
     {
         if (!is_array($list)) {
+            /** @noinspection PhpIncludeInspection */
             $list = include $list;
         }
 
