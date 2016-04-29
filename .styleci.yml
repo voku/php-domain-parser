@@ -10,3 +10,7 @@ enabled:
 disabled:
   - indentation
   - braces
+
+finder:
+  exclude:
+    - "data"
