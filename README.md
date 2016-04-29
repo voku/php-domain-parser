@@ -1,4 +1,13 @@
 [![Build Status](https://travis-ci.org/voku/php-domain-parser.svg?branch=master)](https://travis-ci.org/voku/php-domain-parser)
+[![codecov.io](https://codecov.io/github/voku/php-domain-parser/coverage.svg?branch=master)](https://codecov.io/github/voku/php-domain-parser?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/voku/php-domain-parser/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/voku/php-domain-parser/?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/116fd38826314ba1a325f84d79fcdc43)](https://www.codacy.com/app/voku/php-domain-parser)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/3e918de2-3052-428a-920a-e554f9b4c52d/mini.png)](https://insight.sensiolabs.com/projects/3e918de2-3052-428a-920a-e554f9b4c52d)
+[![Latest Stable Version](https://poser.pugx.org/voku/php-domain-parser/v/stable)](https://packagist.org/packages/voku/php-domain-parser) 
+[![Total Downloads](https://poser.pugx.org/voku/php-domain-parser/downloads)](https://packagist.org/packages/voku/php-domain-parser) 
+[![Latest Unstable Version](https://poser.pugx.org/voku/php-domain-parser/v/unstable)](https://packagist.org/packages/voku/php-domain-parser)
+[![PHP 7 ready](http://php7ready.timesplinter.ch/voku/php-domain-parser/badge.svg)](https://travis-ci.org/voku/php-domain-parser)
+[![License](https://poser.pugx.org/voku/php-domain-parser/license)](https://packagist.org/packages/voku/php-domain-parser)
 
 # PHP Domain Parser
 
