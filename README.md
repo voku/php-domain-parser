@@ -1,11 +1,9 @@
 # PHP Domain Parser
 
+WARNING: this is only a Fork of "https://github.com/jeremykendall/php-domain-parser"
+
 **PHP Domain Parser** is a [Public Suffix List](http://publicsuffix.org/) based
 domain parser implemented in PHP.
-
-[![Build Status](https://travis-ci.org/jeremykendall/php-domain-parser.png?branch=master)](https://travis-ci.org/jeremykendall/php-domain-parser)
-[![Total Downloads](https://poser.pugx.org/jeremykendall/php-domain-parser/downloads.png)](https://packagist.org/packages/jeremykendall/php-domain-parser)
-[![Latest Stable Version](https://poser.pugx.org/jeremykendall/php-domain-parser/v/stable.png)](https://packagist.org/packages/jeremykendall/php-domain-parser)
 
 ## Motivation
 
@@ -32,7 +30,7 @@ Create a `composer.json` file in the root of your project:
 ``` json
 {
     "require": {
-        "jeremykendall/php-domain-parser": "~2.0"
+        "voku/php-domain-parser": "~2.0"
     }
 }
 ```
