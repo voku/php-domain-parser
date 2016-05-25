@@ -27,7 +27,7 @@ namespace {
      */
     function pdp_parse_url($url, $component = -1)
     {
-      $pattern = '%([a-zA-Z][a-zA-Z0-9+\-.]*)?(:?//)?([^:/@?&=#\[\]]+)%usD';
+      $pattern = '%([a-zA-Z][a-zA-Z0-9+\-.]*)?(:?//)?([^:/@?&=#\[\]]+)%us';
 
       $enc_url = preg_replace_callback(
           $pattern,
@@ -46,12 +46,12 @@ namespace {
       }
 
       if (is_array($parts)) {
-        foreach ($parts as $name => $value) {
+        foreach ($parts as $name => &$value) {
           if ($name === 'scheme') {
             continue;
           }
 
-          $parts[$name] = urldecode($value);
+          $value = urldecode($value);
         }
       } else {
         $parts = urldecode($parts);
