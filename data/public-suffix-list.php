@@ -1,5 +1,5 @@
 <?php
-return array (
+static $data = array (
   'ac' => 
   array (
     'com' => 
@@ -1693,16 +1693,19 @@ return array (
         'ap-northeast-1' => 
         array (
         ),
+        'ap-northeast-2' => 
+        array (
+        ),
         'ap-southeast-1' => 
         array (
         ),
         'ap-southeast-2' => 
         array (
         ),
-        'eu-west-1' => 
+        'eu-central-1' => 
         array (
         ),
-        'eu-central-1' => 
+        'eu-west-1' => 
         array (
         ),
         'sa-east-1' => 
@@ -1739,10 +1742,19 @@ return array (
       's3-ap-northeast-1' => 
       array (
       ),
+      's3-ap-northeast-2' => 
+      array (
+      ),
       's3-ap-southeast-1' => 
       array (
       ),
       's3-ap-southeast-2' => 
+      array (
+      ),
+      's3-eu-central-1' => 
+      array (
+      ),
+      's3-eu-west-1' => 
       array (
       ),
       's3-external-1' => 
@@ -1752,12 +1764,6 @@ return array (
       array (
       ),
       's3-fips-us-gov-west-1' => 
-      array (
-      ),
-      's3-eu-central-1' => 
-      array (
-      ),
-      's3-eu-west-1' => 
       array (
       ),
       's3-sa-east-1' => 
@@ -1772,6 +1778,12 @@ return array (
       's3-us-west-2' => 
       array (
       ),
+      'ap-northeast-2' => 
+      array (
+        's3' => 
+        array (
+        ),
+      ),
       'eu-central-1' => 
       array (
         's3' => 
@@ -1780,6 +1792,9 @@ return array (
       ),
     ),
     'elasticbeanstalk' => 
+    array (
+    ),
+    'on-aptible' => 
     array (
     ),
     'betainabox' => 
@@ -1849,6 +1864,9 @@ return array (
     array (
     ),
     'co' => 
+    array (
+    ),
+    'xenapponazure' => 
     array (
     ),
     'cloudcontrolled' => 
@@ -2313,6 +2331,12 @@ return array (
     'writesthisblog' => 
     array (
     ),
+    'fbsbx' => 
+    array (
+      'apps' => 
+      array (
+      ),
+    ),
     'firebaseapp' => 
     array (
     ),
@@ -2322,8 +2346,38 @@ return array (
     'githubusercontent' => 
     array (
     ),
+    'githubcloud' => 
+    array (
+      'api' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'ext' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'gist' => 
+      array (
+      ),
+    ),
+    'githubcloudusercontent' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
     'ro' => 
     array (
+    ),
+    '0emm' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
     'appspot' => 
     array (
@@ -2367,6 +2421,9 @@ return array (
     'outsystemscloud' => 
     array (
     ),
+    'ownprovider' => 
+    array (
+    ),
     'pagefrontapp' => 
     array (
     ),
@@ -2401,6 +2458,12 @@ return array (
     array (
     ),
     'familyds' => 
+    array (
+    ),
+    'bloxcms' => 
+    array (
+    ),
+    'townnews-staging' => 
     array (
     ),
     'hk' => 
@@ -2547,6 +2610,9 @@ return array (
     'com' => 
     array (
     ),
+    'dnshome' => 
+    array (
+    ),
     'fuettertdasnetz' => 
     array (
     ),
@@ -2565,6 +2631,9 @@ return array (
     'traeumtgerade' => 
     array (
     ),
+    'goip' => 
+    array (
+    ),
     'blogspot' => 
     array (
     ),
@@ -2574,6 +2643,21 @@ return array (
   ),
   'dk' => 
   array (
+    'biz' => 
+    array (
+    ),
+    'co' => 
+    array (
+    ),
+    'firm' => 
+    array (
+    ),
+    'reg' => 
+    array (
+    ),
+    'store' => 
+    array (
+    ),
     'blogspot' => 
     array (
     ),
@@ -2926,6 +3010,9 @@ return array (
     array (
     ),
     'blogspot' => 
+    array (
+    ),
+    'chirurgiens-dentistes-en-france' => 
     array (
     ),
   ),
@@ -3615,6 +3702,9 @@ return array (
     'webhop' => 
     array (
     ),
+    'nsupdate' => 
+    array (
+    ),
   ),
   'int' => 
   array (
@@ -3627,6 +3717,9 @@ return array (
     'com' => 
     array (
     ),
+    'dedyn' => 
+    array (
+    ),
     'github' => 
     array (
     ),
@@ -3636,7 +3729,10 @@ return array (
     'nid' => 
     array (
     ),
-    'pantheon' => 
+    'pantheonsite' => 
+    array (
+    ),
+    'hzc' => 
     array (
     ),
     'sandcats' => 
@@ -10654,6 +10750,9 @@ return array (
     'gov' => 
     array (
     ),
+    'oy' => 
+    array (
+    ),
   ),
   'li' => 
   array (
@@ -10871,6 +10970,9 @@ return array (
     array (
     ),
     'priv' => 
+    array (
+    ),
+    'daplie' => 
     array (
     ),
     'diskstation' => 
@@ -12965,6 +13067,9 @@ return array (
     'cloudfront' => 
     array (
     ),
+    'myfritz' => 
+    array (
+    ),
     'gb' => 
     array (
     ),
@@ -13095,6 +13200,9 @@ return array (
     array (
     ),
     'webhop' => 
+    array (
+    ),
+    'dynv6' => 
     array (
     ),
     'fastly' => 
@@ -16928,13 +17036,25 @@ return array (
   ),
   'pro' => 
   array (
+    'aaa' => 
+    array (
+    ),
     'aca' => 
+    array (
+    ),
+    'acct' => 
+    array (
+    ),
+    'avocat' => 
     array (
     ),
     'bar' => 
     array (
     ),
     'cpa' => 
+    array (
+    ),
+    'eng' => 
     array (
     ),
     'jur' => 
@@ -16946,7 +17066,7 @@ return array (
     'med' => 
     array (
     ),
-    'eng' => 
+    'recht' => 
     array (
     ),
   ),
@@ -19806,6 +19926,9 @@ return array (
   'xn--wgbh1c' => 
   array (
   ),
+  'xn--e1a4c' => 
+  array (
+  ),
   'xn--node' => 
   array (
   ),
@@ -20033,7 +20156,37 @@ return array (
   ),
   'zm' => 
   array (
-    '*' => 
+    'ac' => 
+    array (
+    ),
+    'biz' => 
+    array (
+    ),
+    'co' => 
+    array (
+    ),
+    'com' => 
+    array (
+    ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'info' => 
+    array (
+    ),
+    'mil' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
+    'sch' => 
     array (
     ),
   ),
@@ -20224,6 +20377,9 @@ return array (
   array (
   ),
   'army' => 
+  array (
+  ),
+  'art' => 
   array (
   ),
   'arte' => 
@@ -20928,9 +21084,6 @@ return array (
   'domains' => 
   array (
   ),
-  'doosan' => 
-  array (
-  ),
   'dot' => 
   array (
   ),
@@ -21023,6 +21176,12 @@ return array (
   ),
   'estate' => 
   array (
+    'compute' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
   ),
   'esurance' => 
   array (
@@ -21219,6 +21378,9 @@ return array (
   'fujixerox' => 
   array (
   ),
+  'fun' => 
+  array (
+  ),
   'fund' => 
   array (
   ),
@@ -21304,6 +21466,9 @@ return array (
   array (
   ),
   'gmail' => 
+  array (
+  ),
+  'gmbh' => 
   array (
   ),
   'gmo' => 
@@ -21839,6 +22004,12 @@ return array (
   ),
   'link' => 
   array (
+    'cyon' => 
+    array (
+    ),
+    'mypep' => 
+    array (
+    ),
   ),
   'lipsy' => 
   array (
@@ -21926,6 +22097,9 @@ return array (
   ),
   'management' => 
   array (
+    'router' => 
+    array (
+    ),
   ),
   'mango' => 
   array (
@@ -22136,6 +22310,12 @@ return array (
   ),
   'network' => 
   array (
+    'alces' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
   ),
   'neustar' => 
   array (
@@ -22292,6 +22472,9 @@ return array (
   ),
   'ovh' => 
   array (
+    'nerdpol' => 
+    array (
+    ),
   ),
   'page' => 
   array (
@@ -22761,6 +22944,9 @@ return array (
   'shoes' => 
   array (
   ),
+  'shopping' => 
+  array (
+  ),
   'shouji' => 
   array (
   ),
@@ -22784,6 +22970,9 @@ return array (
   ),
   'site' => 
   array (
+    'cyon' => 
+    array (
+    ),
   ),
   'ski' => 
   array (
@@ -22891,6 +23080,9 @@ return array (
   array (
   ),
   'store' => 
+  array (
+  ),
+  'stream' => 
   array (
   ),
   'studio' => 
@@ -23697,4 +23889,4 @@ return array (
   'zuerich' => 
   array (
   ),
-);
+); $result =& $data; unset($data); return $result;

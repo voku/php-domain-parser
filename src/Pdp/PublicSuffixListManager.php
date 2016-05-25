@@ -10,6 +10,8 @@
  */
 namespace Pdp;
 
+use TrueBV\Punycode;
+
 /**
  * Public Suffix List Manager.
  *
@@ -18,223 +20,283 @@ namespace Pdp;
  */
 class PublicSuffixListManager
 {
-    const PDP_PSL_TEXT_FILE = 'public-suffix-list.txt';
-    const PDP_PSL_PHP_FILE = 'public-suffix-list.php';
-    /**
-     * @var string Public Suffix List URL
-     */
-    protected $publicSuffixListUrl = 'https://publicsuffix.org/list/effective_tld_names.dat';
+  const PDP_PSL_TEXT_FILE = 'public-suffix-list.txt';
+  const PDP_PSL_PHP_FILE  = 'public-suffix-list.php';
 
-    /**
-     * @var string Directory where text and php versions of list will be cached
-     */
-    protected $cacheDir;
+  /**
+   * @var string Public Suffix List URL
+   */
+  protected $publicSuffixListUrl = 'https://publicsuffix.org/list/effective_tld_names.dat';
 
-    /**
-     * @var PublicSuffixList Public Suffix List
-     */
-    protected $list;
+  /**
+   * @var string Directory where text and php versions of list will be cached
+   */
+  protected $cacheDir;
 
-    /**
-     * @var \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
-     */
-    protected $httpAdapter;
+  /**
+   * @var PublicSuffixList Public Suffix List
+   */
+  protected $list;
 
-    /**
-     * Public constructor.
-     *
-     * @param string $cacheDir Optional cache directory
-     */
-    public function __construct($cacheDir = null)
-    {
-        if (is_null($cacheDir)) {
-            $cacheDir = realpath(
-                dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'data'
-            );
+  /**
+   * @var \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
+   */
+  protected $httpAdapter;
+
+  /**
+   * Public constructor.
+   *
+   * @param string $cacheDir Optional cache directory
+   */
+  public function __construct($cacheDir = null)
+  {
+    if (null === $cacheDir) {
+      $cacheDir = realpath(
+          dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'data'
+      );
+    }
+
+    $this->cacheDir = $cacheDir;
+  }
+
+  /**
+   * Downloads Public Suffix List and writes text cache and PHP cache. If these files
+   * already exist, they will be overwritten.
+   */
+  public function refreshPublicSuffixList()
+  {
+    $this->fetchListFromSource();
+    $publicSuffixListArray = $this->parseListToArray(
+        $this->cacheDir . '/' . self::PDP_PSL_TEXT_FILE
+    );
+    $this->writePhpCache($publicSuffixListArray);
+  }
+
+  /**
+   * Obtain Public Suffix List from its online source and write to cache dir.
+   *
+   * @return int Number of bytes that were written to the file
+   */
+  public function fetchListFromSource()
+  {
+    $publicSuffixList = $this->getHttpAdapter()->getContent($this->publicSuffixListUrl);
+
+    return $this->write(self::PDP_PSL_TEXT_FILE, $publicSuffixList);
+  }
+
+  /**
+   * Parses text representation of list to associative, multidimensional array.
+   *
+   * This method is based heavily on the code found in generateEffectiveTLDs.php
+   *
+   * @link https://github.com/usrflo/registered-domain-libs/blob/master/generateEffectiveTLDs.php
+   * A copy of the Apache License, Version 2.0, is provided with this
+   * distribution
+   *
+   * @param string $textFile Public Suffix List text filename
+   *
+   * @return array Associative, multidimensional array representation of the
+   *               public suffx list
+   *
+   * @throws \Exception Throws \Exception if unable to read file
+   */
+  public function parseListToArray($textFile)
+  {
+    /** @noinspection PhpUsageOfSilenceOperatorInspection */
+    $fp = @fopen($textFile, 'r');
+    if (!$fp || !flock($fp, LOCK_SH)) {
+      throw new \Exception("Cannot read '$textFile'");
+    }
+
+    $data = file(
+        $textFile,
+        FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
+    );
+
+    flock($fp, LOCK_UN);
+    fclose($fp);
+
+    $data = array_filter(
+        $data,
+        function ($line) {
+          return false === strpos($line, '//');
         }
+    );
 
-        $this->cacheDir = $cacheDir;
+    $publicSuffixListArray = array();
+
+    foreach ($data as $line) {
+      $ruleParts = explode('.', $line);
+      $this->buildArray($publicSuffixListArray, $ruleParts);
     }
 
-    /**
-     * Downloads Public Suffix List and writes text cache and PHP cache. If these files
-     * already exist, they will be overwritten.
-     */
-    public function refreshPublicSuffixList()
-    {
-        $this->fetchListFromSource();
-        $publicSuffixListArray = $this->parseListToArray(
-            $this->cacheDir . '/' . self::PDP_PSL_TEXT_FILE
-        );
-        $this->writePhpCache($publicSuffixListArray);
+    return $publicSuffixListArray;
+  }
+
+  /**
+   * Recursive method to build the array representation of the Public Suffix List.
+   *
+   * This method is based heavily on the code found in generateEffectiveTLDs.php
+   *
+   * @link https://github.com/usrflo/registered-domain-libs/blob/master/generateEffectiveTLDs.php
+   * A copy of the Apache License, Version 2.0, is provided with this
+   * distribution
+   *
+   * @param array $publicSuffixListArray Initially an empty array, this eventually
+   *                                     becomes the array representation of the Public Suffix List
+   * @param array $ruleParts             One line (rule) from the Public Suffix List
+   *                                     exploded on '.', or the remaining portion of that array during recursion
+   */
+  public function buildArray(array &$publicSuffixListArray, array $ruleParts)
+  {
+    $isDomain = true;
+
+    $part = array_pop($ruleParts);
+
+    // Adheres to canonicalization rule from the "Formal Algorithm" section
+    // of https://publicsuffix.org/list/
+    // "The domain and all rules must be canonicalized in the normal way
+    // for hostnames - lower-case, Punycode (RFC 3492)."
+    $punycode = new Punycode();
+    $part = $punycode->encode($part);
+
+    if (strpos($part, '!') === 0) {
+      $part = substr($part, 1);
+      $isDomain = false;
     }
 
-    /**
-     * Obtain Public Suffix List from its online source and write to cache dir.
-     *
-     * @return int Number of bytes that were written to the file
-     */
-    public function fetchListFromSource()
-    {
-        $publicSuffixList = $this->getHttpAdapter()
-            ->getContent($this->publicSuffixListUrl);
-
-        return $this->write(self::PDP_PSL_TEXT_FILE, $publicSuffixList);
+    if (!isset($publicSuffixListArray[$part])) {
+      if ($isDomain) {
+        $publicSuffixListArray[$part] = array();
+      } else {
+        $publicSuffixListArray[$part] = array('!' => '');
+      }
     }
 
-    /**
-     * Parses text representation of list to associative, multidimensional array.
-     *
-     * This method is based heavily on the code found in generateEffectiveTLDs.php
-     *
-     * @link https://github.com/usrflo/registered-domain-libs/blob/master/generateEffectiveTLDs.php
-     * A copy of the Apache License, Version 2.0, is provided with this
-     * distribution
-     *
-     * @param string $textFile Public Suffix List text filename
-     *
-     * @return array Associative, multidimensional array representation of the
-     *               public suffx list
-     */
-    public function parseListToArray($textFile)
-    {
-        $data = file(
-            $textFile,
-            FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
-        );
+    if ($isDomain && count($ruleParts) > 0) {
+      $this->buildArray($publicSuffixListArray[$part], $ruleParts);
+    }
+  }
 
-        $data = array_filter($data, function ($line) {
-            return strstr($line, '//') === false;
-        });
+  /**
+   * Writes php array representation of the Public Suffix List to disk.
+   *
+   * @param array $publicSuffixList Array representation of the Public Suffix List
+   *
+   * @return int Number of bytes that were written to the file
+   */
+  public function writePhpCache(array $publicSuffixList)
+  {
+    $data = '<?php' . PHP_EOL . 'static $data = ' . var_export($publicSuffixList, true) . '; $result =& $data; unset($data); return $result;';
 
-        $publicSuffixListArray = array();
+    return $this->write(self::PDP_PSL_PHP_FILE, $data);
+  }
 
-        foreach ($data as $line) {
-            $ruleParts = explode('.', $line);
-            $this->buildArray($publicSuffixListArray, $ruleParts);
-        }
+  /**
+   * Gets Public Suffix List.
+   *
+   * @return PublicSuffixList Instance of Public Suffix List
+   *
+   * @throws \Exception Throws \Exception if unable to read file
+   */
+  public function getList()
+  {
+    $phpFile = $this->cacheDir . '/' . self::PDP_PSL_PHP_FILE;
 
-        return $publicSuffixListArray;
+    if (!file_exists($phpFile)) {
+      $this->refreshPublicSuffixList();
     }
 
-    /**
-     * Recursive method to build the array representation of the Public Suffix List.
-     *
-     * This method is based heavily on the code found in generateEffectiveTLDs.php
-     *
-     * @link https://github.com/usrflo/registered-domain-libs/blob/master/generateEffectiveTLDs.php
-     * A copy of the Apache License, Version 2.0, is provided with this
-     * distribution
-     *
-     * @param array $publicSuffixListArray Initially an empty array, this eventually
-     *                                     becomes the array representation of the Public Suffix List
-     * @param array $ruleParts             One line (rule) from the Public Suffix List
-     *                                     exploded on '.', or the remaining portion of that array during recursion
-     */
-    public function buildArray(array &$publicSuffixListArray, array $ruleParts)
-    {
-        $isDomain = true;
+    $this->list = $this->getListFromFile($phpFile);
 
-        $part = array_pop($ruleParts);
+    return $this->list;
+  }
 
-        // Adheres to canonicalization rule from the "Formal Algorithm" section
-        // of https://publicsuffix.org/list/
-        // "The domain and all rules must be canonicalized in the normal way
-        // for hostnames - lower-case, Punycode (RFC 3492)."
-        $part = idn_to_ascii($part);
-
-        if (strpos($part, '!') === 0) {
-            $part = substr($part, 1);
-            $isDomain = false;
-        }
-
-        if (!array_key_exists($part, $publicSuffixListArray)) {
-            if ($isDomain) {
-                $publicSuffixListArray[$part] = array();
-            } else {
-                $publicSuffixListArray[$part] = array('!' => '');
-            }
-        }
-
-        if ($isDomain && count($ruleParts) > 0) {
-            $this->buildArray($publicSuffixListArray[$part], $ruleParts);
-        }
+  /**
+   * Retrieves public suffix list from file after obtaining a shared lock.
+   *
+   * @return PublicSuffixList Instance of Public Suffix List
+   *
+   * @throws \Exception Throws \Exception if unable to read file
+   */
+  public function getListFromFile($phpFile)
+  {
+    /** @noinspection PhpUsageOfSilenceOperatorInspection */
+    $fp = @fopen($phpFile, 'r');
+    if (!$fp || !flock($fp, LOCK_SH)) {
+      throw new \Exception("Cannot read '$phpFile'");
     }
 
-    /**
-     * Writes php array representation of the Public Suffix List to disk.
-     *
-     * @param array $publicSuffixList Array representation of the Public Suffix List
-     *
-     * @return int Number of bytes that were written to the file
-     */
-    public function writePhpCache(array $publicSuffixList)
-    {
-        $data = '<?php' . PHP_EOL . 'return ' . var_export($publicSuffixList, true) . ';';
+    /** @noinspection PhpIncludeInspection */
+    $list = new PublicSuffixList(
+        require $phpFile
+    );
 
-        return $this->write(self::PDP_PSL_PHP_FILE, $data);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+
+    return $list;
+  }
+
+  /**
+   * Writes to file after obtaining an exclusive lock.
+   *
+   * @param string $filename Filename in cache dir where data will be written
+   * @param mixed  $data     Data to write
+   *
+   * @return int Number of bytes that were written to the file
+   *
+   * @throws \Exception Throws \Exception if unable to write file
+   */
+  protected function write($filename, $data)
+  {
+    $filePath = $this->cacheDir . '/' . $filename;
+    
+    // open with 'c' and truncate file only after obtaining a lock
+    /** @noinspection PhpUsageOfSilenceOperatorInspection */
+    $fp = @fopen($filePath, 'c');
+    $result = $fp
+              && flock($fp, LOCK_EX)
+              && ftruncate($fp, 0)
+              && fwrite($fp, $data) !== false
+              && fflush($fp);
+
+    if (!$result) {
+      $fp && fclose($fp);
+      throw new \Exception("Cannot write to '$filePath'");
     }
 
-    /**
-     * Gets Public Suffix List.
-     *
-     * @return PublicSuffixList Instance of Public Suffix List
-     */
-    public function getList()
-    {
-        if (!file_exists($this->cacheDir . '/' . self::PDP_PSL_PHP_FILE)) {
-            $this->refreshPublicSuffixList();
-        }
+    flock($fp, LOCK_UN);
+    fclose($fp);
 
-        $this->list = new PublicSuffixList(
-            include $this->cacheDir . '/' . self::PDP_PSL_PHP_FILE
-        );
+    return $result;
+  }
 
-        return $this->list;
+  /**
+   * Returns http adapter. Returns default http adapter if one is not set.
+   *
+   * @return \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
+   */
+  public function getHttpAdapter()
+  {
+    if ($this->httpAdapter === null) {
+      if (extension_loaded('curl')) {
+        $this->httpAdapter = new HttpAdapter\CurlHttpAdapter();
+      } else {
+        $this->httpAdapter = new HttpAdapter\PhpHttpAdapter();
+      }
     }
 
-    /**
-     * Writes to file.
-     *
-     * @param string $filename Filename in cache dir where data will be written
-     * @param mixed  $data     Data to write
-     *
-     * @return int Number of bytes that were written to the file
-     *
-     * @throws \Exception Throws \Exception if unable to write file
-     */
-    protected function write($filename, $data)
-    {
-        $result = @file_put_contents($this->cacheDir . '/' . $filename, $data);
+    return $this->httpAdapter;
+  }
 
-        if ($result === false) {
-            throw new \Exception("Cannot write '" . $this->cacheDir . '/' . "$filename'");
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns http adapter. Returns default http adapter if one is not set.
-     *
-     * @return \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
-     */
-    public function getHttpAdapter()
-    {
-        if ($this->httpAdapter === null) {
-            $this->httpAdapter = new HttpAdapter\CurlHttpAdapter();
-        }
-
-        return $this->httpAdapter;
-    }
-
-    /**
-     * Sets http adapter.
-     *
-     * @param \Pdp\HttpAdapter\HttpAdapterInterface $httpAdapter
-     */
-    public function setHttpAdapter(HttpAdapter\HttpAdapterInterface $httpAdapter)
-    {
-        $this->httpAdapter = $httpAdapter;
-    }
+  /**
+   * Sets http adapter.
+   *
+   * @param \Pdp\HttpAdapter\HttpAdapterInterface $httpAdapter
+   */
+  public function setHttpAdapter(HttpAdapter\HttpAdapterInterface $httpAdapter)
+  {
+    $this->httpAdapter = $httpAdapter;
+  }
 }

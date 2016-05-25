@@ -1,11 +1,20 @@
+[![Build Status](https://travis-ci.org/voku/php-domain-parser.svg?branch=develop)](https://travis-ci.org/voku/php-domain-parser)
+[![codecov.io](https://codecov.io/github/voku/php-domain-parser/coverage.svg?branch=develop)](https://codecov.io/github/voku/php-domain-parser?branch=develop)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/voku/php-domain-parser/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/voku/php-domain-parser/?branch=develop)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/116fd38826314ba1a325f84d79fcdc43)](https://www.codacy.com/app/voku/php-domain-parser)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/3e918de2-3052-428a-920a-e554f9b4c52d/mini.png)](https://insight.sensiolabs.com/projects/3e918de2-3052-428a-920a-e554f9b4c52d)
+[![Latest Stable Version](https://poser.pugx.org/voku/php-domain-parser/v/stable)](https://packagist.org/packages/voku/php-domain-parser) 
+[![Total Downloads](https://poser.pugx.org/voku/php-domain-parser/downloads)](https://packagist.org/packages/voku/php-domain-parser) 
+[![Latest Unstable Version](https://poser.pugx.org/voku/php-domain-parser/v/unstable)](https://packagist.org/packages/voku/php-domain-parser)
+[![PHP 7 ready](http://php7ready.timesplinter.ch/voku/php-domain-parser/badge.svg)](https://travis-ci.org/voku/php-domain-parser)
+[![License](https://poser.pugx.org/voku/php-domain-parser/license)](https://packagist.org/packages/voku/php-domain-parser)
+
 # PHP Domain Parser
+
+WARNING: this is only a Fork of "https://github.com/jeremykendall/php-domain-parser"
 
 **PHP Domain Parser** is a [Public Suffix List](http://publicsuffix.org/) based
 domain parser implemented in PHP.
-
-[![Build Status](https://travis-ci.org/jeremykendall/php-domain-parser.png?branch=master)](https://travis-ci.org/jeremykendall/php-domain-parser)
-[![Total Downloads](https://poser.pugx.org/jeremykendall/php-domain-parser/downloads.png)](https://packagist.org/packages/jeremykendall/php-domain-parser)
-[![Latest Stable Version](https://poser.pugx.org/jeremykendall/php-domain-parser/v/stable.png)](https://packagist.org/packages/jeremykendall/php-domain-parser)
 
 ## Motivation
 
@@ -32,7 +41,7 @@ Create a `composer.json` file in the root of your project:
 ``` json
 {
     "require": {
-        "jeremykendall/php-domain-parser": "~2.0"
+        "voku/php-domain-parser": "~2.0"
     }
 }
 ```
@@ -118,13 +127,6 @@ $publicSuffix = $url->host->publicSuffix;
 [IDN (Internationalized Domain Name)](http://en.wikipedia.org/wiki/Internationalized_domain_name)
 support was added in version `1.4.0`. Both unicode domains and their ASCII
 equivalents are supported.
-
-**IMPORTANT**:
-
-* PHP's [intl](http://php.net/manual/en/book.intl.php) extension is
-required for the [IDN functions](http://php.net/manual/en/ref.intl.idn.php).
-* PHP's [mb_string](http://php.net/manual/en/book.mbstring.php) extension is
-required for [mb_strtolower](http://php.net/manual/en/function.mb-strtolower.php).
 
 #### Unicode
 

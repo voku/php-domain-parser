@@ -15,112 +15,112 @@ namespace Pdp\Uri\Url;
  */
 class Host
 {
-    /**
-     * @var string Subdomain
-     */
-    protected $subdomain;
+  /**
+   * @var string Subdomain
+   */
+  protected $subdomain;
 
-    /**
-     * @var string Registrable domain
-     */
-    protected $registrableDomain;
+  /**
+   * @var string Registrable domain
+   */
+  protected $registrableDomain;
 
-    /**
-     * @var string Public suffix
-     */
-    protected $publicSuffix;
+  /**
+   * @var string Public suffix
+   */
+  protected $publicSuffix;
 
-    /**
-     * @var string host Entire host part
-     */
-    protected $host;
+  /**
+   * @var string host Entire host part
+   */
+  protected $host = '';
 
-    /**
-     * Public constructor.
-     *
-     * @param string|null $subdomain         Subdomain portion of host
-     * @param string|null $registrableDomain Registrable domain portion of host
-     * @param string|null $publicSuffix      Public suffix portion of host
-     * @param string      $host              OPTIONAL Entire host part
-     */
-    public function __construct($subdomain, $registrableDomain, $publicSuffix, $host = null)
-    {
-        $this->subdomain = $subdomain;
-        $this->registrableDomain = $registrableDomain;
-        $this->publicSuffix = $publicSuffix;
-        $this->host = $host;
+  /**
+   * Public constructor.
+   *
+   * @param string|null $subdomain         Subdomain portion of host
+   * @param string|null $registrableDomain Registrable domain portion of host
+   * @param string|null $publicSuffix      Public suffix portion of host
+   * @param string      $host              OPTIONAL Entire host part
+   */
+  public function __construct($subdomain, $registrableDomain, $publicSuffix, $host = '')
+  {
+    $this->subdomain = $subdomain;
+    $this->registrableDomain = $registrableDomain;
+    $this->publicSuffix = $publicSuffix;
+    $this->host = $host;
+  }
+
+  /**
+   * Get Subdomain.
+   *
+   * @return string|null
+   */
+  public function getSubdomain()
+  {
+    return $this->subdomain;
+  }
+
+  /**
+   * @return string
+   */
+  public function getRegistrableDomain()
+  {
+    return $this->registrableDomain;
+  }
+
+  /**
+   * Get Public suffix.
+   *
+   * @return string|null
+   */
+  public function getPublicSuffix()
+  {
+    return $this->publicSuffix;
+  }
+
+  /**
+   * Get Entire host part.
+   *
+   * @return string|null
+   */
+  public function getHost()
+  {
+    return $this->host;
+  }
+
+  /**
+   * Get string representation of host.
+   *
+   * @return string String representation of host
+   */
+  public function __toString()
+  {
+    if ($this->host) {
+      return $this->host;
     }
 
-    /**
-     * Get Subdomain.
-     *
-     * @return string|null
-     */
-    public function getSubdomain()
-    {
-        return $this->subdomain;
-    }
+    // retain only the elements that are not empty
+    $str = array_filter(
+        array($this->subdomain, $this->registrableDomain),
+        'strlen'
+    );
 
-    /**
-     * @return string
-     */
-    public function getRegistrableDomain()
-    {
-        return $this->registrableDomain;
-    }
+    return implode('.', $str);
+  }
 
-    /**
-     * Get Public suffix.
-     *
-     * @return string|null
-     */
-    public function getPublicSuffix()
-    {
-        return $this->publicSuffix;
-    }
-
-    /**
-     * Get Entire host part.
-     *
-     * @return string|null
-     */
-    public function getHost()
-    {
-        return $this->host;
-    }
-
-    /**
-     * Get string representation of host.
-     *
-     * @return string String representation of host
-     */
-    public function __toString()
-    {
-        if ($this->host !== null) {
-            return $this->host;
-        }
-
-        // retain only the elements that are not empty
-        $str = array_filter(
-            array($this->subdomain, $this->registrableDomain),
-            'strlen'
-        );
-
-        return implode('.', $str);
-    }
-
-    /**
-     * Get array representation of host.
-     *
-     * @return array Array representation of host
-     */
-    public function toArray()
-    {
-        return array(
-            'subdomain' => $this->getSubdomain(),
-            'registrableDomain' => $this->getRegistrableDomain(),
-            'publicSuffix' => $this->getPublicSuffix(),
-            'host' => $this->getHost(),
-        );
-    }
+  /**
+   * Get array representation of host.
+   *
+   * @return array Array representation of host
+   */
+  public function toArray()
+  {
+    return array(
+        'subdomain'         => $this->getSubdomain(),
+        'registrableDomain' => $this->getRegistrableDomain(),
+        'publicSuffix'      => $this->getPublicSuffix(),
+        'host'              => $this->getHost(),
+    );
+  }
 }
