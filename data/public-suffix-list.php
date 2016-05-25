@@ -2343,6 +2343,12 @@ static $data = array (
     'flynnhub' => 
     array (
     ),
+    'freebox-os' => 
+    array (
+    ),
+    'freeboxos' => 
+    array (
+    ),
     'githubusercontent' => 
     array (
     ),
@@ -2424,6 +2430,9 @@ static $data = array (
     'ownprovider' => 
     array (
     ),
+    'pgfog' => 
+    array (
+    ),
     'pagefrontapp' => 
     array (
     ),
@@ -2453,6 +2462,15 @@ static $data = array (
     ),
     '1kapp' => 
     array (
+    ),
+    'bounty-full' => 
+    array (
+      'alpha' => 
+      array (
+      ),
+      'beta' => 
+      array (
+      ),
     ),
     'dsmynas' => 
     array (
@@ -2599,6 +2617,9 @@ static $data = array (
   'cz' => 
   array (
     'co' => 
+    array (
+    ),
+    'e4' => 
     array (
     ),
     'blogspot' => 
@@ -2913,6 +2934,9 @@ static $data = array (
     'aland' => 
     array (
     ),
+    'dy' => 
+    array (
+    ),
     'blogspot' => 
     array (
     ),
@@ -3007,6 +3031,18 @@ static $data = array (
     array (
     ),
     'veterinaire' => 
+    array (
+    ),
+    'fbx-os' => 
+    array (
+    ),
+    'fbxos' => 
+    array (
+    ),
+    'freebox-os' => 
+    array (
+    ),
+    'freeboxos' => 
     array (
     ),
     'blogspot' => 
@@ -7749,9 +7785,6 @@ static $data = array (
       array (
       ),
       'kawasaki' => 
-      array (
-      ),
-      'kesennuma' => 
       array (
       ),
       'marumori' => 
@@ -15836,6 +15869,9 @@ static $data = array (
     'duckdns' => 
     array (
     ),
+    'tunk' => 
+    array (
+    ),
     'dyndns' => 
     array (
       'go' => 
@@ -20676,6 +20712,9 @@ static $data = array (
   'calvinklein' => 
   array (
   ),
+  'cam' => 
+  array (
+  ),
   'camera' => 
   array (
   ),
@@ -21327,6 +21366,9 @@ static $data = array (
   'foo' => 
   array (
   ),
+  'food' => 
+  array (
+  ),
   'foodnetwork' => 
   array (
   ),
@@ -21646,6 +21688,9 @@ static $data = array (
   array (
   ),
   'hoteles' => 
+  array (
+  ),
+  'hotels' => 
   array (
   ),
   'hotmail' => 
@@ -22942,6 +22987,9 @@ static $data = array (
   array (
   ),
   'shoes' => 
+  array (
+  ),
+  'shop' => 
   array (
   ),
   'shopping' => 
