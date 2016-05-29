@@ -39,6 +39,11 @@
         "phing/phing": "^2.13",
         "fabpot/php-cs-fixer": "^1.11"
     },
+    "suggest": {
+        "ext-intl": "Use Intl for best performance",
+        "ext-iconv": "Use iconv for best performance",
+        "ext-mbstring": "Use Mbstring for best performance"
+    },
     "autoload": {
         "psr-0": {
             "Pdp\\": "src/"

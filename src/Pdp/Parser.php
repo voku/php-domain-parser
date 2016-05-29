@@ -13,7 +13,6 @@ namespace Pdp;
 use Pdp\Exception\SeriouslyMalformedUrlException;
 use Pdp\Uri\Url;
 use Pdp\Uri\Url\Host;
-use TrueBV\Punycode;
 use voku\helper\UTF8;
 
 /**
@@ -46,6 +45,11 @@ class Parser
   protected $isNormalized = false;
 
   /**
+   * @var PunycodeWrapper
+   */
+  private $punycodeWrapper;
+
+  /**
    * Public constructor.
    *
    * @codeCoverageIgnore
@@ -55,6 +59,7 @@ class Parser
   public function __construct(PublicSuffixList $publicSuffixList)
   {
     $this->publicSuffixList = $publicSuffixList;
+    $this->punycodeWrapper = new PunycodeWrapper();
   }
 
   /**
@@ -307,8 +312,7 @@ class Parser
     $punycoded = (strpos($part, 'xn--') !== false);
 
     if ($punycoded === false) {
-      $punycode = new Punycode();
-      $part = $punycode->encode($part);
+      $part = $this->punycodeWrapper->encode($part);
       $this->isNormalized = true;
     }
 
@@ -326,8 +330,7 @@ class Parser
   protected function denormalize($part)
   {
     if ($this->isNormalized === true) {
-      $punycode = new Punycode();
-      $part = $punycode->decode($part);
+      $part = $this->punycodeWrapper->decode($part);
       $this->isNormalized = false;
     }
 

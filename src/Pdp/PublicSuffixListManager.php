@@ -10,8 +10,6 @@
  */
 namespace Pdp;
 
-use TrueBV\Punycode;
-
 /**
  * Public Suffix List Manager.
  *
@@ -157,7 +155,7 @@ class PublicSuffixListManager
     // of https://publicsuffix.org/list/
     // "The domain and all rules must be canonicalized in the normal way
     // for hostnames - lower-case, Punycode (RFC 3492)."
-    $punycode = new Punycode();
+    $punycode = new PunycodeWrapper();
     $part = $punycode->encode($part);
 
     if (strpos($part, '!') === 0) {
