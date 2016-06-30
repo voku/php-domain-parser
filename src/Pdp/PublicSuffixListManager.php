@@ -10,6 +10,8 @@
  */
 namespace Pdp;
 
+use Pdp\HttpAdapter\HttpAdapterInterface;
+
 /**
  * Public Suffix List Manager.
  *
@@ -78,6 +80,10 @@ class PublicSuffixListManager
   public function fetchListFromSource()
   {
     $publicSuffixList = $this->getHttpAdapter()->getContent($this->publicSuffixListUrl);
+
+    if ($publicSuffixList === false) {
+      return 0;
+    }
 
     return $this->write(self::PDP_PSL_TEXT_FILE, $publicSuffixList);
   }
@@ -277,7 +283,7 @@ class PublicSuffixListManager
    */
   public function getHttpAdapter()
   {
-    if ($this->httpAdapter === null) {
+    if (!$this->httpAdapter instanceof HttpAdapterInterface) {
       if (extension_loaded('curl')) {
         $this->httpAdapter = new HttpAdapter\CurlHttpAdapter();
       } else {

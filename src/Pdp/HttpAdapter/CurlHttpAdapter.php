@@ -28,13 +28,41 @@ class CurlHttpAdapter implements HttpAdapterInterface
    */
   public function getContent($url, $timeout = 5)
   {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    $content = curl_exec($ch);
-    curl_close($ch);
+    // init
+    $content = false;
+
+    try {
+
+      $ch = curl_init();
+
+      if (false === $ch) {
+        throw new \Exception('failed to initialize');
+      }
+
+      curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+      curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-Domain-Parser cURL Request');
+
+      $content = curl_exec($ch);
+      if (false === $content) {
+        throw new \Exception(curl_error($ch), curl_errno($ch));
+      }
+
+      curl_close($ch);
+    } catch (\Exception $e) {
+      trigger_error(
+          sprintf(
+              'Curl failed with error #%d: %s',
+              $e->getCode(), $e->getMessage()
+          ),
+          E_USER_ERROR
+      );
+    }
+
 
     return $content;
   }
