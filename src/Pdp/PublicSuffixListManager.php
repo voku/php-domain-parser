@@ -254,7 +254,12 @@ class PublicSuffixListManager
    */
   protected function write($filename, $data)
   {
+    $data = trim($data);
     $filePath = $this->cacheDir . '/' . $filename;
+
+    if (empty($data)) {
+      throw new \Exception("No data to write into '{$filePath}'");
+    }
     
     // open with 'c' and truncate file only after obtaining a lock
     /** @noinspection PhpUsageOfSilenceOperatorInspection */
