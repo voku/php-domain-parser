@@ -26,7 +26,7 @@ class HostTest extends \PHPUnit_Framework_TestCase
         $hostPart
     );
 
-    self::assertEquals($hostPart, (string)$host);
+    self::assertSame($hostPart, (string)$host);
   }
 
   public function test__toStringWhenHostPartIsNull()
@@ -37,7 +37,7 @@ class HostTest extends \PHPUnit_Framework_TestCase
         'com'
     );
 
-    self::assertEquals('www.example.com', (string)$host);
+    self::assertSame('www.example.com', (string)$host);
   }
 
   /**
@@ -64,7 +64,7 @@ class HostTest extends \PHPUnit_Framework_TestCase
         $parts['host']
     );
 
-    self::assertEquals($parts, $host->toArray());
+    self::assertSame($parts, $host->toArray());
   }
 
   /**

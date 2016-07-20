@@ -117,11 +117,11 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   public function testParseHost($url, $publicSuffix, $registrableDomain, $subdomain, $hostPart)
   {
     $pdpUrl = $this->parser->parseUrl($url);
-    self::assertEquals($hostPart, $pdpUrl->getHost());
+    self::assertSame($hostPart, (string)$pdpUrl->getHost());
 
     $pdpHost = $this->parser->parseHost($hostPart);
     self::assertInstanceOf('\Pdp\Uri\Url\Host', $pdpHost);
-    self::assertEquals($hostPart, $pdpHost->__toString());
+    self::assertSame($hostPart, $pdpHost->__toString());
   }
 
   /**
@@ -215,7 +215,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
    */
   public function testpdp_parse_urlCanReturnCorrectHost($url, $publicSuffix, $registrableDomain, $subdomain, $hostPart)
   {
-    self::assertEquals(
+    self::assertSame(
         $hostPart,
         pdp_parse_url('http://' . $hostPart, PHP_URL_HOST)
     );
@@ -237,14 +237,14 @@ class ParserTest extends \PHPUnit_Framework_TestCase
     $url = $this->parser->parseUrl($schemeless);
     $actual = $url->__toString();
 
-    self::assertEquals($expected, $actual);
+    self::assertSame($expected, $actual);
 
     $schemeless = '//www.graphstory.com';
     $expected = 'www.graphstory.com';
     $url = $this->parser->parseUrl($schemeless);
     $actual = $url->__toString();
 
-    self::assertEquals($expected, $actual);
+    self::assertSame($expected, $actual);
   }
 
   public function parseDataProvider()

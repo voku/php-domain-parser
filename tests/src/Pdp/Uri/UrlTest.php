@@ -66,13 +66,13 @@ class UrlTest extends \PHPUnit_Framework_TestCase
 
   public function test__toString()
   {
-    self::assertEquals($this->spec, (string)$this->url);
+    self::assertSame($this->spec, (string)$this->url);
   }
 
   public function testGetSchemeless()
   {
     $schemeless = substr_replace($this->spec, '', 0, 5);
-    self::assertEquals($schemeless, $this->url->getSchemeless());
+    self::assertSame($schemeless, $this->url->getSchemeless());
   }
 
   public function testToArray()
@@ -85,13 +85,13 @@ class UrlTest extends \PHPUnit_Framework_TestCase
         'subdomain'         => null,
         'registrableDomain' => 'example.com',
         'publicSuffix'      => 'com',
-        'port'              => 8080,
+        'port'              => '8080',
         'path'              => '/path/to/index.php/foo/bar.xml',
         'query'             => 'baz=dib',
         'fragment'          => 'anchor',
     );
 
-    self::assertEquals($expected, $this->url->toArray());
+    self::assertSame($expected, $this->url->toArray());
   }
 
   /**
@@ -103,7 +103,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
   {
     $ftpUrl = 'ftp://ftp.somewhere.com';
     $url = $this->parser->parseUrl($ftpUrl);
-    self::assertEquals($ftpUrl, (string)$url);
+    self::assertSame($ftpUrl, (string)$url);
   }
 
   /**
@@ -125,7 +125,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     $url = $this->parser->parseUrl($idn);
     $actual = (string)$url;
 
-    self::assertEquals($expected, $actual);
+    self::assertSame($expected, $actual);
   }
 
   /**
@@ -142,7 +142,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     $spec = 'fake-scheme+RFC-3986.compliant://www.graphstory.com';
     $expected = 'fake-scheme+rfc-3986.compliant://www.graphstory.com';
     $url = $this->parser->parseUrl($spec);
-    self::assertEquals($expected, (string)$url);
+    self::assertSame($expected, (string)$url);
   }
 
   /**
@@ -157,7 +157,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     $spec = 'HttPS://www.google.com';
     $expected = 'https://www.google.com';
     $url = $this->parser->parseUrl($spec);
-    self::assertEquals($expected, (string)$url);
+    self::assertSame($expected, (string)$url);
   }
 
   /**
