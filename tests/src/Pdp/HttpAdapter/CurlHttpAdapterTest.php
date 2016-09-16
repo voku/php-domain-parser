@@ -34,4 +34,22 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
     self::assertNotNull($content);
     self::assertContains('google', $content);
   }
+
+  public function testExceptionBadUrl()
+  {
+    $this->setExpectedException('Pdp\Exception\HttpAdapterException', '', CURLE_COULDNT_RESOLVE_HOST);
+    $this->adapter->getContent('https://aaaa.aaaa');
+  }
+
+  public function testExceptionMalformat()
+  {
+    $this->setExpectedException('Pdp\Exception\HttpAdapterException', '', CURLE_URL_MALFORMAT);
+    $this->adapter->getContent('https://google.com:9996543/');
+  }
+
+  public function testExceptionCouldntConnect()
+  {
+    $this->setExpectedException('Pdp\Exception\HttpAdapterException', '', CURLE_COULDNT_CONNECT);
+    $this->adapter->getContent('https://google.com:999/');
+  }
 }

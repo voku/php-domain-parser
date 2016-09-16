@@ -10,6 +10,8 @@
  */
 namespace Pdp\HttpAdapter;
 
+use Pdp\Exception\CurlHttpAdapterException;
+
 /**
  * cURL http adapter.
  *
@@ -29,40 +31,41 @@ class CurlHttpAdapter implements HttpAdapterInterface
   public function getContent($url, $timeout = 5)
   {
     // init
-    $content = false;
+    $ch = curl_init();
 
-    try {
-
-      $ch = curl_init();
-
-      if (false === $ch) {
-        throw new \Exception('failed to initialize');
-      }
-
-      curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-      curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
-      curl_setopt($ch, CURLOPT_URL, $url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-Domain-Parser cURL Request');
-
-      $content = curl_exec($ch);
-      if (false === $content) {
-        throw new \Exception(curl_error($ch), curl_errno($ch));
-      }
-
-      curl_close($ch);
-    } catch (\Exception $e) {
-      trigger_error(
-          sprintf(
-              'Curl failed with error #%d: %s',
-              $e->getCode(), $e->getMessage()
-          ),
-          E_USER_ERROR
-      );
+    if (false === $ch) {
+      throw new \Exception('PHP-Domain-Parser: failed to initialize : cURL');
     }
 
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FAILONERROR, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+    curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-Domain-Parser cURL Request');
+
+    $content = curl_exec($ch);
+
+    $errNo = curl_errno($ch);
+    if ($errNo) {
+      throw new CurlHttpAdapterException("CURL error [{$errNo}]: " . curl_error($ch), $errNo);
+    }
+
+    $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if (
+        $responseCode !== 200
+        &&
+        $responseCode !== 301
+        &&
+        $responseCode !== 302
+    ) {
+      throw new CurlHttpAdapterException('Wrong HTTP response code: ' . $responseCode, $responseCode);
+    }
+
+    curl_close($ch);
 
     return $content;
   }

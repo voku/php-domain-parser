@@ -72,6 +72,9 @@ class CheckPublicSuffixTest extends \PHPUnit_Framework_TestCase
     $this->checkPublicSuffix('c.mm', null);
     $this->checkPublicSuffix('b.c.mm', 'b.c.mm');
     $this->checkPublicSuffix('a.b.c.mm', 'b.c.mm');
+    $this->checkPublicSuffix('c.cy', 'c.cy');
+    $this->checkPublicSuffix('b.c.cy', 'c.cy');
+    $this->checkPublicSuffix('a.b.c.cy', 'c.cy');
     // More complex TLD.
     $this->checkPublicSuffix('jp', null);
     $this->checkPublicSuffix('test.jp', 'test.jp');

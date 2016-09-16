@@ -10,6 +10,8 @@
  */
 namespace Pdp\HttpAdapter;
 
+use Pdp\Exception\HttpAdapterException;
+
 /**
  * Interface for http adapters.
  *
@@ -30,6 +32,8 @@ interface HttpAdapterInterface
    * @param int    $timeout
    *
    * @return string Retrieved content
+   *
+   * @throws HttpAdapterException
    */
   public function getContent($url, $timeout = 5);
 }
