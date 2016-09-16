@@ -41,6 +41,7 @@ class CurlHttpAdapter implements HttpAdapterInterface
     curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($ch, CURLOPT_FAILONERROR, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -55,13 +56,7 @@ class CurlHttpAdapter implements HttpAdapterInterface
     }
 
     $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    if (
-        $responseCode !== 200
-        &&
-        $responseCode !== 301
-        &&
-        $responseCode !== 302
-    ) {
+    if ($responseCode !== 200) {
       throw new CurlHttpAdapterException('Wrong HTTP response code: ' . $responseCode, $responseCode);
     }
 
