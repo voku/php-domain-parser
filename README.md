@@ -41,7 +41,7 @@ Create a `composer.json` file in the root of your project:
 ``` json
 {
     "require": {
-        "voku/php-domain-parser": "~2.0"
+        "voku/php-domain-parser": "~5.0"
     }
 }
 ```
