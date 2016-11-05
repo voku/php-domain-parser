@@ -8,12 +8,24 @@ use org\bovigo\vfs\vfsStreamDirectory;
 // work around PHP 5.3 quirky behavior with ftruncate() and streams
 // @see https://bugs.php.net/bug.php?id=53888
 if (version_compare(PHP_VERSION, '5.4.0') < 0) {
+  /**
+   * @param $fp
+   * @param $size
+   *
+   * @return bool
+   */
   function ftruncate($fp, $size)
   {
+    /** @noinspection PhpUsageOfSilenceOperatorInspection */
     return @\ftruncate($fp, $size) || true;
   }
 }
 
+/**
+ * Class PublicSuffixListManagerTest
+ *
+ * @package Pdp
+ */
 class PublicSuffixListManagerTest extends \PHPUnit_Framework_TestCase
 {
   /**
@@ -52,7 +64,7 @@ class PublicSuffixListManagerTest extends \PHPUnit_Framework_TestCase
   protected $publicSuffixListUrl = 'https://publicsuffix.org/list/effective_tld_names.dat';
 
   /**
-   * @var \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
+   * @var \Pdp\HttpAdapter\HttpAdapterInterface|\PHPUnit_Framework_MockObject_MockObject Http adapter
    */
   protected $httpAdapter;
 
@@ -172,6 +184,8 @@ class PublicSuffixListManagerTest extends \PHPUnit_Framework_TestCase
   public function testParseListToArrayThrowsExceptionIfCanNotRead()
   {
     $this->setExpectedException('\Exception', "Cannot read '/does/not/exist/public-suffix-list.txt'");
+    /** @noinspection OnlyWritesOnParameterInspection */
+    /** @noinspection PhpUnusedLocalVariableInspection */
     $publicSuffixList = $this->listManager->parseListToArray(
         '/does/not/exist/' . PublicSuffixListManager::PDP_PSL_TEXT_FILE
     );
@@ -199,7 +213,7 @@ class PublicSuffixListManagerTest extends \PHPUnit_Framework_TestCase
         $this->cacheDir . '/' . PublicSuffixListManager::PDP_PSL_PHP_FILE
     );
 
-    /** @var PublicSuffixListManager $listManager */
+    /** @var PublicSuffixListManager|\PHPUnit_Framework_MockObject_MockObject $listManager */
     $listManager = $this->getMock(
         '\Pdp\PublicSuffixListManager',
         array('refreshPublicSuffixList'),
@@ -222,7 +236,7 @@ class PublicSuffixListManagerTest extends \PHPUnit_Framework_TestCase
                     )
                 );
 
-    $publicSuffixList = $listManager->getList();
+    $publicSuffixList = $listManager->getList(PublicSuffixListManager::ALL_DOMAINS, false);
     self::assertInstanceOf('\Pdp\PublicSuffixList', $publicSuffixList);
   }
 
@@ -240,8 +254,26 @@ class PublicSuffixListManagerTest extends \PHPUnit_Framework_TestCase
   public function testgetListFromFileThrowsExceptionIfCanNotRead()
   {
     $this->setExpectedException('\Exception', "Cannot read '/does/not/exist/public-suffix-list.php'");
+    /** @noinspection OnlyWritesOnParameterInspection */
+    /** @noinspection PhpUnusedLocalVariableInspection */
     $publicSuffixList = $this->listManager->getListFromFile(
         '/does/not/exist/' . PublicSuffixListManager::PDP_PSL_PHP_FILE
     );
+  }
+
+  public function testGetDifferentPublicList()
+  {
+    $listManager = new PublicSuffixListManager();
+    $publicSuffixList = $listManager->getList();
+    $icannSuffixList = $listManager->getList(PublicSuffixListManager::ICANN_DOMAINS, false);
+    $privateSuffixList = $listManager->getList(PublicSuffixListManager::PRIVATE_DOMAINS, false);
+    $invalidSuffixList = $listManager->getList('invalid type');
+    $this->assertInstanceOf('\Pdp\PublicSuffixList', $icannSuffixList);
+    $this->assertInstanceOf('\Pdp\PublicSuffixList', $privateSuffixList);
+    $this->assertInstanceOf('\Pdp\PublicSuffixList', $invalidSuffixList);
+    $this->assertEquals($invalidSuffixList, $publicSuffixList);
+    $this->assertNotEquals($privateSuffixList, $icannSuffixList);
+    $this->assertNotEquals($publicSuffixList, $icannSuffixList);
+    $this->assertNotEquals($publicSuffixList, $privateSuffixList);
   }
 }

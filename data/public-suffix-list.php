@@ -485,6 +485,9 @@ static $data = array (
   ),
   'asia' => 
   array (
+    'cloudns' => 
+    array (
+    ),
   ),
   'at' => 
   array (
@@ -502,6 +505,24 @@ static $data = array (
     ),
     'or' => 
     array (
+    ),
+    'futuremailing' => 
+    array (
+    ),
+    'ortsinfo' => 
+    array (
+      'ex' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'kunden' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
     ),
     'biz' => 
     array (
@@ -731,6 +752,12 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'transurl' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
   ),
   'bf' => 
   array (
@@ -890,6 +917,9 @@ static $data = array (
   ),
   'biz' => 
   array (
+    'cloudns' => 
+    array (
+    ),
     'dyndns' => 
     array (
     ),
@@ -1114,6 +1144,87 @@ static $data = array (
     ),
     'leg' => 
     array (
+      'ac' => 
+      array (
+      ),
+      'al' => 
+      array (
+      ),
+      'am' => 
+      array (
+      ),
+      'ap' => 
+      array (
+      ),
+      'ba' => 
+      array (
+      ),
+      'ce' => 
+      array (
+      ),
+      'df' => 
+      array (
+      ),
+      'es' => 
+      array (
+      ),
+      'go' => 
+      array (
+      ),
+      'ma' => 
+      array (
+      ),
+      'mg' => 
+      array (
+      ),
+      'ms' => 
+      array (
+      ),
+      'mt' => 
+      array (
+      ),
+      'pa' => 
+      array (
+      ),
+      'pb' => 
+      array (
+      ),
+      'pe' => 
+      array (
+      ),
+      'pi' => 
+      array (
+      ),
+      'pr' => 
+      array (
+      ),
+      'rj' => 
+      array (
+      ),
+      'rn' => 
+      array (
+      ),
+      'ro' => 
+      array (
+      ),
+      'rr' => 
+      array (
+      ),
+      'rs' => 
+      array (
+      ),
+      'sc' => 
+      array (
+      ),
+      'se' => 
+      array (
+      ),
+      'sp' => 
+      array (
+      ),
+      'to' => 
+      array (
+      ),
     ),
     'lel' => 
     array (
@@ -1361,6 +1472,9 @@ static $data = array (
   ),
   'cc' => 
   array (
+    'cloudns' => 
+    array (
+    ),
     'ftpaccess' => 
     array (
     ),
@@ -2424,6 +2538,9 @@ static $data = array (
     'pagespeedmobilizer' => 
     array (
     ),
+    'publishproxy' => 
+    array (
+    ),
     'withgoogle' => 
     array (
     ),
@@ -2616,13 +2733,19 @@ static $data = array (
     'myshopblocks' => 
     array (
     ),
+    '1kapp' => 
+    array (
+    ),
+    'appchizi' => 
+    array (
+    ),
+    'applinzi' => 
+    array (
+    ),
     'sinaapp' => 
     array (
     ),
     'vipsinaapp' => 
-    array (
-    ),
-    '1kapp' => 
     array (
     ),
     'bounty-full' => 
@@ -2823,7 +2946,13 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'keymachine' => 
+    array (
+    ),
     'logoip' => 
+    array (
+    ),
+    'taifun-dns' => 
     array (
     ),
   ),
@@ -3098,6 +3227,18 @@ static $data = array (
   array (
     'mycd' => 
     array (
+    ),
+    'cloudns' => 
+    array (
+    ),
+    'wellbeingzone' => 
+    array (
+    ),
+    'transurl' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
   ),
   'fi' => 
@@ -3876,12 +4017,18 @@ static $data = array (
     'mil' => 
     array (
     ),
+    'cloudns' => 
+    array (
+    ),
     'blogspot' => 
     array (
     ),
   ),
   'info' => 
   array (
+    'cloudns' => 
+    array (
+    ),
     'dyndns' => 
     array (
     ),
@@ -3977,6 +4124,18 @@ static $data = array (
     ),
     'sandcats' => 
     array (
+    ),
+    'lair' => 
+    array (
+      'apps' => 
+      array (
+      ),
+    ),
+    'stolos' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
     'spacekit' => 
     array (
@@ -13237,12 +13396,29 @@ static $data = array (
   ),
   'mz' => 
   array (
-    '*' => 
+    'ac' => 
     array (
     ),
-    'teledata' => 
+    'adv' => 
     array (
-      '!' => '',
+    ),
+    'co' => 
+    array (
+    ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'mil' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
     ),
   ),
   'na' => 
@@ -13325,6 +13501,12 @@ static $data = array (
   ),
   'net' => 
   array (
+    'alwaysdata' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
     'cloudfront' => 
     array (
     ),
@@ -13696,6 +13878,12 @@ static $data = array (
     ),
     'blogspot' => 
     array (
+    ),
+    'transurl' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
   ),
   'no' => 
@@ -16166,6 +16354,9 @@ static $data = array (
         ),
       ),
     ),
+    'cloudns' => 
+    array (
+    ),
     'duckdns' => 
     array (
     ),
@@ -17456,6 +17647,9 @@ static $data = array (
     'recht' => 
     array (
     ),
+    'cloudns' => 
+    array (
+    ),
   ),
   'ps' => 
   array (
@@ -17529,6 +17723,9 @@ static $data = array (
     array (
     ),
     'belau' => 
+    array (
+    ),
+    'cloudns' => 
     array (
     ),
   ),
@@ -19354,6 +19551,9 @@ static $data = array (
       'no-ip' => 
       array (
       ),
+      'wellbeingzone' => 
+      array (
+      ),
     ),
     'gov' => 
     array (
@@ -20059,6 +20259,9 @@ static $data = array (
       'lib' => 
       array (
       ),
+    ),
+    'cloudns' => 
+    array (
     ),
     'drud' => 
     array (
@@ -21254,6 +21457,9 @@ static $data = array (
   ),
   'cloud' => 
   array (
+    'myfusion' => 
+    array (
+    ),
     'magentosite' => 
     array (
       '*' => 
@@ -21263,6 +21469,9 @@ static $data = array (
   ),
   'club' => 
   array (
+    'cloudns' => 
+    array (
+    ),
   ),
   'clubmed' => 
   array (
@@ -21719,6 +21928,9 @@ static $data = array (
   ),
   'fit' => 
   array (
+    'ptplus' => 
+    array (
+    ),
   ),
   'fitness' => 
   array (
@@ -22061,6 +22273,9 @@ static $data = array (
   ),
   'hosting' => 
   array (
+    'opencraft' => 
+    array (
+    ),
   ),
   'hot' => 
   array (
@@ -23579,6 +23794,9 @@ static $data = array (
   ),
   'systems' => 
   array (
+    'knightpoint' => 
+    array (
+    ),
   ),
   'tab' => 
   array (

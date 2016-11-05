@@ -31,7 +31,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers Pdp\Parser::isSuffixValid()
+   * @covers \Pdp\Parser::isSuffixValid()
    */
   public function testIsSuffixValidFalse()
   {
@@ -40,7 +40,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers Pdp\Parser::isSuffixValid()
+   * @covers \Pdp\Parser::isSuffixValid()
    */
   public function testIsSuffixValidTrue()
   {
@@ -51,7 +51,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers Pdp\Parser::parseUrl()
+   * @covers \Pdp\Parser::parseUrl()
    * @covers ::pdp_parse_url
    */
   public function testParseBadUrlThrowsInvalidArgumentException()
@@ -74,7 +74,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
    *
    * @see    https://github.com/jeremykendall/php-domain-parser/issues/54
    *
-   * @covers Pdp\Parser::parseUrl()
+   * @covers \Pdp\Parser::parseUrl()
    * @covers ::pdp_parse_url
    */
   public function testParseEmptyStringThrowsInvalidArgumentExceptionWithoutWackySchemeInMessage()
@@ -88,7 +88,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers       Pdp\Parser::parseUrl()
+   * @covers       \Pdp\Parser::parseUrl()
    * @dataProvider parseDataProvider
    *
    * @param $url
@@ -104,8 +104,8 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers       Pdp\Parser::parseUrl()
-   * @covers       Pdp\Parser::parseHost()
+   * @covers       \Pdp\Parser::parseUrl()
+   * @covers       \Pdp\Parser::parseHost()
    * @dataProvider parseDataProvider
    *
    * @param $url
@@ -125,8 +125,8 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers       Pdp\Parser::parseUrl()
-   * @covers       Pdp\Parser::getPublicSuffix()
+   * @covers       \Pdp\Parser::parseUrl()
+   * @covers       \Pdp\Parser::getPublicSuffix()
    * @dataProvider parseDataProvider
    *
    * @param $url
@@ -143,7 +143,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers Pdp\Parser::getPublicSuffix()
+   * @covers \Pdp\Parser::getPublicSuffix()
    */
   public function testGetPublicSuffixHandlesWrongCaseProperly()
   {
@@ -154,8 +154,8 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers       Pdp\Parser::parseUrl()
-   * @covers       Pdp\Parser::getRegistrableDomain()
+   * @covers       \Pdp\Parser::parseUrl()
+   * @covers       \Pdp\Parser::getRegistrableDomain()
    * @dataProvider parseDataProvider
    *
    * @param $url
@@ -172,8 +172,8 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers       Pdp\Parser::parseUrl()
-   * @covers       Pdp\Parser::getSubdomain()
+   * @covers       \Pdp\Parser::parseUrl()
+   * @covers       \Pdp\Parser::getSubdomain()
    * @dataProvider parseDataProvider
    *
    * @param $url
@@ -190,7 +190,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers Pdp\Parser::getSubdomain()
+   * @covers \Pdp\Parser::getSubdomain()
    */
   public function testGetSubdomainHandlesWrongCaseProperly()
   {
