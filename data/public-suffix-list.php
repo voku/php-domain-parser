@@ -2730,6 +2730,9 @@ static $data = array (
     'logoip' => 
     array (
     ),
+    'firewall-gateway' => 
+    array (
+    ),
     'myshopblocks' => 
     array (
     ),
@@ -2940,6 +2943,30 @@ static $data = array (
     'traeumtgerade' => 
     array (
     ),
+    'ddnss' => 
+    array (
+      'dyn' => 
+      array (
+      ),
+      'dyndns' => 
+      array (
+      ),
+    ),
+    'dyndns1' => 
+    array (
+    ),
+    'dyn-ip24' => 
+    array (
+    ),
+    'home-webserver' => 
+    array (
+      'dyn' => 
+      array (
+      ),
+    ),
+    'myhome-server' => 
+    array (
+    ),
     'goip' => 
     array (
     ),
@@ -2950,6 +2977,18 @@ static $data = array (
     array (
     ),
     'logoip' => 
+    array (
+    ),
+    'firewall-gateway' => 
+    array (
+    ),
+    'my-gateway' => 
+    array (
+    ),
+    'my-router' => 
+    array (
+    ),
+    'spdns' => 
     array (
     ),
     'taifun-dns' => 
@@ -3232,6 +3271,9 @@ static $data = array (
     array (
     ),
     'wellbeingzone' => 
+    array (
+    ),
+    'spdns' => 
     array (
     ),
     'transurl' => 
@@ -4123,6 +4165,9 @@ static $data = array (
     array (
     ),
     'sandcats' => 
+    array (
+    ),
+    'shiftedit' => 
     array (
     ),
     'lair' => 
@@ -7877,13 +7922,7 @@ static $data = array (
       'gyokuto' => 
       array (
       ),
-      'hitoyoshi' => 
-      array (
-      ),
       'kamiamakusa' => 
-      array (
-      ),
-      'kashima' => 
       array (
       ),
       'kikuchi' => 
@@ -13741,6 +13780,9 @@ static $data = array (
     'rackmaze' => 
     array (
     ),
+    'firewall-gateway' => 
+    array (
+    ),
     'dsmynas' => 
     array (
     ),
@@ -16519,6 +16561,9 @@ static $data = array (
     'webhop' => 
     array (
     ),
+    'ddnss' => 
+    array (
+    ),
     'eu' => 
     array (
       'al' => 
@@ -16730,6 +16775,15 @@ static $data = array (
     array (
     ),
     'zapto' => 
+    array (
+    ),
+    'my-firewall' => 
+    array (
+    ),
+    'myfirewall' => 
+    array (
+    ),
+    'spdns' => 
     array (
     ),
     'dsmynas' => 
@@ -18554,6 +18608,9 @@ static $data = array (
       ),
     ),
     'hashbang' => 
+    array (
+    ),
+    'now' => 
     array (
     ),
   ),

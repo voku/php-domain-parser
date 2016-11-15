@@ -6380,13 +6380,7 @@ static $data = array (
       'gyokuto' => 
       array (
       ),
-      'hitoyoshi' => 
-      array (
-      ),
       'kamiamakusa' => 
-      array (
-      ),
-      'kashima' => 
       array (
       ),
       'kikuchi' => 
