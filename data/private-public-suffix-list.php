@@ -71,6 +71,9 @@ static $data = array (
     'cloudfront' => 
     array (
     ),
+    't3l3p0rt' => 
+    array (
+    ),
     'myfritz' => 
     array (
     ),
@@ -100,6 +103,15 @@ static $data = array (
       'r' => 
       array (
       ),
+    ),
+    'feste-ip' => 
+    array (
+    ),
+    'knx-server' => 
+    array (
+    ),
+    'static-access' => 
+    array (
     ),
     'cryptonomic' => 
     array (
@@ -215,8 +227,23 @@ static $data = array (
     'dynv6' => 
     array (
     ),
+    'ru' => 
+    array (
+    ),
     'fastly' => 
     array (
+      'map' => 
+      array (
+      ),
+      'prod' => 
+      array (
+        'a' => 
+        array (
+        ),
+        'global' => 
+        array (
+        ),
+      ),
       'ssl' => 
       array (
         'a' => 
@@ -229,14 +256,11 @@ static $data = array (
         array (
         ),
       ),
-      'prod' => 
+    ),
+    'fastlylb' => 
+    array (
+      'map' => 
       array (
-        'a' => 
-        array (
-        ),
-        'global' => 
-        array (
-        ),
       ),
     ),
     'cloudfunctions' => 
@@ -321,51 +345,30 @@ static $data = array (
     array (
       'compute' => 
       array (
-        'ap-northeast-1' => 
-        array (
-        ),
-        'ap-northeast-2' => 
-        array (
-        ),
-        'ap-southeast-1' => 
-        array (
-        ),
-        'ap-southeast-2' => 
-        array (
-        ),
-        'eu-central-1' => 
-        array (
-        ),
-        'eu-west-1' => 
-        array (
-        ),
-        'sa-east-1' => 
-        array (
-        ),
-        'us-gov-west-1' => 
-        array (
-        ),
-        'us-west-1' => 
-        array (
-        ),
-        'us-west-2' => 
+        '*' => 
         array (
         ),
       ),
       'compute-1' => 
       array (
-        'z-1' => 
-        array (
-        ),
-        'z-2' => 
+        '*' => 
         array (
         ),
       ),
       'us-east-1' => 
       array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
       ),
       'elb' => 
       array (
+        '*' => 
+        array (
+        ),
       ),
       's3' => 
       array (
@@ -376,10 +379,16 @@ static $data = array (
       's3-ap-northeast-2' => 
       array (
       ),
+      's3-ap-south-1' => 
+      array (
+      ),
       's3-ap-southeast-1' => 
       array (
       ),
       's3-ap-southeast-2' => 
+      array (
+      ),
+      's3-ca-central-1' => 
       array (
       ),
       's3-eu-central-1' => 
@@ -388,10 +397,10 @@ static $data = array (
       's3-eu-west-1' => 
       array (
       ),
-      's3-external-1' => 
+      's3-eu-west-2' => 
       array (
       ),
-      's3-external-2' => 
+      's3-external-1' => 
       array (
       ),
       's3-fips-us-gov-west-1' => 
@@ -401,6 +410,9 @@ static $data = array (
       array (
       ),
       's3-us-gov-west-1' => 
+      array (
+      ),
+      's3-us-east-2' => 
       array (
       ),
       's3-us-west-1' => 
@@ -414,16 +426,166 @@ static $data = array (
         's3' => 
         array (
         ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'ap-south-1' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'ca-central-1' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
       ),
       'eu-central-1' => 
       array (
         's3' => 
         array (
         ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'eu-west-2' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'us-east-2' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'ap-northeast-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'ap-southeast-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'ap-southeast-2' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'eu-west-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'sa-east-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      's3-website-us-east-1' => 
+      array (
+      ),
+      's3-website-us-west-1' => 
+      array (
+      ),
+      's3-website-us-west-2' => 
+      array (
+      ),
+      's3-website-ap-northeast-1' => 
+      array (
+      ),
+      's3-website-ap-southeast-1' => 
+      array (
+      ),
+      's3-website-ap-southeast-2' => 
+      array (
+      ),
+      's3-website-eu-west-1' => 
+      array (
+      ),
+      's3-website-sa-east-1' => 
+      array (
       ),
     ),
     'elasticbeanstalk' => 
     array (
+      '*' => 
+      array (
+      ),
     ),
     'on-aptible' => 
     array (
@@ -1025,9 +1187,6 @@ static $data = array (
       array (
       ),
     ),
-    'ro' => 
-    array (
-    ),
     '0emm' => 
     array (
       '*' => 
@@ -1289,6 +1448,9 @@ static $data = array (
     'hk' => 
     array (
     ),
+    'remotewd' => 
+    array (
+    ),
     'yolasite' => 
     array (
     ),
@@ -1301,13 +1463,22 @@ static $data = array (
       array (
         'compute' => 
         array (
-          'cn-north-1' => 
+          '*' => 
           array (
           ),
         ),
         'cn-north-1' => 
         array (
+          'elasticbeanstalk' => 
+          array (
+          ),
           's3' => 
+          array (
+          ),
+        ),
+        'elb' => 
+        array (
+          '*' => 
           array (
           ),
         ),
@@ -1316,6 +1487,12 @@ static $data = array (
   ),
   'org' => 
   array (
+    'amune' => 
+    array (
+      'tele' => 
+      array (
+      ),
+    ),
     'pimienta' => 
     array (
     ),
@@ -1754,6 +1931,9 @@ static $data = array (
     'tuxfamily' => 
     array (
     ),
+    'diskstation' => 
+    array (
+    ),
     'hk' => 
     array (
     ),
@@ -1762,6 +1942,15 @@ static $data = array (
     ),
     'za' => 
     array (
+    ),
+  ),
+  'eus' => 
+  array (
+    'party' => 
+    array (
+      'user' => 
+      array (
+      ),
     ),
   ),
   'io' => 
@@ -1780,6 +1969,12 @@ static $data = array (
     ),
     'drud' => 
     array (
+    ),
+    'enonic' => 
+    array (
+      'customer' => 
+      array (
+      ),
     ),
     'github' => 
     array (
@@ -1856,10 +2051,31 @@ static $data = array (
       array (
       ),
     ),
+    'diskstation' => 
+    array (
+    ),
   ),
   'de' => 
   array (
     'com' => 
+    array (
+    ),
+    'cosidns' => 
+    array (
+      'dyn' => 
+      array (
+      ),
+    ),
+    'dynamisches-dns' => 
+    array (
+    ),
+    'dnsupdater' => 
+    array (
+    ),
+    'internet-dns' => 
+    array (
+    ),
+    'l-o-g-i-n' => 
     array (
     ),
     'dnshome' => 
@@ -1932,6 +2148,39 @@ static $data = array (
     array (
     ),
     'taifun-dns' => 
+    array (
+    ),
+    'dd-dns' => 
+    array (
+    ),
+    'dray-dns' => 
+    array (
+    ),
+    'draydns' => 
+    array (
+    ),
+    'dyn-vpn' => 
+    array (
+    ),
+    'dynvpn' => 
+    array (
+    ),
+    'mein-vigor' => 
+    array (
+    ),
+    'my-vigor' => 
+    array (
+    ),
+    'my-wan' => 
+    array (
+    ),
+    'syno-ds' => 
+    array (
+    ),
+    'synology-diskstation' => 
+    array (
+    ),
+    'synology-ds' => 
     array (
     ),
   ),
@@ -2079,6 +2328,9 @@ static $data = array (
   'info' => 
   array (
     'cloudns' => 
+    array (
+    ),
+    'dynamic-dns' => 
     array (
     ),
     'dyndns' => 
@@ -2258,6 +2510,9 @@ static $data = array (
     'synology' => 
     array (
     ),
+    'yombo' => 
+    array (
+    ),
   ),
   'dk' => 
   array (
@@ -2349,6 +2604,228 @@ static $data = array (
     array (
     ),
   ),
+  'ru' => 
+  array (
+    'adygeya' => 
+    array (
+    ),
+    'bashkiria' => 
+    array (
+    ),
+    'bir' => 
+    array (
+    ),
+    'cbg' => 
+    array (
+    ),
+    'com' => 
+    array (
+    ),
+    'dagestan' => 
+    array (
+    ),
+    'grozny' => 
+    array (
+    ),
+    'kalmykia' => 
+    array (
+    ),
+    'kustanai' => 
+    array (
+    ),
+    'marine' => 
+    array (
+    ),
+    'mordovia' => 
+    array (
+    ),
+    'msk' => 
+    array (
+    ),
+    'mytis' => 
+    array (
+    ),
+    'nalchik' => 
+    array (
+    ),
+    'nov' => 
+    array (
+    ),
+    'pyatigorsk' => 
+    array (
+    ),
+    'spb' => 
+    array (
+    ),
+    'vladikavkaz' => 
+    array (
+    ),
+    'vladimir' => 
+    array (
+    ),
+    'blogspot' => 
+    array (
+    ),
+  ),
+  'su' => 
+  array (
+    'abkhazia' => 
+    array (
+    ),
+    'adygeya' => 
+    array (
+    ),
+    'aktyubinsk' => 
+    array (
+    ),
+    'arkhangelsk' => 
+    array (
+    ),
+    'armenia' => 
+    array (
+    ),
+    'ashgabad' => 
+    array (
+    ),
+    'azerbaijan' => 
+    array (
+    ),
+    'balashov' => 
+    array (
+    ),
+    'bashkiria' => 
+    array (
+    ),
+    'bryansk' => 
+    array (
+    ),
+    'bukhara' => 
+    array (
+    ),
+    'chimkent' => 
+    array (
+    ),
+    'dagestan' => 
+    array (
+    ),
+    'east-kazakhstan' => 
+    array (
+    ),
+    'exnet' => 
+    array (
+    ),
+    'georgia' => 
+    array (
+    ),
+    'grozny' => 
+    array (
+    ),
+    'ivanovo' => 
+    array (
+    ),
+    'jambyl' => 
+    array (
+    ),
+    'kalmykia' => 
+    array (
+    ),
+    'kaluga' => 
+    array (
+    ),
+    'karacol' => 
+    array (
+    ),
+    'karaganda' => 
+    array (
+    ),
+    'karelia' => 
+    array (
+    ),
+    'khakassia' => 
+    array (
+    ),
+    'krasnodar' => 
+    array (
+    ),
+    'kurgan' => 
+    array (
+    ),
+    'kustanai' => 
+    array (
+    ),
+    'lenug' => 
+    array (
+    ),
+    'mangyshlak' => 
+    array (
+    ),
+    'mordovia' => 
+    array (
+    ),
+    'msk' => 
+    array (
+    ),
+    'murmansk' => 
+    array (
+    ),
+    'nalchik' => 
+    array (
+    ),
+    'navoi' => 
+    array (
+    ),
+    'north-kazakhstan' => 
+    array (
+    ),
+    'nov' => 
+    array (
+    ),
+    'obninsk' => 
+    array (
+    ),
+    'penza' => 
+    array (
+    ),
+    'pokrovsk' => 
+    array (
+    ),
+    'sochi' => 
+    array (
+    ),
+    'spb' => 
+    array (
+    ),
+    'tashkent' => 
+    array (
+    ),
+    'termez' => 
+    array (
+    ),
+    'togliatti' => 
+    array (
+    ),
+    'troitsk' => 
+    array (
+    ),
+    'tselinograd' => 
+    array (
+    ),
+    'tula' => 
+    array (
+    ),
+    'tuva' => 
+    array (
+    ),
+    'vladikavkaz' => 
+    array (
+    ),
+    'vladimir' => 
+    array (
+    ),
+    'vologda' => 
+    array (
+    ),
+  ),
   'xyz' => 
   array (
     'fhapp' => 
@@ -2372,6 +2849,9 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'on-web' => 
+    array (
+    ),
     'chirurgiens-dentistes-en-france' => 
     array (
     ),
@@ -2380,6 +2860,12 @@ static $data = array (
   array (
     'myfusion' => 
     array (
+    ),
+    'statics' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
     'magentosite' => 
     array (
@@ -2390,6 +2876,9 @@ static $data = array (
   ),
   'at' => 
   array (
+    'futurehosting' => 
+    array (
+    ),
     'futuremailing' => 
     array (
     ),
@@ -2429,6 +2918,9 @@ static $data = array (
     'gov' => 
     array (
       'service' => 
+      array (
+      ),
+      'homeoffice' => 
       array (
       ),
     ),
@@ -2913,12 +3405,6 @@ static $data = array (
     array (
     ),
   ),
-  'ru' => 
-  array (
-    'blogspot' => 
-    array (
-    ),
-  ),
   'sg' => 
   array (
     'blogspot' => 
@@ -3032,6 +3518,15 @@ static $data = array (
     'pp' => 
     array (
     ),
+    'cc' => 
+    array (
+    ),
+    'inf' => 
+    array (
+    ),
+    'ltd' => 
+    array (
+    ),
   ),
   'land' => 
   array (
@@ -3060,6 +3555,42 @@ static $data = array (
   'management' => 
   array (
     'router' => 
+    array (
+    ),
+  ),
+  'faith' => 
+  array (
+    'ybo' => 
+    array (
+    ),
+  ),
+  'one' => 
+  array (
+    'homelink' => 
+    array (
+    ),
+  ),
+  'party' => 
+  array (
+    'ybo' => 
+    array (
+    ),
+  ),
+  'review' => 
+  array (
+    'ybo' => 
+    array (
+    ),
+  ),
+  'science' => 
+  array (
+    'ybo' => 
+    array (
+    ),
+  ),
+  'trade' => 
+  array (
+    'ybo' => 
     array (
     ),
   ),

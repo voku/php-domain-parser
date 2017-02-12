@@ -506,6 +506,9 @@ static $data = array (
     'or' => 
     array (
     ),
+    'futurehosting' => 
+    array (
+    ),
     'futuremailing' => 
     array (
     ),
@@ -1617,13 +1620,22 @@ static $data = array (
       array (
         'compute' => 
         array (
-          'cn-north-1' => 
+          '*' => 
           array (
           ),
         ),
         'cn-north-1' => 
         array (
+          'elasticbeanstalk' => 
+          array (
+          ),
           's3' => 
+          array (
+          ),
+        ),
+        'elb' => 
+        array (
+          '*' => 
           array (
           ),
         ),
@@ -1807,51 +1819,30 @@ static $data = array (
     array (
       'compute' => 
       array (
-        'ap-northeast-1' => 
-        array (
-        ),
-        'ap-northeast-2' => 
-        array (
-        ),
-        'ap-southeast-1' => 
-        array (
-        ),
-        'ap-southeast-2' => 
-        array (
-        ),
-        'eu-central-1' => 
-        array (
-        ),
-        'eu-west-1' => 
-        array (
-        ),
-        'sa-east-1' => 
-        array (
-        ),
-        'us-gov-west-1' => 
-        array (
-        ),
-        'us-west-1' => 
-        array (
-        ),
-        'us-west-2' => 
+        '*' => 
         array (
         ),
       ),
       'compute-1' => 
       array (
-        'z-1' => 
-        array (
-        ),
-        'z-2' => 
+        '*' => 
         array (
         ),
       ),
       'us-east-1' => 
       array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
       ),
       'elb' => 
       array (
+        '*' => 
+        array (
+        ),
       ),
       's3' => 
       array (
@@ -1862,10 +1853,16 @@ static $data = array (
       's3-ap-northeast-2' => 
       array (
       ),
+      's3-ap-south-1' => 
+      array (
+      ),
       's3-ap-southeast-1' => 
       array (
       ),
       's3-ap-southeast-2' => 
+      array (
+      ),
+      's3-ca-central-1' => 
       array (
       ),
       's3-eu-central-1' => 
@@ -1874,10 +1871,10 @@ static $data = array (
       's3-eu-west-1' => 
       array (
       ),
-      's3-external-1' => 
+      's3-eu-west-2' => 
       array (
       ),
-      's3-external-2' => 
+      's3-external-1' => 
       array (
       ),
       's3-fips-us-gov-west-1' => 
@@ -1887,6 +1884,9 @@ static $data = array (
       array (
       ),
       's3-us-gov-west-1' => 
+      array (
+      ),
+      's3-us-east-2' => 
       array (
       ),
       's3-us-west-1' => 
@@ -1900,16 +1900,166 @@ static $data = array (
         's3' => 
         array (
         ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'ap-south-1' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'ca-central-1' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
       ),
       'eu-central-1' => 
       array (
         's3' => 
         array (
         ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'eu-west-2' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'us-east-2' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'ap-northeast-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'ap-southeast-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'ap-southeast-2' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'eu-west-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      'sa-east-1' => 
+      array (
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+      ),
+      's3-website-us-east-1' => 
+      array (
+      ),
+      's3-website-us-west-1' => 
+      array (
+      ),
+      's3-website-us-west-2' => 
+      array (
+      ),
+      's3-website-ap-northeast-1' => 
+      array (
+      ),
+      's3-website-ap-southeast-1' => 
+      array (
+      ),
+      's3-website-ap-southeast-2' => 
+      array (
+      ),
+      's3-website-eu-west-1' => 
+      array (
+      ),
+      's3-website-sa-east-1' => 
+      array (
       ),
     ),
     'elasticbeanstalk' => 
     array (
+      '*' => 
+      array (
+      ),
     ),
     'on-aptible' => 
     array (
@@ -2511,9 +2661,6 @@ static $data = array (
       array (
       ),
     ),
-    'ro' => 
-    array (
-    ),
     '0emm' => 
     array (
       '*' => 
@@ -2775,6 +2922,9 @@ static $data = array (
     'hk' => 
     array (
     ),
+    'remotewd' => 
+    array (
+    ),
     'yolasite' => 
     array (
     ),
@@ -2922,6 +3072,24 @@ static $data = array (
     'com' => 
     array (
     ),
+    'cosidns' => 
+    array (
+      'dyn' => 
+      array (
+      ),
+    ),
+    'dynamisches-dns' => 
+    array (
+    ),
+    'dnsupdater' => 
+    array (
+    ),
+    'internet-dns' => 
+    array (
+    ),
+    'l-o-g-i-n' => 
+    array (
+    ),
     'dnshome' => 
     array (
     ),
@@ -2992,6 +3160,39 @@ static $data = array (
     array (
     ),
     'taifun-dns' => 
+    array (
+    ),
+    'dd-dns' => 
+    array (
+    ),
+    'dray-dns' => 
+    array (
+    ),
+    'draydns' => 
+    array (
+    ),
+    'dyn-vpn' => 
+    array (
+    ),
+    'dynvpn' => 
+    array (
+    ),
+    'mein-vigor' => 
+    array (
+    ),
+    'my-vigor' => 
+    array (
+    ),
+    'my-wan' => 
+    array (
+    ),
+    'syno-ds' => 
+    array (
+    ),
+    'synology-diskstation' => 
+    array (
+    ),
+    'synology-ds' => 
     array (
     ),
   ),
@@ -3282,6 +3483,9 @@ static $data = array (
       array (
       ),
     ),
+    'diskstation' => 
+    array (
+    ),
   ),
   'fi' => 
   array (
@@ -3400,6 +3604,9 @@ static $data = array (
     array (
     ),
     'blogspot' => 
+    array (
+    ),
+    'on-web' => 
     array (
     ),
     'chirurgiens-dentistes-en-france' => 
@@ -4071,6 +4278,9 @@ static $data = array (
     'cloudns' => 
     array (
     ),
+    'dynamic-dns' => 
+    array (
+    ),
     'dyndns' => 
     array (
     ),
@@ -4139,6 +4349,12 @@ static $data = array (
     ),
     'drud' => 
     array (
+    ),
+    'enonic' => 
+    array (
+      'customer' => 
+      array (
+      ),
     ),
     'github' => 
     array (
@@ -11449,6 +11665,9 @@ static $data = array (
     'synology' => 
     array (
     ),
+    'yombo' => 
+    array (
+    ),
   ),
   'mg' => 
   array (
@@ -13549,6 +13768,9 @@ static $data = array (
     'cloudfront' => 
     array (
     ),
+    't3l3p0rt' => 
+    array (
+    ),
     'myfritz' => 
     array (
     ),
@@ -13578,6 +13800,15 @@ static $data = array (
       'r' => 
       array (
       ),
+    ),
+    'feste-ip' => 
+    array (
+    ),
+    'knx-server' => 
+    array (
+    ),
+    'static-access' => 
+    array (
     ),
     'cryptonomic' => 
     array (
@@ -13693,8 +13924,23 @@ static $data = array (
     'dynv6' => 
     array (
     ),
+    'ru' => 
+    array (
+    ),
     'fastly' => 
     array (
+      'map' => 
+      array (
+      ),
+      'prod' => 
+      array (
+        'a' => 
+        array (
+        ),
+        'global' => 
+        array (
+        ),
+      ),
       'ssl' => 
       array (
         'a' => 
@@ -13707,14 +13953,11 @@ static $data = array (
         array (
         ),
       ),
-      'prod' => 
+    ),
+    'fastlylb' => 
+    array (
+      'map' => 
       array (
-        'a' => 
-        array (
-        ),
-        'global' => 
-        array (
-        ),
       ),
     ),
     'cloudfunctions' => 
@@ -13864,46 +14107,46 @@ static $data = array (
   ),
   'ni' => 
   array (
-    'com' => 
-    array (
-    ),
-    'gob' => 
-    array (
-    ),
-    'edu' => 
-    array (
-    ),
-    'org' => 
-    array (
-    ),
-    'nom' => 
-    array (
-    ),
-    'net' => 
-    array (
-    ),
-    'mil' => 
-    array (
-    ),
-    'co' => 
+    'ac' => 
     array (
     ),
     'biz' => 
     array (
     ),
-    'web' => 
+    'co' => 
     array (
     ),
-    'int' => 
+    'com' => 
     array (
     ),
-    'ac' => 
+    'edu' => 
+    array (
+    ),
+    'gob' => 
     array (
     ),
     'in' => 
     array (
     ),
     'info' => 
+    array (
+    ),
+    'int' => 
+    array (
+    ),
+    'mil' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'nom' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
+    'web' => 
     array (
     ),
   ),
@@ -16355,8 +16598,17 @@ static $data = array (
     array (
     ),
   ),
+  'onion' => 
+  array (
+  ),
   'org' => 
   array (
+    'amune' => 
+    array (
+      'tele' => 
+      array (
+      ),
+    ),
     'pimienta' => 
     array (
     ),
@@ -16793,6 +17045,9 @@ static $data = array (
     array (
     ),
     'tuxfamily' => 
+    array (
+    ),
+    'diskstation' => 
     array (
     ),
     'hk' => 
@@ -17923,163 +18178,46 @@ static $data = array (
     'ac' => 
     array (
     ),
-    'com' => 
+    'edu' => 
     array (
     ),
-    'edu' => 
+    'gov' => 
     array (
     ),
     'int' => 
     array (
     ),
-    'net' => 
+    'mil' => 
     array (
     ),
-    'org' => 
-    array (
-    ),
-    'pp' => 
+    'test' => 
     array (
     ),
     'adygeya' => 
     array (
     ),
-    'altai' => 
-    array (
-    ),
-    'amur' => 
-    array (
-    ),
-    'arkhangelsk' => 
-    array (
-    ),
-    'astrakhan' => 
-    array (
-    ),
     'bashkiria' => 
-    array (
-    ),
-    'belgorod' => 
     array (
     ),
     'bir' => 
     array (
     ),
-    'bryansk' => 
-    array (
-    ),
-    'buryatia' => 
-    array (
-    ),
     'cbg' => 
     array (
     ),
-    'chel' => 
-    array (
-    ),
-    'chelyabinsk' => 
-    array (
-    ),
-    'chita' => 
-    array (
-    ),
-    'chukotka' => 
-    array (
-    ),
-    'chuvashia' => 
+    'com' => 
     array (
     ),
     'dagestan' => 
     array (
     ),
-    'dudinka' => 
-    array (
-    ),
-    'e-burg' => 
-    array (
-    ),
     'grozny' => 
-    array (
-    ),
-    'irkutsk' => 
-    array (
-    ),
-    'ivanovo' => 
-    array (
-    ),
-    'izhevsk' => 
-    array (
-    ),
-    'jar' => 
-    array (
-    ),
-    'joshkar-ola' => 
     array (
     ),
     'kalmykia' => 
     array (
     ),
-    'kaluga' => 
-    array (
-    ),
-    'kamchatka' => 
-    array (
-    ),
-    'karelia' => 
-    array (
-    ),
-    'kazan' => 
-    array (
-    ),
-    'kchr' => 
-    array (
-    ),
-    'kemerovo' => 
-    array (
-    ),
-    'khabarovsk' => 
-    array (
-    ),
-    'khakassia' => 
-    array (
-    ),
-    'khv' => 
-    array (
-    ),
-    'kirov' => 
-    array (
-    ),
-    'koenig' => 
-    array (
-    ),
-    'komi' => 
-    array (
-    ),
-    'kostroma' => 
-    array (
-    ),
-    'krasnoyarsk' => 
-    array (
-    ),
-    'kuban' => 
-    array (
-    ),
-    'kurgan' => 
-    array (
-    ),
-    'kursk' => 
-    array (
-    ),
-    'lipetsk' => 
-    array (
-    ),
-    'magadan' => 
-    array (
-    ),
-    'mari' => 
-    array (
-    ),
-    'mari-el' => 
+    'kustanai' => 
     array (
     ),
     'marine' => 
@@ -18091,223 +18229,25 @@ static $data = array (
     'msk' => 
     array (
     ),
-    'murmansk' => 
+    'mytis' => 
     array (
     ),
     'nalchik' => 
     array (
     ),
-    'nnov' => 
-    array (
-    ),
     'nov' => 
     array (
     ),
-    'novosibirsk' => 
-    array (
-    ),
-    'nsk' => 
-    array (
-    ),
-    'omsk' => 
-    array (
-    ),
-    'orenburg' => 
-    array (
-    ),
-    'oryol' => 
-    array (
-    ),
-    'palana' => 
-    array (
-    ),
-    'penza' => 
-    array (
-    ),
-    'perm' => 
-    array (
-    ),
-    'ptz' => 
-    array (
-    ),
-    'rnd' => 
-    array (
-    ),
-    'ryazan' => 
-    array (
-    ),
-    'sakhalin' => 
-    array (
-    ),
-    'samara' => 
-    array (
-    ),
-    'saratov' => 
-    array (
-    ),
-    'simbirsk' => 
-    array (
-    ),
-    'smolensk' => 
+    'pyatigorsk' => 
     array (
     ),
     'spb' => 
-    array (
-    ),
-    'stavropol' => 
-    array (
-    ),
-    'stv' => 
-    array (
-    ),
-    'surgut' => 
-    array (
-    ),
-    'tambov' => 
-    array (
-    ),
-    'tatarstan' => 
-    array (
-    ),
-    'tom' => 
-    array (
-    ),
-    'tomsk' => 
-    array (
-    ),
-    'tsaritsyn' => 
-    array (
-    ),
-    'tsk' => 
-    array (
-    ),
-    'tula' => 
-    array (
-    ),
-    'tuva' => 
-    array (
-    ),
-    'tver' => 
-    array (
-    ),
-    'tyumen' => 
-    array (
-    ),
-    'udm' => 
-    array (
-    ),
-    'udmurtia' => 
-    array (
-    ),
-    'ulan-ude' => 
     array (
     ),
     'vladikavkaz' => 
     array (
     ),
     'vladimir' => 
-    array (
-    ),
-    'vladivostok' => 
-    array (
-    ),
-    'volgograd' => 
-    array (
-    ),
-    'vologda' => 
-    array (
-    ),
-    'voronezh' => 
-    array (
-    ),
-    'vrn' => 
-    array (
-    ),
-    'vyatka' => 
-    array (
-    ),
-    'yakutia' => 
-    array (
-    ),
-    'yamal' => 
-    array (
-    ),
-    'yaroslavl' => 
-    array (
-    ),
-    'yekaterinburg' => 
-    array (
-    ),
-    'yuzhno-sakhalinsk' => 
-    array (
-    ),
-    'amursk' => 
-    array (
-    ),
-    'baikal' => 
-    array (
-    ),
-    'cmw' => 
-    array (
-    ),
-    'fareast' => 
-    array (
-    ),
-    'jamal' => 
-    array (
-    ),
-    'kms' => 
-    array (
-    ),
-    'k-uralsk' => 
-    array (
-    ),
-    'kustanai' => 
-    array (
-    ),
-    'kuzbass' => 
-    array (
-    ),
-    'mytis' => 
-    array (
-    ),
-    'nakhodka' => 
-    array (
-    ),
-    'nkz' => 
-    array (
-    ),
-    'norilsk' => 
-    array (
-    ),
-    'oskol' => 
-    array (
-    ),
-    'pyatigorsk' => 
-    array (
-    ),
-    'rubtsovsk' => 
-    array (
-    ),
-    'snz' => 
-    array (
-    ),
-    'syzran' => 
-    array (
-    ),
-    'vdonsk' => 
-    array (
-    ),
-    'zgrad' => 
-    array (
-    ),
-    'gov' => 
-    array (
-    ),
-    'mil' => 
-    array (
-    ),
-    'test' => 
     array (
     ),
     'blogspot' => 
@@ -18733,10 +18673,25 @@ static $data = array (
   ),
   'su' => 
   array (
+    'abkhazia' => 
+    array (
+    ),
     'adygeya' => 
     array (
     ),
+    'aktyubinsk' => 
+    array (
+    ),
     'arkhangelsk' => 
+    array (
+    ),
+    'armenia' => 
+    array (
+    ),
+    'ashgabad' => 
+    array (
+    ),
+    'azerbaijan' => 
     array (
     ),
     'balashov' => 
@@ -18748,7 +18703,22 @@ static $data = array (
     'bryansk' => 
     array (
     ),
+    'bukhara' => 
+    array (
+    ),
+    'chimkent' => 
+    array (
+    ),
     'dagestan' => 
+    array (
+    ),
+    'east-kazakhstan' => 
+    array (
+    ),
+    'exnet' => 
+    array (
+    ),
+    'georgia' => 
     array (
     ),
     'grozny' => 
@@ -18757,10 +18727,19 @@ static $data = array (
     'ivanovo' => 
     array (
     ),
+    'jambyl' => 
+    array (
+    ),
     'kalmykia' => 
     array (
     ),
     'kaluga' => 
+    array (
+    ),
+    'karacol' => 
+    array (
+    ),
+    'karaganda' => 
     array (
     ),
     'karelia' => 
@@ -18775,7 +18754,13 @@ static $data = array (
     'kurgan' => 
     array (
     ),
+    'kustanai' => 
+    array (
+    ),
     'lenug' => 
+    array (
+    ),
+    'mangyshlak' => 
     array (
     ),
     'mordovia' => 
@@ -18788,6 +18773,12 @@ static $data = array (
     array (
     ),
     'nalchik' => 
+    array (
+    ),
+    'navoi' => 
+    array (
+    ),
+    'north-kazakhstan' => 
     array (
     ),
     'nov' => 
@@ -18808,10 +18799,19 @@ static $data = array (
     'spb' => 
     array (
     ),
+    'tashkent' => 
+    array (
+    ),
+    'termez' => 
+    array (
+    ),
     'togliatti' => 
     array (
     ),
     'troitsk' => 
+    array (
+    ),
+    'tselinograd' => 
     array (
     ),
     'tula' => 
@@ -19564,6 +19564,15 @@ static $data = array (
     'pp' => 
     array (
     ),
+    'cc' => 
+    array (
+    ),
+    'inf' => 
+    array (
+    ),
+    'ltd' => 
+    array (
+    ),
   ),
   'ug' => 
   array (
@@ -19615,6 +19624,9 @@ static $data = array (
     'gov' => 
     array (
       'service' => 
+      array (
+      ),
+      'homeoffice' => 
       array (
       ),
     ),
@@ -21517,6 +21529,12 @@ static $data = array (
     'myfusion' => 
     array (
     ),
+    'statics' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
     'magentosite' => 
     array (
       '*' => 
@@ -21827,9 +21845,6 @@ static $data = array (
   'emerck' => 
   array (
   ),
-  'emerson' => 
-  array (
-  ),
   'energy' => 
   array (
   ),
@@ -21880,6 +21895,12 @@ static $data = array (
   ),
   'eus' => 
   array (
+    'party' => 
+    array (
+      'user' => 
+      array (
+      ),
+    ),
   ),
   'events' => 
   array (
@@ -21913,6 +21934,9 @@ static $data = array (
   ),
   'faith' => 
   array (
+    'ybo' => 
+    array (
+    ),
   ),
   'family' => 
   array (
@@ -22323,6 +22347,9 @@ static $data = array (
   array (
   ),
   'horse' => 
+  array (
+  ),
+  'hospital' => 
   array (
   ),
   'host' => 
@@ -23131,6 +23158,9 @@ static $data = array (
   ),
   'one' => 
   array (
+    'homelink' => 
+    array (
+    ),
   ),
   'ong' => 
   array (
@@ -23206,6 +23236,9 @@ static $data = array (
   ),
   'party' => 
   array (
+    'ybo' => 
+    array (
+    ),
   ),
   'passagens' => 
   array (
@@ -23440,6 +23473,9 @@ static $data = array (
   ),
   'review' => 
   array (
+    'ybo' => 
+    array (
+    ),
   ),
   'reviews' => 
   array (
@@ -23584,6 +23620,9 @@ static $data = array (
   ),
   'science' => 
   array (
+    'ybo' => 
+    array (
+    ),
   ),
   'scjohnson' => 
   array (
@@ -23995,6 +24034,9 @@ static $data = array (
   ),
   'trade' => 
   array (
+    'ybo' => 
+    array (
+    ),
   ),
   'trading' => 
   array (
