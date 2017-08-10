@@ -254,9 +254,6 @@ class ParserTest extends \PHPUnit_Framework_TestCase
    * @group issue183
    *
    * @see https://github.com/jeremykendall/php-domain-parser/issues/183
-   *
-   * @covers Parser::parseUrl()
-   * @covers ::pdp_parse_url
    */
   public function testParseFileURIThrowsInvalidArgumentException()
   {
