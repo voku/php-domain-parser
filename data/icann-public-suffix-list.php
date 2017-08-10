@@ -434,6 +434,9 @@ static $data = array (
     'mil' => 
     array (
     ),
+    'musica' => 
+    array (
+    ),
     'net' => 
     array (
     ),
@@ -947,6 +950,9 @@ static $data = array (
     'b' => 
     array (
     ),
+    'belem' => 
+    array (
+    ),
     'bio' => 
     array (
     ),
@@ -969,6 +975,12 @@ static $data = array (
     array (
     ),
     'coop' => 
+    array (
+    ),
+    'cri' => 
+    array (
+    ),
+    'def' => 
     array (
     ),
     'ecn' => 
@@ -1001,6 +1013,9 @@ static $data = array (
     'flog' => 
     array (
     ),
+    'floripa' => 
+    array (
+    ),
     'fm' => 
     array (
     ),
@@ -1021,6 +1036,87 @@ static $data = array (
     ),
     'gov' => 
     array (
+      'ac' => 
+      array (
+      ),
+      'al' => 
+      array (
+      ),
+      'am' => 
+      array (
+      ),
+      'ap' => 
+      array (
+      ),
+      'ba' => 
+      array (
+      ),
+      'ce' => 
+      array (
+      ),
+      'df' => 
+      array (
+      ),
+      'es' => 
+      array (
+      ),
+      'go' => 
+      array (
+      ),
+      'ma' => 
+      array (
+      ),
+      'mg' => 
+      array (
+      ),
+      'ms' => 
+      array (
+      ),
+      'mt' => 
+      array (
+      ),
+      'pa' => 
+      array (
+      ),
+      'pb' => 
+      array (
+      ),
+      'pe' => 
+      array (
+      ),
+      'pi' => 
+      array (
+      ),
+      'pr' => 
+      array (
+      ),
+      'rj' => 
+      array (
+      ),
+      'rn' => 
+      array (
+      ),
+      'ro' => 
+      array (
+      ),
+      'rr' => 
+      array (
+      ),
+      'rs' => 
+      array (
+      ),
+      'sc' => 
+      array (
+      ),
+      'se' => 
+      array (
+      ),
+      'sp' => 
+      array (
+      ),
+      'to' => 
+      array (
+      ),
     ),
     'imb' => 
     array (
@@ -1029,6 +1125,9 @@ static $data = array (
     array (
     ),
     'inf' => 
+    array (
+    ),
+    'jampa' => 
     array (
     ),
     'jor' => 
@@ -1079,6 +1178,9 @@ static $data = array (
     'org' => 
     array (
     ),
+    'poa' => 
+    array (
+    ),
     'ppg' => 
     array (
     ),
@@ -1098,6 +1200,9 @@ static $data = array (
     array (
     ),
     'rec' => 
+    array (
+    ),
+    'recife' => 
     array (
     ),
     'slg' => 
@@ -1125,6 +1230,9 @@ static $data = array (
     array (
     ),
     'vet' => 
+    array (
+    ),
+    'vix' => 
     array (
     ),
     'vlog' => 
@@ -11887,6 +11995,9 @@ static $data = array (
     'asso' => 
     array (
     ),
+    'nom' => 
+    array (
+    ),
   ),
   'ne' => 
   array (
@@ -17546,6 +17657,9 @@ static $data = array (
   'xn--54b7fta0cc' => 
   array (
   ),
+  'xn--90ae' => 
+  array (
+  ),
   'xn--90ais' => 
   array (
   ),
@@ -17571,6 +17685,27 @@ static $data = array (
   array (
   ),
   'xn--j6w193g' => 
+  array (
+  ),
+  'xn--2scrj9c' => 
+  array (
+  ),
+  'xn--3hcrj9c' => 
+  array (
+  ),
+  'xn--45br5cyl' => 
+  array (
+  ),
+  'xn--h2breg3eve' => 
+  array (
+  ),
+  'xn--h2brj9c8c' => 
+  array (
+  ),
+  'xn--mgbgu82a' => 
+  array (
+  ),
+  'xn--rvc1e0am3e' => 
   array (
   ),
   'xn--h2brj9c' => 
@@ -17704,6 +17839,24 @@ static $data = array (
   ),
   'xn--o3cw4h' => 
   array (
+    'xn--12c1fe0br' => 
+    array (
+    ),
+    'xn--12co0c3b4eva' => 
+    array (
+    ),
+    'xn--h3cuzk1di' => 
+    array (
+    ),
+    'xn--o3cyx2a' => 
+    array (
+    ),
+    'xn--m3ch0j3a' => 
+    array (
+    ),
+    'xn--12cfi8ixb8l' => 
+    array (
+    ),
   ),
   'xn--pgbs0dh' => 
   array (
@@ -17824,7 +17977,19 @@ static $data = array (
   ),
   'zw' => 
   array (
-    '*' => 
+    'ac' => 
+    array (
+    ),
+    'co' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'mil' => 
+    array (
+    ),
+    'org' => 
     array (
     ),
   ),
@@ -18758,9 +18923,6 @@ static $data = array (
   'dvr' => 
   array (
   ),
-  'dwg' => 
-  array (
-  ),
   'earth' => 
   array (
   ),
@@ -19326,9 +19488,6 @@ static $data = array (
   array (
   ),
   'ifm' => 
-  array (
-  ),
-  'iinet' => 
   array (
   ),
   'ikano' => 
@@ -19898,9 +20057,6 @@ static $data = array (
   'mutual' => 
   array (
   ),
-  'mutuelle' => 
-  array (
-  ),
   'nab' => 
   array (
   ),
@@ -20070,9 +20226,6 @@ static $data = array (
   array (
   ),
   'organic' => 
-  array (
-  ),
-  'orientexpress' => 
   array (
   ),
   'origins' => 
@@ -20397,6 +20550,9 @@ static $data = array (
   array (
   ),
   'rsvp' => 
+  array (
+  ),
+  'rugby' => 
   array (
   ),
   'ruhr' => 
@@ -20825,9 +20981,6 @@ static $data = array (
   'theatre' => 
   array (
   ),
-  'theguardian' => 
-  array (
-  ),
   'tiaa' => 
   array (
   ),
@@ -21198,9 +21351,6 @@ static $data = array (
   array (
   ),
   'xn--4gbrim' => 
-  array (
-  ),
-  'xn--4gq48lf9j' => 
   array (
   ),
   'xn--55qw42g' => 

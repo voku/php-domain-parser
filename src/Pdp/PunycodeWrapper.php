@@ -38,7 +38,12 @@ class PunycodeWrapper
   public function encode($input)
   {
     if ($this->idnSupport === true) {
-      return idn_to_ascii($input);
+      // https://git.ispconfig.org/ispconfig/ispconfig3/blob/master/interface/lib/classes/functions.inc.php#L305
+      if(defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46') && constant('IDNA_NONTRANSITIONAL_TO_ASCII')) {
+        return idn_to_ascii($input, IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+      } else {
+        return idn_to_ascii($input);
+      }
     }
 
     return self::$punycode->encode($input);
@@ -54,7 +59,11 @@ class PunycodeWrapper
   public function decode($input)
   {
     if ($this->idnSupport === true) {
-      return idn_to_utf8($input);
+      if(defined('IDNA_NONTRANSITIONAL_TO_UNICODE') && defined('INTL_IDNA_VARIANT_UTS46') && constant('IDNA_NONTRANSITIONAL_TO_UNICODE')) {
+        return idn_to_utf8($input, IDNA_NONTRANSITIONAL_TO_UNICODE, INTL_IDNA_VARIANT_UTS46);
+      } else {
+        return idn_to_utf8($input);
+      }
     }
 
     return self::$punycode->decode($input);
