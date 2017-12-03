@@ -1061,6 +1061,9 @@ static $data = array (
   ),
   'br' => 
   array (
+    'abc' => 
+    array (
+    ),
     'adm' => 
     array (
     ),
@@ -1070,7 +1073,13 @@ static $data = array (
     'agr' => 
     array (
     ),
+    'aju' => 
+    array (
+    ),
     'am' => 
+    array (
+    ),
+    'aparecida' => 
     array (
     ),
     'arq' => 
@@ -1088,6 +1097,9 @@ static $data = array (
     'belem' => 
     array (
     ),
+    'bhz' => 
+    array (
+    ),
     'bio' => 
     array (
     ),
@@ -1095,6 +1107,18 @@ static $data = array (
     array (
     ),
     'bmd' => 
+    array (
+    ),
+    'boavista' => 
+    array (
+    ),
+    'bsb' => 
+    array (
+    ),
+    'campinas' => 
+    array (
+    ),
+    'caxias' => 
     array (
     ),
     'cim' => 
@@ -1112,10 +1136,16 @@ static $data = array (
       array (
       ),
     ),
+    'contagem' => 
+    array (
+    ),
     'coop' => 
     array (
     ),
     'cri' => 
+    array (
+    ),
+    'cuiaba' => 
     array (
     ),
     'def' => 
@@ -1148,6 +1178,9 @@ static $data = array (
     'far' => 
     array (
     ),
+    'feira' => 
+    array (
+    ),
     'flog' => 
     array (
     ),
@@ -1160,6 +1193,9 @@ static $data = array (
     'fnd' => 
     array (
     ),
+    'fortal' => 
+    array (
+    ),
     'fot' => 
     array (
     ),
@@ -1170,6 +1206,9 @@ static $data = array (
     array (
     ),
     'ggf' => 
+    array (
+    ),
+    'goiania' => 
     array (
     ),
     'gov' => 
@@ -1256,6 +1295,9 @@ static $data = array (
       array (
       ),
     ),
+    'gru' => 
+    array (
+    ),
     'imb' => 
     array (
     ),
@@ -1265,7 +1307,16 @@ static $data = array (
     'inf' => 
     array (
     ),
+    'jab' => 
+    array (
+    ),
     'jampa' => 
+    array (
+    ),
+    'jdf' => 
+    array (
+    ),
+    'joinville' => 
     array (
     ),
     'jor' => 
@@ -1361,6 +1412,15 @@ static $data = array (
     'lel' => 
     array (
     ),
+    'londrina' => 
+    array (
+    ),
+    'macapa' => 
+    array (
+    ),
+    'maceio' => 
+    array (
+    ),
     'mat' => 
     array (
     ),
@@ -1370,13 +1430,22 @@ static $data = array (
     'mil' => 
     array (
     ),
+    'morena' => 
+    array (
+    ),
     'mp' => 
     array (
     ),
     'mus' => 
     array (
     ),
+    'natal' => 
+    array (
+    ),
     'net' => 
+    array (
+    ),
+    'niteroi' => 
     array (
     ),
     'nom' => 
@@ -1397,6 +1466,12 @@ static $data = array (
     'org' => 
     array (
     ),
+    'osasco' => 
+    array (
+    ),
+    'palmas' => 
+    array (
+    ),
     'poa' => 
     array (
     ),
@@ -1412,6 +1487,9 @@ static $data = array (
     'psi' => 
     array (
     ),
+    'pvh' => 
+    array (
+    ),
     'qsl' => 
     array (
     ),
@@ -1424,7 +1502,31 @@ static $data = array (
     'recife' => 
     array (
     ),
+    'ribeirao' => 
+    array (
+    ),
+    'rio' => 
+    array (
+    ),
+    'riobranco' => 
+    array (
+    ),
+    'salvador' => 
+    array (
+    ),
+    'sampa' => 
+    array (
+    ),
+    'sjc' => 
+    array (
+    ),
     'slg' => 
+    array (
+    ),
+    'slz' => 
+    array (
+    ),
+    'sorocaba' => 
     array (
     ),
     'srv' => 
@@ -1434,6 +1536,9 @@ static $data = array (
     array (
     ),
     'teo' => 
+    array (
+    ),
+    'the' => 
     array (
     ),
     'tmp' => 
@@ -1446,6 +1551,9 @@ static $data = array (
     array (
     ),
     'tv' => 
+    array (
+    ),
+    'udi' => 
     array (
     ),
     'vet' => 
@@ -1798,18 +1906,21 @@ static $data = array (
           array (
           ),
         ),
-        'cn-north-1' => 
+        'eb' => 
         array (
-          'elasticbeanstalk' => 
-          array (
-          ),
-          's3' => 
+          'cn-north-1' => 
           array (
           ),
         ),
         'elb' => 
         array (
           '*' => 
+          array (
+          ),
+        ),
+        'cn-north-1' => 
+        array (
+          's3' => 
           array (
           ),
         ),
@@ -2234,7 +2345,49 @@ static $data = array (
     ),
     'elasticbeanstalk' => 
     array (
-      '*' => 
+      'ap-northeast-1' => 
+      array (
+      ),
+      'ap-northeast-2' => 
+      array (
+      ),
+      'ap-south-1' => 
+      array (
+      ),
+      'ap-southeast-1' => 
+      array (
+      ),
+      'ap-southeast-2' => 
+      array (
+      ),
+      'ca-central-1' => 
+      array (
+      ),
+      'eu-central-1' => 
+      array (
+      ),
+      'eu-west-1' => 
+      array (
+      ),
+      'eu-west-2' => 
+      array (
+      ),
+      'sa-east-1' => 
+      array (
+      ),
+      'us-east-1' => 
+      array (
+      ),
+      'us-east-2' => 
+      array (
+      ),
+      'us-gov-west-1' => 
+      array (
+      ),
+      'us-west-1' => 
+      array (
+      ),
+      'us-west-2' => 
       array (
       ),
     ),
@@ -2902,6 +3055,9 @@ static $data = array (
     array (
     ),
     'herokussl' => 
+    array (
+    ),
+    'pixolino' => 
     array (
     ),
     'joyent' => 
@@ -4612,6 +4768,9 @@ static $data = array (
     array (
     ),
     'no-ip' => 
+    array (
+    ),
+    'v-info' => 
     array (
     ),
   ),
@@ -14206,6 +14365,9 @@ static $data = array (
       array (
       ),
     ),
+    'debian' => 
+    array (
+    ),
     'at-band-camp' => 
     array (
     ),
@@ -14327,6 +14489,9 @@ static $data = array (
     array (
     ),
     'ru' => 
+    array (
+    ),
+    'channelsdvr' => 
     array (
     ),
     'fastlylb' => 
@@ -19039,6 +19204,9 @@ static $data = array (
       array (
       ),
     ),
+    'wedeploy' => 
+    array (
+    ),
     'now' => 
     array (
     ),
@@ -20494,6 +20662,30 @@ static $data = array (
       array (
       ),
       'lib' => 
+      array (
+      ),
+      'ann-arbor' => 
+      array (
+      ),
+      'cog' => 
+      array (
+      ),
+      'dst' => 
+      array (
+      ),
+      'eaton' => 
+      array (
+      ),
+      'gen' => 
+      array (
+      ),
+      'mus' => 
+      array (
+      ),
+      'tec' => 
+      array (
+      ),
+      'washtenaw' => 
       array (
       ),
     ),
@@ -22052,9 +22244,6 @@ static $data = array (
   'chintai' => 
   array (
   ),
-  'chloe' => 
-  array (
-  ),
   'christmas' => 
   array (
   ),
@@ -22991,9 +23180,6 @@ static $data = array (
   'hsbc' => 
   array (
   ),
-  'htc' => 
-  array (
-  ),
   'hughes' => 
   array (
   ),
@@ -23471,12 +23657,6 @@ static $data = array (
   'mba' => 
   array (
   ),
-  'mcd' => 
-  array (
-  ),
-  'mcdonalds' => 
-  array (
-  ),
   'mckinsey' => 
   array (
   ),
@@ -23565,9 +23745,6 @@ static $data = array (
   array (
   ),
   'monster' => 
-  array (
-  ),
-  'montblanc' => 
   array (
   ),
   'mopar' => 
@@ -23814,9 +23991,6 @@ static $data = array (
     ),
   ),
   'page' => 
-  array (
-  ),
-  'pamperedchef' => 
   array (
   ),
   'panasonic' => 

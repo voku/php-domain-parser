@@ -6,13 +6,14 @@ use Pdp\Parser;
 use Pdp\PublicSuffixList;
 use Pdp\PublicSuffixListManager;
 use Pdp\Uri\Url\Host;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class UrlTest
  *
  * @package Pdp\Uri
  */
-class UrlTest extends \PHPUnit_Framework_TestCase
+class UrlTest extends TestCase
 {
   /**
    * @var Url
@@ -61,7 +62,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
         'anchor'
     );
 
-    self::assertInstanceOf('Pdp\Uri\Url', $url);
+    self::assertInstanceOf(Url::class, $url);
   }
 
   public function test__toString()
@@ -77,7 +78,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
 
   public function testToArray()
   {
-    $expected = array(
+    $expected = [
         'scheme'            => 'http',
         'user'              => 'anonymous',
         'pass'              => 'guest',
@@ -89,9 +90,9 @@ class UrlTest extends \PHPUnit_Framework_TestCase
         'path'              => '/path/to/index.php/foo/bar.xml',
         'query'             => 'baz=dib',
         'fragment'          => 'anchor',
-    );
+    ];
 
-    self::assertSame($expected, $this->url->toArray());
+    self::assertEquals($expected, $this->url->toArray());
   }
 
   /**

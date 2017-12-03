@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2014 Jeremy Kendall (http://about.me/jeremykendall)
  * @license   http://github.com/jeremykendall/php-domain-parser/blob/master/LICENSE MIT License
  */
+
 namespace Pdp\Uri\Url;
 
 /**
@@ -62,7 +63,7 @@ class Host
   }
 
   /**
-   * @return string
+   * @return string|null
    */
   public function getRegistrableDomain()
   {
@@ -101,12 +102,12 @@ class Host
     }
 
     // retain only the elements that are not empty
-    $str = array_filter(
-        array($this->subdomain, $this->registrableDomain),
-        'strlen'
+    $str = \array_filter(
+        [$this->subdomain, $this->registrableDomain],
+        '\strlen'
     );
 
-    return implode('.', $str);
+    return \implode('.', $str);
   }
 
   /**
@@ -114,13 +115,13 @@ class Host
    *
    * @return array Array representation of host
    */
-  public function toArray()
+  public function toArray(): array
   {
-    return array(
+    return [
         'subdomain'         => $this->getSubdomain(),
         'registrableDomain' => $this->getRegistrableDomain(),
         'publicSuffix'      => $this->getPublicSuffix(),
         'host'              => $this->getHost(),
-    );
+    ];
   }
 }

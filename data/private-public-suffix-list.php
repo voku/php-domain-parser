@@ -152,6 +152,9 @@ static $data = array (
       array (
       ),
     ),
+    'debian' => 
+    array (
+    ),
     'at-band-camp' => 
     array (
     ),
@@ -273,6 +276,9 @@ static $data = array (
     array (
     ),
     'ru' => 
+    array (
+    ),
+    'channelsdvr' => 
     array (
     ),
     'fastlylb' => 
@@ -643,7 +649,49 @@ static $data = array (
     ),
     'elasticbeanstalk' => 
     array (
-      '*' => 
+      'ap-northeast-1' => 
+      array (
+      ),
+      'ap-northeast-2' => 
+      array (
+      ),
+      'ap-south-1' => 
+      array (
+      ),
+      'ap-southeast-1' => 
+      array (
+      ),
+      'ap-southeast-2' => 
+      array (
+      ),
+      'ca-central-1' => 
+      array (
+      ),
+      'eu-central-1' => 
+      array (
+      ),
+      'eu-west-1' => 
+      array (
+      ),
+      'eu-west-2' => 
+      array (
+      ),
+      'sa-east-1' => 
+      array (
+      ),
+      'us-east-1' => 
+      array (
+      ),
+      'us-east-2' => 
+      array (
+      ),
+      'us-gov-west-1' => 
+      array (
+      ),
+      'us-west-1' => 
+      array (
+      ),
+      'us-west-2' => 
       array (
       ),
     ),
@@ -1313,6 +1361,9 @@ static $data = array (
     'herokussl' => 
     array (
     ),
+    'pixolino' => 
+    array (
+    ),
     'joyent' => 
     array (
       'cns' => 
@@ -1572,18 +1623,21 @@ static $data = array (
           array (
           ),
         ),
-        'cn-north-1' => 
+        'eb' => 
         array (
-          'elasticbeanstalk' => 
-          array (
-          ),
-          's3' => 
+          'cn-north-1' => 
           array (
           ),
         ),
         'elb' => 
         array (
           '*' => 
+          array (
+          ),
+        ),
+        'cn-north-1' => 
+        array (
+          's3' => 
           array (
           ),
         ),
@@ -2727,6 +2781,9 @@ static $data = array (
     array (
     ),
     'no-ip' => 
+    array (
+    ),
+    'v-info' => 
     array (
     ),
   ),
@@ -3907,6 +3964,9 @@ static $data = array (
       '*' => 
       array (
       ),
+    ),
+    'wedeploy' => 
+    array (
     ),
     'now' => 
     array (

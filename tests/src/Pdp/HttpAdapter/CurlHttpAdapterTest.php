@@ -2,12 +2,14 @@
 
 namespace Pdp\HttpAdapter;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class CurlHttpAdapterTest
  *
  * @package Pdp\HttpAdapter
  */
-class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
+class CurlHttpAdapterTest extends TestCase
 {
   /**
    * @var HttpAdapterInterface
@@ -35,21 +37,27 @@ class CurlHttpAdapterTest extends \PHPUnit_Framework_TestCase
     self::assertContains('google', $content);
   }
 
+  /**
+   * @expectedException Pdp\Exception\HttpAdapterException
+   */
   public function testExceptionBadUrl()
   {
-    $this->setExpectedException('Pdp\Exception\HttpAdapterException', '', CURLE_COULDNT_RESOLVE_HOST);
     $this->adapter->getContent('https://aaaa.aaaa');
   }
 
+  /**
+   * @expectedException Pdp\Exception\HttpAdapterException
+   */
   public function testExceptionMalformat()
   {
-    $this->setExpectedException('Pdp\Exception\HttpAdapterException', '', CURLE_URL_MALFORMAT);
     $this->adapter->getContent('https://google.com:9996543/');
   }
 
+  /**
+   * @expectedException Pdp\Exception\HttpAdapterException
+   */
   public function testExceptionCouldntConnect()
   {
-    $this->setExpectedException('Pdp\Exception\HttpAdapterException', '', CURLE_COULDNT_CONNECT);
     $this->adapter->getContent('https://google.com:999/');
   }
 }

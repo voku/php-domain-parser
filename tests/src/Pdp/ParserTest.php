@@ -2,12 +2,14 @@
 
 namespace Pdp;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class ParserTest
  *
  * @package Pdp
  */
-class ParserTest extends \PHPUnit_Framework_TestCase
+class ParserTest extends TestCase
 {
   /**
    * @var Parser
@@ -51,17 +53,14 @@ class ParserTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
+   * @expectedException Pdp\Exception\SeriouslyMalformedUrlException
+   *
    * @covers \Pdp\Parser::parseUrl()
    * @covers ::pdp_parse_url
    */
   public function testParseBadUrlThrowsInvalidArgumentException()
   {
     $url = 'http:///example.com';
-
-    $this->setExpectedException(
-        'Pdp\Exception\SeriouslyMalformedUrlException',
-        sprintf('"%s" is one seriously malformed url.', $url)
-    );
 
     $this->parser->parseUrl($url);
   }
@@ -74,16 +73,13 @@ class ParserTest extends \PHPUnit_Framework_TestCase
    *
    * @see    https://github.com/jeremykendall/php-domain-parser/issues/54
    *
+   * @expectedException Pdp\Exception\SeriouslyMalformedUrlException
+   *
    * @covers \Pdp\Parser::parseUrl()
    * @covers ::pdp_parse_url
    */
   public function testParseEmptyStringThrowsInvalidArgumentExceptionWithoutWackySchemeInMessage()
   {
-    $this->setExpectedException(
-        'Pdp\Exception\SeriouslyMalformedUrlException',
-        '"" is one seriously malformed url.'
-    );
-
     $this->parser->parseUrl('');
   }
 
@@ -253,104 +249,103 @@ class ParserTest extends \PHPUnit_Framework_TestCase
    *
    * @group issue183
    *
-   * @see https://github.com/jeremykendall/php-domain-parser/issues/183
+   * @expectedException Pdp\Exception\SeriouslyMalformedUrlException
+   *
+   * @see   https://github.com/jeremykendall/php-domain-parser/issues/183
    */
   public function testParseFileURIThrowsInvalidArgumentException()
   {
     $file = 'file:///a/b/c';
-    $this->setExpectedException(
-        'Pdp\Exception\SeriouslyMalformedUrlException',
-        '"' . $file . '" is one seriously malformed url.'
-    );
+
     $this->parser->parseUrl($file);
   }
 
   public function parseDataProvider()
   {
-    return array(
+    return [
       // url, public suffix, registrable domain, subdomain, host part
-      array(
+      [
           'http://www.waxaudio.com.au/audio/albums/the_mashening',
           'com.au',
           'waxaudio.com.au',
           'www',
           'www.waxaudio.com.au',
-      ),
-      array('example.COM', 'com', 'example.com', null, 'example.com'),
-      array('giant.yyyy', 'yyyy', 'giant.yyyy', null, 'giant.yyyy'),
-      array('cea-law.co.il', 'co.il', 'cea-law.co.il', null, 'cea-law.co.il'),
-      array('http://edition.cnn.com/WORLD/', 'com', 'cnn.com', 'edition', 'edition.cnn.com'),
-      array('http://en.wikipedia.org/', 'org', 'wikipedia.org', 'en', 'en.wikipedia.org'),
-      array('a.b.c.mm', 'c.mm', 'b.c.mm', 'a', 'a.b.c.mm'),
-      array('https://test.k12.ak.us', 'k12.ak.us', 'test.k12.ak.us', null, 'test.k12.ak.us'),
-      array('www.scottwills.co.uk', 'co.uk', 'scottwills.co.uk', 'www', 'www.scottwills.co.uk'),
-      array('b.ide.kyoto.jp', 'ide.kyoto.jp', 'b.ide.kyoto.jp', null, 'b.ide.kyoto.jp'),
-      array('a.b.example.uk.com', 'uk.com', 'example.uk.com', 'a.b', 'a.b.example.uk.com'),
-      array('test.nic.ar', 'ar', 'nic.ar', 'test', 'test.nic.ar'),
-      array('a.b.test.ck', 'test.ck', 'b.test.ck', 'a', 'a.b.test.ck'),
-      array('baez.songfest.om', 'om', 'songfest.om', 'baez', 'baez.songfest.om'),
-      array('politics.news.omanpost.om', 'om', 'omanpost.om', 'politics.news', 'politics.news.omanpost.om'),
+      ],
+      ['example.COM', 'com', 'example.com', null, 'example.com'],
+      ['giant.yyyy', 'yyyy', 'giant.yyyy', null, 'giant.yyyy'],
+      ['cea-law.co.il', 'co.il', 'cea-law.co.il', null, 'cea-law.co.il'],
+      ['http://edition.cnn.com/WORLD/', 'com', 'cnn.com', 'edition', 'edition.cnn.com'],
+      ['http://en.wikipedia.org/', 'org', 'wikipedia.org', 'en', 'en.wikipedia.org'],
+      ['a.b.c.mm', 'c.mm', 'b.c.mm', 'a', 'a.b.c.mm'],
+      ['https://test.k12.ak.us', 'k12.ak.us', 'test.k12.ak.us', null, 'test.k12.ak.us'],
+      ['www.scottwills.co.uk', 'co.uk', 'scottwills.co.uk', 'www', 'www.scottwills.co.uk'],
+      ['b.ide.kyoto.jp', 'ide.kyoto.jp', 'b.ide.kyoto.jp', null, 'b.ide.kyoto.jp'],
+      ['a.b.example.uk.com', 'uk.com', 'example.uk.com', 'a.b', 'a.b.example.uk.com'],
+      ['test.nic.ar', 'ar', 'nic.ar', 'test', 'test.nic.ar'],
+      ['a.b.test.ck', 'test.ck', 'b.test.ck', 'a', 'a.b.test.ck'],
+      ['baez.songfest.om', 'om', 'songfest.om', 'baez', 'baez.songfest.om'],
+      ['politics.news.omanpost.om', 'om', 'omanpost.om', 'politics.news', 'politics.news.omanpost.om'],
       // BEGIN https://github.com/jeremykendall/php-domain-parser/issues/16
-      array('us.example.com', 'com', 'example.com', 'us', 'us.example.com'),
-      array('us.example.na', 'na', 'example.na', 'us', 'us.example.na'),
-      array('www.example.us.na', 'us.na', 'example.us.na', 'www', 'www.example.us.na'),
-      array('us.example.org', 'org', 'example.org', 'us', 'us.example.org'),
-      array('webhop.broken.biz', 'biz', 'broken.biz', 'webhop', 'webhop.broken.biz'),
-      array('www.broken.webhop.biz', 'webhop.biz', 'broken.webhop.biz', 'www', 'www.broken.webhop.biz'),
+      ['us.example.com', 'com', 'example.com', 'us', 'us.example.com'],
+      ['us.example.na', 'na', 'example.na', 'us', 'us.example.na'],
+      ['www.example.us.na', 'us.na', 'example.us.na', 'www', 'www.example.us.na'],
+      ['us.example.org', 'org', 'example.org', 'us', 'us.example.org'],
+      ['webhop.broken.biz', 'biz', 'broken.biz', 'webhop', 'webhop.broken.biz'],
+      ['www.broken.webhop.biz', 'webhop.biz', 'broken.webhop.biz', 'www', 'www.broken.webhop.biz'],
       // END https://github.com/jeremykendall/php-domain-parser/issues/16
       // Test schemeless url
-      array('//www.broken.webhop.biz', 'webhop.biz', 'broken.webhop.biz', 'www', 'www.broken.webhop.biz'),
+      ['//www.broken.webhop.biz', 'webhop.biz', 'broken.webhop.biz', 'www', 'www.broken.webhop.biz'],
       // Test ftp support - https://github.com/jeremykendall/php-domain-parser/issues/18
-      array(
+      [
           'ftp://www.waxaudio.com.au/audio/albums/the_mashening',
           'com.au',
           'waxaudio.com.au',
           'www',
           'www.waxaudio.com.au',
-      ),
-      array('ftps://test.k12.ak.us', 'k12.ak.us', 'test.k12.ak.us', null, 'test.k12.ak.us'),
+      ],
+      ['ftps://test.k12.ak.us', 'k12.ak.us', 'test.k12.ak.us', null, 'test.k12.ak.us'],
       // Test support for RFC 3986 compliant schemes
       // https://github.com/jeremykendall/php-domain-parser/issues/46
-      array('fake-scheme+RFC-3986.compliant://example.com', 'com', 'example.com', null, 'example.com'),
-      array('http://localhost', null, null, null, 'localhost'),
-      array('test.museum', 'museum', 'test.museum', null, 'test.museum'),
-      array('bob.smith.name', 'name', 'smith.name', 'bob', 'bob.smith.name'),
-      array('tons.of.info', 'info', 'of.info', 'tons', 'tons.of.info'),
+      ['fake-scheme+RFC-3986.compliant://example.com', 'com', 'example.com', null, 'example.com'],
+      ['http://localhost', null, null, null, 'localhost'],
+      ['test.museum', 'museum', 'test.museum', null, 'test.museum'],
+      ['bob.smith.name', 'name', 'smith.name', 'bob', 'bob.smith.name'],
+      ['tons.of.info', 'info', 'of.info', 'tons', 'tons.of.info'],
       // Test IDN parsing
       // BEGIN https://github.com/jeremykendall/php-domain-parser/issues/29
-      array('http://Яндекс.РФ', 'рф', 'яндекс.рф', null, 'яндекс.рф'),
+      ['http://Яндекс.РФ', 'рф', 'яндекс.рф', null, 'яндекс.рф'],
       // END https://github.com/jeremykendall/php-domain-parser/issues/29
-      array('www.食狮.中国', '中国', '食狮.中国', 'www', 'www.食狮.中国'),
-      array('食狮.com.cn', 'com.cn', '食狮.com.cn', null, '食狮.com.cn'),
+      ['www.食狮.中国', '中国', '食狮.中国', 'www', 'www.食狮.中国'],
+      ['食狮.com.cn', 'com.cn', '食狮.com.cn', null, '食狮.com.cn'],
       // Test punycode URLs
-      array('www.xn--85x722f.xn--fiqs8s', 'xn--fiqs8s', 'xn--85x722f.xn--fiqs8s', 'www', 'www.xn--85x722f.xn--fiqs8s'),
-      array('xn--85x722f.com.cn', 'com.cn', 'xn--85x722f.com.cn', null, 'xn--85x722f.com.cn'),
+      ['www.xn--85x722f.xn--fiqs8s', 'xn--fiqs8s', 'xn--85x722f.xn--fiqs8s', 'www', 'www.xn--85x722f.xn--fiqs8s'],
+      ['xn--85x722f.com.cn', 'com.cn', 'xn--85x722f.com.cn', null, 'xn--85x722f.com.cn'],
       // Test ipv6 URL
-      array('http://[::1]/', null, null, null, '[::1]'),
-      array(
+      ['http://[::1]/', null, null, null, '[::1]'],
+      [
           'http://[2001:db8:85a3:8d3:1319:8a2e:370:7348]/',
           null,
           null,
           null,
           '[2001:db8:85a3:8d3:1319:8a2e:370:7348]',
-      ),
-      array(
+      ],
+      [
           'https://[2001:db8:85a3:8d3:1319:8a2e:370:7348]:443/',
           null,
           null,
           null,
           '[2001:db8:85a3:8d3:1319:8a2e:370:7348]',
-      ),
+      ],
       // Test IP address: Fixes #43
-      array('http://192.168.1.2/', null, null, null, '192.168.1.2'),
-      array('http://127.0.0.1:443', null, null, null, '127.0.0.1'),
-      array('http://67.196.2.34/whois-archive/latest.php?page=2479', null, null, null, '67.196.2.34'),
+      ['http://192.168.1.2/', null, null, null, '192.168.1.2'],
+      ['http://127.0.0.1:443', null, null, null, '127.0.0.1'],
+      ['http://67.196.2.34/whois-archive/latest.php?page=2479', null, null, null, '67.196.2.34'],
       // Link-local addresses and zone indices
-      array('http://[fe80::3%25eth0]', null, null, null, '[fe80::3%25eth0]'),
-      array('http://[fe80::1%2511]', null, null, null, '[fe80::1%2511]'),
-      array('http://www.example.dev', 'dev', 'example.dev', 'www', 'www.example.dev'),
-      array('http://example.faketld', 'faketld', 'example.faketld', null, 'example.faketld'),
+      ['http://[fe80::3%25eth0]', null, null, null, '[fe80::3%25eth0]'],
+      ['http://[fe80::1%2511]', null, null, null, '[fe80::1%2511]'],
+      ['http://www.example.dev', 'dev', 'example.dev', 'www', 'www.example.dev'],
+      ['http://example.faketld', 'faketld', 'example.faketld', null, 'example.faketld'],
       // url, public suffix, registrable domain, subdomain, host part
-    );
+    ];
   }
 }

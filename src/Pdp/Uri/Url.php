@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2014 Jeremy Kendall (http://about.me/jeremykendall)
  * @license   http://github.com/jeremykendall/php-domain-parser/blob/master/LICENSE MIT License
  */
+
 namespace Pdp\Uri;
 
 use Pdp\Parser;
@@ -98,7 +99,7 @@ class Url
    *
    * @return string Url without scheme
    */
-  public function getSchemeless()
+  public function getSchemeless(): string
   {
     return preg_replace(Parser::SCHEME_PATTERN, '//', (string)$this, 1);
   }
@@ -154,9 +155,9 @@ class Url
    *
    * @return array Array of URI component parts
    */
-  public function toArray()
+  public function toArray(): array
   {
-    return array(
+    return [
         'scheme'            => $this->getScheme(),
         'user'              => $this->getUser(),
         'pass'              => $this->getPass(),
@@ -168,13 +169,13 @@ class Url
         'path'              => $this->getPath(),
         'query'             => $this->getQuery(),
         'fragment'          => $this->getFragment(),
-    );
+    ];
   }
 
   /**
    * Get Scheme.
    *
-   * @return string
+   * @return string|null
    */
   public function getScheme()
   {
@@ -186,7 +187,7 @@ class Url
    *
    * @return string
    */
-  public function getUser()
+  public function getUser(): string
   {
     return $this->user;
   }
@@ -196,7 +197,7 @@ class Url
    *
    * @return string
    */
-  public function getPass()
+  public function getPass(): string
   {
     return $this->pass;
   }
@@ -206,7 +207,7 @@ class Url
    *
    * @return Host
    */
-  public function getHost()
+  public function getHost(): Host
   {
     return $this->host;
   }
@@ -216,7 +217,7 @@ class Url
    *
    * @return int
    */
-  public function getPort()
+  public function getPort(): int
   {
     return $this->port;
   }
@@ -226,7 +227,7 @@ class Url
    *
    * @return string
    */
-  public function getPath()
+  public function getPath(): string
   {
     return $this->path;
   }
@@ -236,7 +237,7 @@ class Url
    *
    * @return string
    */
-  public function getQuery()
+  public function getQuery(): string
   {
     return $this->query;
   }
@@ -246,7 +247,7 @@ class Url
    *
    * @return string
    */
-  public function getFragment()
+  public function getFragment(): string
   {
     return $this->fragment;
   }

@@ -2,12 +2,14 @@
 
 namespace Pdp\HttpAdapter;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class PhpHttpAdapterTest
  *
  * @package Pdp\HttpAdapter
  */
-class PhpHttpAdapterTest extends \PHPUnit_Framework_TestCase
+class PhpHttpAdapterTest extends TestCase
 {
   /**
    * @var HttpAdapterInterface

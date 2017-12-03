@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2014 Jeremy Kendall (http://about.me/jeremykendall)
  * @license   http://github.com/jeremykendall/php-domain-parser/blob/master/LICENSE MIT License
  */
+
 namespace Pdp;
 
 use Pdp\HttpAdapter\HttpAdapterInterface;
@@ -44,11 +45,11 @@ class PublicSuffixListManager
   /**
    * @var PublicSuffixList Public Suffix List
    */
-  protected static $domainList = array(
+  protected static $domainList = [
       self::ALL_DOMAINS     => self::PDP_PSL_PHP_FILE,
       self::ICANN_DOMAINS   => self::ICANN_PSL_PHP_FILE,
       self::PRIVATE_DOMAINS => self::PRIVATE_PSL_PHP_FILE,
-  );
+  ];
 
   /**
    * @var \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
@@ -64,7 +65,7 @@ class PublicSuffixListManager
   {
     if (null === $cacheDir) {
       $cacheDir = realpath(
-          dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'data'
+          \dirname(\dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'data'
       );
     }
 
@@ -83,7 +84,7 @@ class PublicSuffixListManager
     foreach ($publicSuffixListArray as $domain => $data) {
       // do not empty existing PHP cache file if source TXT is empty
       if (
-          is_array($data)
+          \is_array($data)
           &&
           !empty($data)
       ) {
@@ -124,10 +125,10 @@ class PublicSuffixListManager
    *
    * @throws \Exception Throws \Exception if unable to read file
    */
-  public function parseListToArray($textFile)
+  public function parseListToArray($textFile): array
   {
     /** @noinspection PhpUsageOfSilenceOperatorInspection */
-    $fp = @fopen($textFile, 'r');
+    $fp = @fopen($textFile, 'rb');
     if (!$fp || !flock($fp, LOCK_SH)) {
       throw new \Exception("Cannot read '$textFile'");
     }
@@ -147,7 +148,7 @@ class PublicSuffixListManager
         }
     );
 
-    $publicSuffixListArray = array();
+    $publicSuffixListArray = [];
 
     foreach ($data as $line) {
       $ruleParts = explode('.', $line);
@@ -191,13 +192,13 @@ class PublicSuffixListManager
 
     if (!isset($publicSuffixListArray[$part])) {
       if ($isDomain) {
-        $publicSuffixListArray[$part] = array();
+        $publicSuffixListArray[$part] = [];
       } else {
-        $publicSuffixListArray[$part] = array('!' => '');
+        $publicSuffixListArray[$part] = ['!' => ''];
       }
     }
 
-    if ($isDomain && count($ruleParts) > 0) {
+    if ($isDomain && \count($ruleParts) > 0) {
       $this->buildArray($publicSuffixListArray[$part], $ruleParts);
     }
   }
@@ -209,7 +210,7 @@ class PublicSuffixListManager
    *
    * @return int Number of bytes that were written to the file
    */
-  public function writePhpCache(array $publicSuffixList)
+  public function writePhpCache(array $publicSuffixList): int
   {
     $data = '<?php' . PHP_EOL . 'static $data = ' . var_export($publicSuffixList, true) . '; $result =& $data; unset($data); return $result;';
 
@@ -224,7 +225,7 @@ class PublicSuffixListManager
    *
    * @return int Number of bytes that were written to the file
    */
-  protected function varExportToFile($basename, array $input)
+  protected function varExportToFile($basename, array $input): int
   {
     $data = '<?php' . PHP_EOL . 'static $data = ' . var_export($input, true) . '; $result =& $data; unset($data); return $result;';
 
@@ -241,10 +242,10 @@ class PublicSuffixListManager
    *
    * @throws \Exception Throws \Exception if unable to read file
    */
-  public function getList($list = self::ALL_DOMAINS, $withStaticCache = true)
+  public function getList($list = self::ALL_DOMAINS, bool $withStaticCache = true): PublicSuffixList
   {
     // init
-    static $LIST_STATIC = array();
+    static $LIST_STATIC = [];
 
     $cacheBasename = isset(self::$domainList[$list]) ? self::$domainList[$list] : self::PDP_PSL_PHP_FILE;
     $cacheFile = $this->cacheDir . '/' . $cacheBasename;
@@ -274,10 +275,10 @@ class PublicSuffixListManager
    *
    * @throws \Exception Throws \Exception if unable to read file
    */
-  public function getListFromFile($phpFile)
+  public function getListFromFile($phpFile): PublicSuffixList
   {
     /** @noinspection PhpUsageOfSilenceOperatorInspection */
-    $fp = @fopen($phpFile, 'r');
+    $fp = @fopen($phpFile, 'rb');
     if (!$fp || !flock($fp, LOCK_SH)) {
       throw new \Exception("Cannot read '$phpFile'");
     }
@@ -301,24 +302,24 @@ class PublicSuffixListManager
    * @return array Associative, multidimensional array representation of the
    *               public suffx list
    */
-  protected function convertListToArray($textFile)
+  protected function convertListToArray($textFile): array
   {
-    $addDomain = array(
+    $addDomain = [
         self::ICANN_DOMAINS   => false,
         self::PRIVATE_DOMAINS => false,
-    );
+    ];
 
-    $publicSuffixListArray = array(
-        self::ALL_DOMAINS     => array(),
-        self::ICANN_DOMAINS   => array(),
-        self::PRIVATE_DOMAINS => array(),
-    );
+    $publicSuffixListArray = [
+        self::ALL_DOMAINS     => [],
+        self::ICANN_DOMAINS   => [],
+        self::PRIVATE_DOMAINS => [],
+    ];
 
     $data = new \SplFileObject($textFile);
     $data->setFlags(\SplFileObject::DROP_NEW_LINE | \SplFileObject::READ_AHEAD | \SplFileObject::SKIP_EMPTY);
     foreach ($data as $line) {
       $addDomain = $this->validateDomainAddition($line, $addDomain);
-      if (strstr($line, '//') !== false) {
+      if (false !== strpos($line, '//')) {
         continue;
       }
       $publicSuffixListArray = $this->convertLineToArray($line, $publicSuffixListArray, $addDomain);
@@ -338,7 +339,7 @@ class PublicSuffixListManager
    * @return array Associative, multidimensional array representation of the
    *               public suffx list
    */
-  protected function convertLineToArray($textLine, array $publicSuffixListArray, array $addDomain)
+  protected function convertLineToArray($textLine, array $publicSuffixListArray, array $addDomain): array
   {
     $ruleParts = explode('.', $textLine);
     $this->buildArray($publicSuffixListArray[self::ALL_DOMAINS], $ruleParts);
@@ -358,7 +359,7 @@ class PublicSuffixListManager
    *
    * @return array
    */
-  protected function validateDomainAddition($line, array $addDomain)
+  protected function validateDomainAddition($line, array $addDomain): array
   {
     foreach ($addDomain as $section => $status) {
       $addDomain[$section] = $this->isValidSection($status, $line, $section);
@@ -376,7 +377,7 @@ class PublicSuffixListManager
    *
    * @return bool
    */
-  protected function isValidSection($previousStatus, $line, $section)
+  protected function isValidSection($previousStatus, $line, $section): bool
   {
     if (!$previousStatus && 0 === strpos($line, '// ===BEGIN ' . $section . ' DOMAINS===')) {
       return true;
@@ -399,7 +400,7 @@ class PublicSuffixListManager
    *
    * @throws \Exception Throws \Exception if unable to write file
    */
-  protected function write($filename, $data)
+  protected function write($filename, $data): int
   {
     $data = trim($data);
     $filePath = $this->cacheDir . '/' . $filename;
@@ -410,7 +411,7 @@ class PublicSuffixListManager
 
     // open with 'c' and truncate file only after obtaining a lock
     /** @noinspection PhpUsageOfSilenceOperatorInspection */
-    $fp = @fopen($filePath, 'c');
+    $fp = @fopen($filePath, 'cb');
     $result = $fp
               && flock($fp, LOCK_EX)
               && ftruncate($fp, 0)
@@ -433,10 +434,10 @@ class PublicSuffixListManager
    *
    * @return \Pdp\HttpAdapter\HttpAdapterInterface Http adapter
    */
-  public function getHttpAdapter()
+  public function getHttpAdapter(): HttpAdapterInterface
   {
     if (!$this->httpAdapter instanceof HttpAdapterInterface) {
-      if (extension_loaded('curl')) {
+      if (\extension_loaded('curl')) {
         $this->httpAdapter = new HttpAdapter\CurlHttpAdapter();
       } else {
         $this->httpAdapter = new HttpAdapter\PhpHttpAdapter();

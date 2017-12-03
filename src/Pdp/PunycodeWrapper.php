@@ -18,8 +18,13 @@ class PunycodeWrapper
 
   public function __construct()
   {
-    if (function_exists('idn_to_ascii') && function_exists('idn_to_utf8')) {
+    if (
+        \function_exists('idn_to_ascii')
+        &&
+        \function_exists('idn_to_utf8')
+    ) {
       $this->idnSupport = true;
+
       return;
     }
 
@@ -35,11 +40,11 @@ class PunycodeWrapper
    *
    * @return string Punycode representation in ASCII
    */
-  public function encode($input)
+  public function encode($input): string
   {
     if ($this->idnSupport === true) {
       // https://git.ispconfig.org/ispconfig/ispconfig3/blob/master/interface/lib/classes/functions.inc.php#L305
-      if(defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46') && constant('IDNA_NONTRANSITIONAL_TO_ASCII')) {
+      if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46') && constant('IDNA_NONTRANSITIONAL_TO_ASCII')) {
         return idn_to_ascii($input, IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
       } else {
         return idn_to_ascii($input);
@@ -56,10 +61,10 @@ class PunycodeWrapper
    *
    * @return string Unicode domain name
    */
-  public function decode($input)
+  public function decode($input): string
   {
     if ($this->idnSupport === true) {
-      if(defined('IDNA_NONTRANSITIONAL_TO_UNICODE') && defined('INTL_IDNA_VARIANT_UTS46') && constant('IDNA_NONTRANSITIONAL_TO_UNICODE')) {
+      if (defined('IDNA_NONTRANSITIONAL_TO_UNICODE') && defined('INTL_IDNA_VARIANT_UTS46') && constant('IDNA_NONTRANSITIONAL_TO_UNICODE')) {
         return idn_to_utf8($input, IDNA_NONTRANSITIONAL_TO_UNICODE, INTL_IDNA_VARIANT_UTS46);
       } else {
         return idn_to_utf8($input);

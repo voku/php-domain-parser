@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2014 Jeremy Kendall (http://about.me/jeremykendall)
  * @license   http://github.com/jeremykendall/php-domain-parser/blob/master/LICENSE MIT License
  */
+
 namespace Pdp;
 
 use Pdp\Exception\SeriouslyMalformedUrlException;
@@ -69,10 +70,10 @@ class Parser
    *
    * @return Url Object representation of url
    */
-  public function parseUrl($url)
+  public function parseUrl($url): Url
   {
     $rawUrl = $url;
-    $elem = array(
+    $elem = [
         'scheme'   => null,
         'user'     => null,
         'pass'     => null,
@@ -81,7 +82,7 @@ class Parser
         'path'     => null,
         'query'    => null,
         'fragment' => null,
-    );
+    ];
 
     if (preg_match(self::SCHEME_PATTERN, $url) === 0) {
       // Wacky scheme required to overcome parse_url behavior in PHP lt 5.4.7
@@ -125,7 +126,7 @@ class Parser
    *
    * @return Host Object representation of host portion of url
    */
-  public function parseHost($host)
+  public function parseHost($host): Host
   {
     $host = UTF8::strtolower($host);
 
@@ -145,12 +146,12 @@ class Parser
    *
    * @return string|false The suffix or false if suffix not included in the PSL
    */
-  protected function getRawPublicSuffix($host)
+  protected function getRawPublicSuffix(string $host)
   {
     $host = $this->normalize($host);
 
     $parts = array_reverse(explode('.', $host));
-    $publicSuffix = array();
+    $publicSuffix = [];
     $publicSuffixList = $this->publicSuffixList;
 
     foreach ($parts as $part) {
@@ -187,7 +188,7 @@ class Parser
       return false;
     }
 
-    $suffix = implode('.', array_filter($publicSuffix, 'strlen'));
+    $suffix = \implode('.', \array_filter($publicSuffix, '\strlen'));
 
     return $this->denormalize($suffix);
   }
@@ -237,7 +238,7 @@ class Parser
    *
    * @return bool True is suffix is valid, false otherwise
    */
-  public function isSuffixValid($host)
+  public function isSuffixValid($host): bool
   {
     return $this->getRawPublicSuffix($host) !== false;
   }
@@ -267,7 +268,7 @@ class Parser
 
     $publicSuffixParts = array_reverse(explode('.', $publicSuffix));
     $hostParts = array_reverse(explode('.', $host));
-    $registrableDomainParts = $publicSuffixParts + array_slice($hostParts, 0, count($publicSuffixParts) + 1);
+    $registrableDomainParts = $publicSuffixParts + \array_slice($hostParts, 0, \count($publicSuffixParts) + 1);
 
     return implode('.', array_reverse($registrableDomainParts));
   }
@@ -292,7 +293,7 @@ class Parser
     $host = $this->normalize($host);
 
     $hostParts = array_reverse(explode('.', $host));
-    $subdomainParts = array_slice($hostParts, count($registrableDomainParts));
+    $subdomainParts = \array_slice($hostParts, \count($registrableDomainParts));
 
     $subdomain = implode('.', array_reverse($subdomainParts));
 
@@ -307,7 +308,7 @@ class Parser
    *
    * @return string Host part, transformed if not punycoded
    */
-  protected function normalize($part)
+  protected function normalize($part): string
   {
     $punycoded = (strpos($part, 'xn--') !== false);
 
@@ -327,7 +328,7 @@ class Parser
    *
    * @return string Denormalized host part
    */
-  protected function denormalize($part)
+  protected function denormalize($part): string
   {
     if ($this->isNormalized === true) {
       $part = $this->punycodeWrapper->decode($part);
@@ -346,7 +347,7 @@ class Parser
    *
    * @return bool True if multi-label domain, false otherwise
    */
-  protected function isMultiLabelDomain($host)
+  protected function isMultiLabelDomain($host): bool
   {
     return strpos($host, '.') !== false;
   }
@@ -360,7 +361,7 @@ class Parser
    *
    * @return bool True if host is an ip address, false otherwise
    */
-  protected function isIpv4Address($host)
+  protected function isIpv4Address($host): bool
   {
     return preg_match(self::IP_ADDRESS_PATTERN, $host) === 1;
   }

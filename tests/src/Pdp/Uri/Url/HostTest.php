@@ -2,12 +2,14 @@
 
 namespace Pdp\Uri\Url;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class HostTest
  *
  * @package Pdp\Uri\Url
  */
-class HostTest extends \PHPUnit_Framework_TestCase
+class HostTest extends TestCase
 {
   /**
    * @dataProvider hostDataProvider
@@ -50,12 +52,12 @@ class HostTest extends \PHPUnit_Framework_TestCase
    */
   public function testToArray($publicSuffix, $registrableDomain, $subdomain, $hostPart)
   {
-    $parts = array(
+    $parts = [
         'subdomain'         => $subdomain,
         'registrableDomain' => $registrableDomain,
         'publicSuffix'      => $publicSuffix,
         'host'              => $hostPart,
-    );
+    ];
 
     $host = new Host(
         $parts['subdomain'],
@@ -73,13 +75,13 @@ class HostTest extends \PHPUnit_Framework_TestCase
   public function hostDataProvider()
   {
     // $publicSuffix, $registrableDomain, $subdomain, $hostPart
-    return array(
-        array('com.au', 'waxaudio.com.au', 'www', 'www.waxaudio.com.au'),
-        array('com', 'example.com', null, 'example.com'),
-        array('com', 'cnn.com', 'edition', 'edition.cnn.com'),
-        array('org', 'wikipedia.org', 'en', 'en.wikipedia.org'),
-        array('uk.com', 'example.uk.com', 'a.b', 'a.b.example.uk.com'),
-        array(null, null, null, 'localhost'),
-    );
+    return [
+        ['com.au', 'waxaudio.com.au', 'www', 'www.waxaudio.com.au'],
+        ['com', 'example.com', null, 'example.com'],
+        ['com', 'cnn.com', 'edition', 'edition.cnn.com'],
+        ['org', 'wikipedia.org', 'en', 'en.wikipedia.org'],
+        ['uk.com', 'example.uk.com', 'a.b', 'a.b.example.uk.com'],
+        [null, null, null, 'localhost'],
+    ];
   }
 }
