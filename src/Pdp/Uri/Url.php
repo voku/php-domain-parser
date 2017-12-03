@@ -185,9 +185,9 @@ class Url
   /**
    * Get User.
    *
-   * @return string
+   * @return string|null
    */
-  public function getUser(): string
+  public function getUser()
   {
     return $this->user;
   }
@@ -195,9 +195,9 @@ class Url
   /**
    * Get Pass.
    *
-   * @return string
+   * @return string|null
    */
-  public function getPass(): string
+  public function getPass()
   {
     return $this->pass;
   }
@@ -215,9 +215,9 @@ class Url
   /**
    * Get Port.
    *
-   * @return int
+   * @return int|null
    */
-  public function getPort(): int
+  public function getPort()
   {
     return $this->port;
   }
@@ -225,9 +225,9 @@ class Url
   /**
    * Get Path.
    *
-   * @return string
+   * @return string|null
    */
-  public function getPath(): string
+  public function getPath()
   {
     return $this->path;
   }
@@ -235,9 +235,9 @@ class Url
   /**
    * Get Query.
    *
-   * @return string
+   * @return string|null
    */
-  public function getQuery(): string
+  public function getQuery()
   {
     return $this->query;
   }
@@ -245,9 +245,9 @@ class Url
   /**
    * Get Fragment.
    *
-   * @return string
+   * @return string|null
    */
-  public function getFragment(): string
+  public function getFragment()
   {
     return $this->fragment;
   }
