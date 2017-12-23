@@ -30,7 +30,7 @@
     "require": {
         "php": ">=7.0.0",
         "true/punycode": "~2.1",
-        "voku/portable-utf8": "~4.0"
+        "voku/portable-utf8": "~5.0"
     },
     "require-dev": {
         "mikey179/vfsStream": "~1.6",
