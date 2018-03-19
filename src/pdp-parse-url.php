@@ -11,7 +11,7 @@
 
 namespace {
 
-  if (!function_exists('pdp_parse_url')) {
+  if (!\function_exists('pdp_parse_url')) {
     /**
      * UTF-8 aware parse_url() replacement.
      *
@@ -30,32 +30,32 @@ namespace {
     {
       $pattern = '%([a-zA-Z][a-zA-Z0-9+\-.]*)?(:?//)?([^:/@?&=#\[\]]+)%us';
 
-      $enc_url = preg_replace_callback(
+      $enc_url = \preg_replace_callback(
           $pattern,
           function ($matches) {
-            $encoded = urlencode($matches[3]);
+            $encoded = \urlencode($matches[3]);
 
-            return sprintf('%s%s%s', $matches[1], $matches[2], $encoded);
+            return \sprintf('%s%s%s', $matches[1], $matches[2], $encoded);
           },
           $url
       );
 
-      $parts = parse_url($enc_url, $component);
+      $parts = \parse_url($enc_url, $component);
 
       if ($parts === false) {
         return $parts;
       }
 
-      if (is_array($parts)) {
+      if (\is_array($parts)) {
         foreach ($parts as $name => &$value) {
           if ($name === 'scheme') {
             continue;
           }
 
-          $value = urldecode($value);
+          $value = \urldecode($value);
         }
       } else {
-        $parts = urldecode($parts);
+        $parts = \urldecode($parts);
       }
 
       return $parts;

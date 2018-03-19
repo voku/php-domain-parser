@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * PHP Domain Parser: Public Suffix List based URL parsing.
  *

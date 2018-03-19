@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * PHP Domain Parser: Public Suffix List based URL parsing.
  *
@@ -13,6 +15,7 @@ namespace Pdp\Uri;
 
 use Pdp\Parser;
 use Pdp\Uri\Url\Host;
+use voku\helper\UTF8;
 
 /**
  * An object representation of a Url.
@@ -84,7 +87,7 @@ class Url
   {
     // Ensure scheme is either a legit scheme or null, never an empty string.
     // @see https://github.com/jeremykendall/php-domain-parser/issues/53
-    $this->scheme = mb_strtolower($scheme, 'UTF-8') ?: null;
+    $this->scheme = UTF8::strtolower($scheme) ?: null;
     $this->user = $user;
     $this->pass = $pass;
     $this->host = $host;

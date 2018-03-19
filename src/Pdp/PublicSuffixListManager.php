@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * PHP Domain Parser: Public Suffix List based URL parsing.
  *
@@ -65,7 +67,7 @@ class PublicSuffixListManager
   {
     if (null === $cacheDir) {
       $cacheDir = realpath(
-          \dirname(\dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'data'
+          dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'data'
       );
     }
 
@@ -247,11 +249,15 @@ class PublicSuffixListManager
     // init
     static $LIST_STATIC = [];
 
-    $cacheBasename = isset(self::$domainList[$list]) ? self::$domainList[$list] : self::PDP_PSL_PHP_FILE;
+    $cacheBasename = self::$domainList[$list] ?? self::PDP_PSL_PHP_FILE;
     $cacheFile = $this->cacheDir . '/' . $cacheBasename;
     $cacheKey = md5($cacheFile);
 
-    if ($withStaticCache === true && isset($LIST_STATIC[$cacheKey])) {
+    if (
+        $withStaticCache === true
+        &&
+        isset($LIST_STATIC[$cacheKey])
+    ) {
       return $LIST_STATIC[$cacheKey];
     }
 
@@ -398,7 +404,7 @@ class PublicSuffixListManager
    *
    * @return int Number of bytes that were written to the file
    *
-   * @throws \Exception Throws \Exception if unable to write file
+   * @throws \Exception <p>Throws \Exception if unable to write file.</p>
    */
   protected function write($filename, $data): int
   {
@@ -425,6 +431,8 @@ class PublicSuffixListManager
 
     flock($fp, LOCK_UN);
     fclose($fp);
+
+    $result = (int)$result;
 
     return $result;
   }

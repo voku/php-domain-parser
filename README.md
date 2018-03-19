@@ -41,7 +41,7 @@ Create a `composer.json` file in the root of your project:
 ``` json
 {
     "require": {
-        "voku/php-domain-parser": "~5.0"
+        "voku/php-domain-parser": "~8.0"
     }
 }
 ```
@@ -117,7 +117,7 @@ suffix for a parsed domain is as simple as:
 
 $host = 'waxaudio.com.au';
 $url = $parser->parseUrl($host);
-$publicSuffix = $url->host->publicSuffix;
+$publicSuffix = $url->host->getPublicSuffix();
 
 // $publicSuffix = 'com.au'
 ```

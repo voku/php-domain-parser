@@ -31,6 +31,17 @@ class HostTest extends TestCase
     self::assertSame($hostPart, (string)$host);
   }
 
+  public function test__getPublicSuffix()
+  {
+    $host = new Host(
+        'www',
+        'example.com',
+        'com'
+    );
+
+    self::assertSame('com', $host->getPublicSuffix());
+  }
+
   public function test__toStringWhenHostPartIsNull()
   {
     $host = new Host(
