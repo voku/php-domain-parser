@@ -7,33 +7,32 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class SeriouslyMalformedUrlExceptionTest
  *
- * @package Pdp\Exception
+ * @internal
  */
-class SeriouslyMalformedUrlExceptionTest extends TestCase
+final class SeriouslyMalformedUrlExceptionTest extends TestCase
 {
-  public function testInstanceOfPdpException()
-  {
-    self::assertInstanceOf(
-        'Pdp\Exception\PdpException',
-        new SeriouslyMalformedUrlException()
-    );
-  }
+    public function testInstanceOfPdpException()
+    {
+        static::assertInstanceOf(
+            'Pdp\Exception\PdpException',
+            new SeriouslyMalformedUrlException()
+        );
+    }
 
-  public function testInstanceOfInvalidArgumentException()
-  {
-    self::assertInstanceOf(
-        'InvalidArgumentException',
-        new SeriouslyMalformedUrlException()
-    );
-  }
+    public function testInstanceOfInvalidArgumentException()
+    {
+        static::assertInstanceOf(
+            'InvalidArgumentException',
+            new SeriouslyMalformedUrlException()
+        );
+    }
 
-  /**
-   * @expectedException Pdp\Exception\SeriouslyMalformedUrlException
-   */
-  public function testMessage()
-  {
-    $url = 'http:///example.com';
+    public function testMessage()
+    {
+        $this->expectException(\Pdp\Exception\SeriouslyMalformedUrlException::class);
 
-    throw new SeriouslyMalformedUrlException($url);
-  }
+        $url = 'http:///example.com';
+
+        throw new SeriouslyMalformedUrlException($url);
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-static $data = array (
+ return array (
   'ac' => 
   array (
     'com' => 
@@ -191,9 +191,6 @@ static $data = array (
     'flight' => 
     array (
     ),
-    'freight' => 
-    array (
-    ),
     'fuel' => 
     array (
     ),
@@ -338,6 +335,9 @@ static $data = array (
     'edu' => 
     array (
     ),
+    'nom' => 
+    array (
+    ),
   ),
   'ag' => 
   array (
@@ -369,6 +369,9 @@ static $data = array (
     array (
     ),
     'org' => 
+    array (
+    ),
+    'uwu' => 
     array (
     ),
     'nom' => 
@@ -404,6 +407,21 @@ static $data = array (
   ),
   'am' => 
   array (
+    'co' => 
+    array (
+    ),
+    'com' => 
+    array (
+    ),
+    'commune' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
     'blogspot' => 
     array (
     ),
@@ -523,6 +541,18 @@ static $data = array (
       '*' => 
       array (
       ),
+      'ex' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'in' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
     ),
     'futurehosting' => 
     array (
@@ -586,8 +616,14 @@ static $data = array (
       'act' => 
       array (
       ),
+      'catholic' => 
+      array (
+      ),
       'nsw' => 
       array (
+        'schools' => 
+        array (
+        ),
       ),
       'nt' => 
       array (
@@ -600,6 +636,9 @@ static $data = array (
       ),
       'tas' => 
       array (
+        'education' => 
+        array (
+        ),
       ),
       'vic' => 
       array (
@@ -780,6 +819,9 @@ static $data = array (
   'be' => 
   array (
     'ac' => 
+    array (
+    ),
+    'webhosting' => 
     array (
     ),
     'blogspot' => 
@@ -977,6 +1019,12 @@ static $data = array (
     'webhop' => 
     array (
     ),
+    'bpl' => 
+    array (
+    ),
+    'orx' => 
+    array (
+    ),
     'mmafan' => 
     array (
     ),
@@ -1025,7 +1073,22 @@ static $data = array (
   ),
   'bn' => 
   array (
-    '*' => 
+    'com' => 
+    array (
+    ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
+    'co' => 
     array (
     ),
   ),
@@ -1035,9 +1098,6 @@ static $data = array (
     array (
     ),
     'edu' => 
-    array (
-    ),
-    'gov' => 
     array (
     ),
     'gob' => 
@@ -1058,9 +1118,111 @@ static $data = array (
     'tv' => 
     array (
     ),
+    'web' => 
+    array (
+    ),
+    'academia' => 
+    array (
+    ),
+    'agro' => 
+    array (
+    ),
+    'arte' => 
+    array (
+    ),
+    'blog' => 
+    array (
+    ),
+    'bolivia' => 
+    array (
+    ),
+    'ciencia' => 
+    array (
+    ),
+    'cooperativa' => 
+    array (
+    ),
+    'democracia' => 
+    array (
+    ),
+    'deporte' => 
+    array (
+    ),
+    'ecologia' => 
+    array (
+    ),
+    'economia' => 
+    array (
+    ),
+    'empresa' => 
+    array (
+    ),
+    'indigena' => 
+    array (
+    ),
+    'industria' => 
+    array (
+    ),
+    'info' => 
+    array (
+    ),
+    'medicina' => 
+    array (
+    ),
+    'movimiento' => 
+    array (
+    ),
+    'musica' => 
+    array (
+    ),
+    'natural' => 
+    array (
+    ),
+    'nombre' => 
+    array (
+    ),
+    'noticias' => 
+    array (
+    ),
+    'patria' => 
+    array (
+    ),
+    'politica' => 
+    array (
+    ),
+    'profesional' => 
+    array (
+    ),
+    'plurinacional' => 
+    array (
+    ),
+    'pueblo' => 
+    array (
+    ),
+    'revista' => 
+    array (
+    ),
+    'salud' => 
+    array (
+    ),
+    'tecnologia' => 
+    array (
+    ),
+    'tksat' => 
+    array (
+    ),
+    'transporte' => 
+    array (
+    ),
+    'wiki' => 
+    array (
+    ),
   ),
   'br' => 
   array (
+    '9guacu' => 
+    array (
+    ),
     'abc' => 
     array (
     ),
@@ -1079,6 +1241,9 @@ static $data = array (
     'am' => 
     array (
     ),
+    'anani' => 
+    array (
+    ),
     'aparecida' => 
     array (
     ),
@@ -1092,6 +1257,9 @@ static $data = array (
     array (
     ),
     'b' => 
+    array (
+    ),
+    'barueri' => 
     array (
     ),
     'belem' => 
@@ -1113,6 +1281,9 @@ static $data = array (
     array (
     ),
     'bsb' => 
+    array (
+    ),
+    'campinagrande' => 
     array (
     ),
     'campinas' => 
@@ -1146,6 +1317,9 @@ static $data = array (
     array (
     ),
     'cuiaba' => 
+    array (
+    ),
+    'curitiba' => 
     array (
     ),
     'def' => 
@@ -1197,6 +1371,9 @@ static $data = array (
     array (
     ),
     'fot' => 
+    array (
+    ),
+    'foz' => 
     array (
     ),
     'fst' => 
@@ -1421,6 +1598,12 @@ static $data = array (
     'maceio' => 
     array (
     ),
+    'manaus' => 
+    array (
+    ),
+    'maringa' => 
+    array (
+    ),
     'mat' => 
     array (
     ),
@@ -1461,6 +1644,9 @@ static $data = array (
     array (
     ),
     'odo' => 
+    array (
+    ),
+    'ong' => 
     array (
     ),
     'org' => 
@@ -1511,10 +1697,25 @@ static $data = array (
     'riobranco' => 
     array (
     ),
+    'riopreto' => 
+    array (
+    ),
     'salvador' => 
     array (
     ),
     'sampa' => 
+    array (
+    ),
+    'santamaria' => 
+    array (
+    ),
+    'santoandre' => 
+    array (
+    ),
+    'saobernardo' => 
+    array (
+    ),
+    'saogonca' => 
     array (
     ),
     'sjc' => 
@@ -1533,6 +1734,9 @@ static $data = array (
     array (
     ),
     'taxi' => 
+    array (
+    ),
+    'tc' => 
     array (
     ),
     'teo' => 
@@ -1664,6 +1868,9 @@ static $data = array (
     'za' => 
     array (
     ),
+    'nom' => 
+    array (
+    ),
     'nym' => 
     array (
     ),
@@ -1713,6 +1920,9 @@ static $data = array (
     array (
     ),
     'gc' => 
+    array (
+    ),
+    'barsy' => 
     array (
     ),
     'awdev' => 
@@ -1781,6 +1991,12 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'linkyard-cloud' => 
+    array (
+    ),
+    'dnsking' => 
+    array (
+    ),
     'gotdns' => 
     array (
     ),
@@ -1844,6 +2060,9 @@ static $data = array (
     'gouv' => 
     array (
     ),
+    'fin' => 
+    array (
+    ),
   ),
   'ck' => 
   array (
@@ -1857,13 +2076,16 @@ static $data = array (
   ),
   'cl' => 
   array (
-    'gov' => 
+    'aprendemas' => 
+    array (
+    ),
+    'co' => 
     array (
     ),
     'gob' => 
     array (
     ),
-    'co' => 
+    'gov' => 
     array (
     ),
     'mil' => 
@@ -1909,6 +2131,9 @@ static $data = array (
         'eb' => 
         array (
           'cn-north-1' => 
+          array (
+          ),
+          'cn-northwest-1' => 
           array (
           ),
         ),
@@ -2052,6 +2277,9 @@ static $data = array (
     'tw' => 
     array (
     ),
+    'instantcloud' => 
+    array (
+    ),
   ),
   'co' => 
   array (
@@ -2097,12 +2325,48 @@ static $data = array (
     'web' => 
     array (
     ),
+    'carrd' => 
+    array (
+    ),
+    'crd' => 
+    array (
+    ),
+    'otap' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'leadpages' => 
+    array (
+    ),
+    'lpages' => 
+    array (
+    ),
+    'mypi' => 
+    array (
+    ),
+    'n4t' => 
+    array (
+    ),
     'nodum' => 
+    array (
+    ),
+    'repl' => 
     array (
     ),
   ),
   'com' => 
   array (
+    'adobeaemcloud' => 
+    array (
+      'dev' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+    ),
     'amazonaws' => 
     array (
       'compute' => 
@@ -2160,6 +2424,9 @@ static $data = array (
       array (
       ),
       's3-eu-west-2' => 
+      array (
+      ),
+      's3-eu-west-3' => 
       array (
       ),
       's3-external-1' => 
@@ -2244,6 +2511,21 @@ static $data = array (
         ),
       ),
       'eu-west-2' => 
+      array (
+        's3' => 
+        array (
+        ),
+        'dualstack' => 
+        array (
+          's3' => 
+          array (
+          ),
+        ),
+        's3-website' => 
+        array (
+        ),
+      ),
+      'eu-west-3' => 
       array (
         's3' => 
         array (
@@ -2351,6 +2633,9 @@ static $data = array (
       'ap-northeast-2' => 
       array (
       ),
+      'ap-northeast-3' => 
+      array (
+      ),
       'ap-south-1' => 
       array (
       ),
@@ -2370,6 +2655,9 @@ static $data = array (
       array (
       ),
       'eu-west-2' => 
+      array (
+      ),
+      'eu-west-3' => 
       array (
       ),
       'sa-east-1' => 
@@ -2395,6 +2683,9 @@ static $data = array (
     array (
     ),
     'myasustor' => 
+    array (
+    ),
+    'balena-devices' => 
     array (
     ),
     'betainabox' => 
@@ -2445,9 +2736,6 @@ static $data = array (
     'sa' => 
     array (
     ),
-    'se' => 
-    array (
-    ),
     'uk' => 
     array (
     ),
@@ -2482,6 +2770,48 @@ static $data = array (
     array (
     ),
     'cloudcontrolapp' => 
+    array (
+    ),
+    'trycloudflare' => 
+    array (
+    ),
+    'customer-oci' => 
+    array (
+      '*' => 
+      array (
+      ),
+      'oci' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'ocp' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'ocs' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+    ),
+    'dattolocal' => 
+    array (
+    ),
+    'dattorelay' => 
+    array (
+    ),
+    'dattoweb' => 
+    array (
+    ),
+    'mydatto' => 
+    array (
+    ),
+    'builtwithdark' => 
     array (
     ),
     'drayddns' => 
@@ -3003,16 +3333,25 @@ static $data = array (
       array (
       ),
     ),
-    'firebaseapp' => 
+    'fastly-terrarium' => 
     array (
     ),
-    'flynnhub' => 
+    'fastvps-server' => 
+    array (
+    ),
+    'mydobiss' => 
+    array (
+    ),
+    'firebaseapp' => 
     array (
     ),
     'freebox-os' => 
     array (
     ),
     'freeboxos' => 
+    array (
+    ),
+    'gentapps' => 
     array (
     ),
     'githubusercontent' => 
@@ -3026,6 +3365,12 @@ static $data = array (
     ),
     'appspot' => 
     array (
+      'r' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
     ),
     'blogspot' => 
     array (
@@ -3051,10 +3396,16 @@ static $data = array (
     'withyoutube' => 
     array (
     ),
+    'awsmppl' => 
+    array (
+    ),
     'herokuapp' => 
     array (
     ),
     'herokussl' => 
+    array (
+    ),
+    'myravendb' => 
     array (
     ),
     'pixolino' => 
@@ -3069,7 +3420,31 @@ static $data = array (
         ),
       ),
     ),
+    'lpusercontent' => 
+    array (
+    ),
+    'lmpm' => 
+    array (
+      'app' => 
+      array (
+      ),
+    ),
+    'linode' => 
+    array (
+      'members' => 
+      array (
+      ),
+      'nodebalancer' => 
+      array (
+      ),
+    ),
+    'barsycenter' => 
+    array (
+    ),
     'barsyonline' => 
+    array (
+    ),
+    'miniserver' => 
     array (
     ),
     'meteorapp' => 
@@ -3088,6 +3463,15 @@ static $data = array (
     array (
     ),
     'nfshost' => 
+    array (
+    ),
+    '001www' => 
+    array (
+    ),
+    'ddnslive' => 
+    array (
+    ),
+    'myiphost' => 
     array (
     ),
     'blogsyte' => 
@@ -3201,7 +3585,16 @@ static $data = array (
     'servequake' => 
     array (
     ),
+    'observableusercontent' => 
+    array (
+      'static' => 
+      array (
+      ),
+    ),
     'operaunite' => 
+    array (
+    ),
+    'skygearapp' => 
     array (
     ),
     'outsystemscloud' => 
@@ -3219,11 +3612,20 @@ static $data = array (
     'gotpantheon' => 
     array (
     ),
+    'platter-app' => 
+    array (
+    ),
     'prgmr' => 
     array (
       'xen' => 
       array (
       ),
+    ),
+    'qualifioapp' => 
+    array (
+    ),
+    'qbuser' => 
+    array (
     ),
     'qa2' => 
     array (
@@ -3249,13 +3651,28 @@ static $data = array (
     'rhcloud' => 
     array (
     ),
+    'render' => 
+    array (
+      'app' => 
+      array (
+      ),
+    ),
+    'onrender' => 
+    array (
+    ),
     'logoip' => 
+    array (
+    ),
+    'scrysec' => 
     array (
     ),
     'firewall-gateway' => 
     array (
     ),
     'myshopblocks' => 
+    array (
+    ),
+    'shopitsite' => 
     array (
     ),
     '1kapp' => 
@@ -3282,6 +3699,18 @@ static $data = array (
       array (
       ),
     ),
+    'stackhero-network' => 
+    array (
+    ),
+    'playstation-cloud' => 
+    array (
+    ),
+    'stdlib' => 
+    array (
+      'api' => 
+      array (
+      ),
+    ),
     'temp-dns' => 
     array (
     ),
@@ -3289,6 +3718,9 @@ static $data = array (
     array (
     ),
     'familyds' => 
+    array (
+    ),
+    'thingdustdata' => 
     array (
     ),
     'bloxcms' => 
@@ -3300,8 +3732,20 @@ static $data = array (
     'hk' => 
     array (
     ),
+    'wafflecell' => 
+    array (
+    ),
     'remotewd' => 
     array (
+    ),
+    'xnbay' => 
+    array (
+      'u2' => 
+      array (
+      ),
+      'u2-local' => 
+      array (
+      ),
     ),
     'yolasite' => 
     array (
@@ -3456,6 +3900,18 @@ static $data = array (
       array (
       ),
     ),
+    'muni' => 
+    array (
+      'cloud' => 
+      array (
+        'flt' => 
+        array (
+        ),
+        'usr' => 
+        array (
+        ),
+      ),
+    ),
   ),
   'de' => 
   array (
@@ -3537,6 +3993,30 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'dyn-berlin' => 
+    array (
+    ),
+    'in-berlin' => 
+    array (
+    ),
+    'in-brb' => 
+    array (
+    ),
+    'in-butter' => 
+    array (
+    ),
+    'in-dsl' => 
+    array (
+    ),
+    'in-vpn' => 
+    array (
+    ),
+    'mein-iserv' => 
+    array (
+    ),
+    'test-iserv' => 
+    array (
+    ),
     'keymachine' => 
     array (
     ),
@@ -3566,6 +4046,12 @@ static $data = array (
     ),
     'spdns' => 
     array (
+    ),
+    'speedpartner' => 
+    array (
+      'customer' => 
+      array (
+      ),
     ),
     'taifun-dns' => 
     array (
@@ -3613,6 +4099,24 @@ static $data = array (
     array (
     ),
     'synology-ds' => 
+    array (
+    ),
+    'uberspace' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'virtualuser' => 
+    array (
+    ),
+    'virtual-user' => 
+    array (
+    ),
+    'community-pro' => 
+    array (
+    ),
+    'diskussionsbereich' => 
     array (
     ),
   ),
@@ -3756,9 +4260,18 @@ static $data = array (
     'mil' => 
     array (
     ),
+    'nym' => 
+    array (
+    ),
   ),
   'edu' => 
   array (
+    'rit' => 
+    array (
+      'git-pages' => 
+      array (
+      ),
+    ),
   ),
   'ee' => 
   array (
@@ -3921,13 +4434,43 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'xn--hkkinen-5wa' => 
+    array (
+    ),
     'iki' => 
     array (
     ),
   ),
   'fj' => 
   array (
-    '*' => 
+    'ac' => 
+    array (
+    ),
+    'biz' => 
+    array (
+    ),
+    'com' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'info' => 
+    array (
+    ),
+    'mil' => 
+    array (
+    ),
+    'name' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
+    'pro' => 
     array (
     ),
   ),
@@ -3945,10 +4488,13 @@ static $data = array (
   ),
   'fr' => 
   array (
+    'asso' => 
+    array (
+    ),
     'com' => 
     array (
     ),
-    'asso' => 
+    'gouv' => 
     array (
     ),
     'nom' => 
@@ -3957,16 +4503,10 @@ static $data = array (
     'prd' => 
     array (
     ),
-    'presse' => 
-    array (
-    ),
     'tm' => 
     array (
     ),
     'aeroport' => 
-    array (
-    ),
-    'assedic' => 
     array (
     ),
     'avocat' => 
@@ -3990,9 +4530,6 @@ static $data = array (
     'geometre-expert' => 
     array (
     ),
-    'gouv' => 
-    array (
-    ),
     'greta' => 
     array (
     ),
@@ -4012,6 +4549,9 @@ static $data = array (
     array (
     ),
     'veterinaire' => 
+    array (
+    ),
+    'en-root' => 
     array (
     ),
     'fbx-os' => 
@@ -4071,6 +4611,9 @@ static $data = array (
     'pvt' => 
     array (
     ),
+    'nom' => 
+    array (
+    ),
   ),
   'gf' => 
   array (
@@ -4084,6 +4627,9 @@ static $data = array (
     array (
     ),
     'org' => 
+    array (
+    ),
+    'kaas' => 
     array (
     ),
     'cya' => 
@@ -4144,6 +4690,9 @@ static $data = array (
     array (
     ),
     'org' => 
+    array (
+    ),
+    'biz' => 
     array (
     ),
     'nom' => 
@@ -4257,7 +4806,28 @@ static $data = array (
   ),
   'gu' => 
   array (
-    '*' => 
+    'com' => 
+    array (
+    ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'guam' => 
+    array (
+    ),
+    'info' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
+    'web' => 
     array (
     ),
   ),
@@ -4282,6 +4852,9 @@ static $data = array (
     array (
     ),
     'org' => 
+    array (
+    ),
+    'nym' => 
     array (
     ),
   ),
@@ -4353,6 +4926,9 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'nym' => 
+    array (
+    ),
     'ltd' => 
     array (
     ),
@@ -4402,6 +4978,9 @@ static $data = array (
     array (
     ),
     'blogspot' => 
+    array (
+    ),
+    'free' => 
     array (
     ),
   ),
@@ -4590,6 +5169,9 @@ static $data = array (
     'or' => 
     array (
     ),
+    'ponpes' => 
+    array (
+    ),
     'sch' => 
     array (
     ),
@@ -4603,6 +5185,9 @@ static $data = array (
     array (
     ),
     'blogspot' => 
+    array (
+    ),
+    'nym' => 
     array (
     ),
   ),
@@ -4758,6 +5343,15 @@ static $data = array (
     'webhop' => 
     array (
     ),
+    'barsy' => 
+    array (
+    ),
+    'mayfirst' => 
+    array (
+    ),
+    'forumz' => 
+    array (
+    ),
     'nsupdate' => 
     array (
     ),
@@ -4768,6 +5362,9 @@ static $data = array (
     array (
     ),
     'no-ip' => 
+    array (
+    ),
+    'dnsupdate' => 
     array (
     ),
     'v-info' => 
@@ -4785,13 +5382,34 @@ static $data = array (
     'com' => 
     array (
     ),
+    'apigee' => 
+    array (
+    ),
+    'b-data' => 
+    array (
+    ),
     'backplaneapp' => 
     array (
+    ),
+    'banzaicloud' => 
+    array (
+      'app' => 
+      array (
+      ),
     ),
     'boxfuse' => 
     array (
     ),
     'browsersafetymark' => 
+    array (
+    ),
+    'bigv' => 
+    array (
+      'uk0' => 
+      array (
+      ),
+    ),
+    'cleverapps' => 
     array (
     ),
     'dedyn' => 
@@ -4815,8 +5433,29 @@ static $data = array (
     'gitlab' => 
     array (
     ),
+    'lolipop' => 
+    array (
+    ),
     'hasura-app' => 
     array (
+    ),
+    'moonscale' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'loginline' => 
+    array (
+    ),
+    'barsy' => 
+    array (
+    ),
+    'azurecontainer' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
     'ngrok' => 
     array (
@@ -4836,11 +5475,47 @@ static $data = array (
     'pantheonsite' => 
     array (
     ),
+    'dyn53' => 
+    array (
+    ),
     'protonet' => 
     array (
     ),
+    'qcx' => 
+    array (
+      'sys' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+    ),
     'vaporcloud' => 
     array (
+    ),
+    'on-k3s' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'on-rio' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'readthedocs' => 
+    array (
+    ),
+    'resindevice' => 
+    array (
+    ),
+    'resinstaging' => 
+    array (
+      'devices' => 
+      array (
+      ),
     ),
     'hzc' => 
     array (
@@ -4849,6 +5524,9 @@ static $data = array (
     array (
     ),
     'shiftedit' => 
+    array (
+    ),
+    'mo-siemens' => 
     array (
     ),
     'lair' => 
@@ -4864,6 +5542,24 @@ static $data = array (
       ),
     ),
     'spacekit' => 
+    array (
+    ),
+    'utwente' => 
+    array (
+    ),
+    'applicationcloud' => 
+    array (
+    ),
+    'scapp' => 
+    array (
+    ),
+    's5y' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'telebit' => 
     array (
     ),
     'thingdust' => 
@@ -4893,7 +5589,16 @@ static $data = array (
         ),
       ),
     ),
+    2038 => 
+    array (
+    ),
     'wedeploy' => 
+    array (
+    ),
+    'basicserver' => 
+    array (
+    ),
+    'virtualserver' => 
     array (
     ),
   ),
@@ -5139,6 +5844,24 @@ static $data = array (
     'toscana' => 
     array (
     ),
+    'trentin-sud-tirol' => 
+    array (
+    ),
+    'xn--trentin-sd-tirol-rzb' => 
+    array (
+    ),
+    'trentin-sudtirol' => 
+    array (
+    ),
+    'xn--trentin-sdtirol-7vb' => 
+    array (
+    ),
+    'trentin-sued-tirol' => 
+    array (
+    ),
+    'trentin-suedtirol' => 
+    array (
+    ),
     'trentino-a-adige' => 
     array (
     ),
@@ -5160,13 +5883,22 @@ static $data = array (
     'trentino-sud-tirol' => 
     array (
     ),
+    'xn--trentino-sd-tirol-c3b' => 
+    array (
+    ),
     'trentino-sudtirol' => 
+    array (
+    ),
+    'xn--trentino-sdtirol-szb' => 
     array (
     ),
     'trentino-sued-tirol' => 
     array (
     ),
     'trentino-suedtirol' => 
+    array (
+    ),
+    'trentino' => 
     array (
     ),
     'trentinoa-adige' => 
@@ -5190,13 +5922,37 @@ static $data = array (
     'trentinosud-tirol' => 
     array (
     ),
+    'xn--trentinosd-tirol-rzb' => 
+    array (
+    ),
     'trentinosudtirol' => 
+    array (
+    ),
+    'xn--trentinosdtirol-7vb' => 
     array (
     ),
     'trentinosued-tirol' => 
     array (
     ),
     'trentinosuedtirol' => 
+    array (
+    ),
+    'trentinsud-tirol' => 
+    array (
+    ),
+    'xn--trentinsd-tirol-6vb' => 
+    array (
+    ),
+    'trentinsudtirol' => 
+    array (
+    ),
+    'xn--trentinsdtirol-nsb' => 
+    array (
+    ),
+    'trentinsued-tirol' => 
+    array (
+    ),
+    'trentinsuedtirol' => 
     array (
     ),
     'tuscany' => 
@@ -5241,7 +5997,25 @@ static $data = array (
     'vallee-aoste' => 
     array (
     ),
+    'xn--valle-aoste-ebb' => 
+    array (
+    ),
+    'vallee-d-aoste' => 
+    array (
+    ),
+    'xn--valle-d-aoste-ehb' => 
+    array (
+    ),
     'valleeaoste' => 
+    array (
+    ),
+    'xn--valleaoste-e7a' => 
+    array (
+    ),
+    'valleedaoste' => 
+    array (
+    ),
+    'xn--valledaoste-ebb' => 
     array (
     ),
     'vao' => 
@@ -5337,6 +6111,15 @@ static $data = array (
     'ba' => 
     array (
     ),
+    'balsan-sudtirol' => 
+    array (
+    ),
+    'xn--balsan-sdtirol-nsb' => 
+    array (
+    ),
+    'balsan-suedtirol' => 
+    array (
+    ),
     'balsan' => 
     array (
     ),
@@ -5379,7 +6162,19 @@ static $data = array (
     'bologna' => 
     array (
     ),
+    'bolzano-altoadige' => 
+    array (
+    ),
     'bolzano' => 
+    array (
+    ),
+    'bozen-sudtirol' => 
+    array (
+    ),
+    'xn--bozen-sdtirol-2ob' => 
+    array (
+    ),
+    'bozen-suedtirol' => 
     array (
     ),
     'bozen' => 
@@ -5398,6 +6193,18 @@ static $data = array (
     array (
     ),
     'bt' => 
+    array (
+    ),
+    'bulsan-sudtirol' => 
+    array (
+    ),
+    'xn--bulsan-sdtirol-nsb' => 
+    array (
+    ),
+    'bulsan-suedtirol' => 
+    array (
+    ),
+    'bulsan' => 
     array (
     ),
     'bz' => 
@@ -5451,7 +6258,13 @@ static $data = array (
     'cesena-forli' => 
     array (
     ),
+    'xn--cesena-forl-mcb' => 
+    array (
+    ),
     'cesenaforli' => 
+    array (
+    ),
+    'xn--cesenaforl-i8a' => 
     array (
     ),
     'ch' => 
@@ -5544,7 +6357,13 @@ static $data = array (
     'forli-cesena' => 
     array (
     ),
+    'xn--forl-cesena-fcb' => 
+    array (
+    ),
     'forlicesena' => 
+    array (
+    ),
+    'xn--forlcesena-c8a' => 
     array (
     ),
     'fr' => 
@@ -5937,6 +6756,9 @@ static $data = array (
     'suedtirol' => 
     array (
     ),
+    'xn--sdtirol-n2a' => 
+    array (
+    ),
     'sv' => 
     array (
     ),
@@ -5989,9 +6811,6 @@ static $data = array (
     array (
     ),
     'trapani' => 
-    array (
-    ),
-    'trentino' => 
     array (
     ),
     'trento' => 
@@ -6084,6 +6903,18 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    '16-b' => 
+    array (
+    ),
+    '32-b' => 
+    array (
+    ),
+    '64-b' => 
+    array (
+    ),
+    'syncloud' => 
+    array (
+    ),
   ),
   'je' => 
   array (
@@ -6158,6 +6989,15 @@ static $data = array (
     ),
     'ne' => 
     array (
+      'aseinet' => 
+      array (
+        'user' => 
+        array (
+        ),
+      ),
+      'gehirn' => 
+      array (
+      ),
     ),
     'or' => 
     array (
@@ -11533,13 +12373,16 @@ static $data = array (
         '!' => '',
       ),
     ),
+    'usercontent' => 
+    array (
+    ),
     'blogspot' => 
     array (
     ),
   ),
   'ke' => 
   array (
-    '*' => 
+    'ac' => 
     array (
     ),
     'co' => 
@@ -11547,6 +12390,30 @@ static $data = array (
       'blogspot' => 
       array (
       ),
+    ),
+    'go' => 
+    array (
+    ),
+    'info' => 
+    array (
+    ),
+    'me' => 
+    array (
+    ),
+    'mobi' => 
+    array (
+    ),
+    'ne' => 
+    array (
+    ),
+    'or' => 
+    array (
+    ),
+    'sc' => 
+    array (
+    ),
+    'nom' => 
+    array (
     ),
   ),
   'kg' => 
@@ -11785,7 +12652,25 @@ static $data = array (
   ),
   'kw' => 
   array (
-    '*' => 
+    'com' => 
+    array (
+    ),
+    'edu' => 
+    array (
+    ),
+    'emb' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'ind' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
     array (
     ),
   ),
@@ -11905,6 +12790,9 @@ static $data = array (
     'gov' => 
     array (
     ),
+    'nym' => 
+    array (
+    ),
     'oy' => 
     array (
     ),
@@ -11912,6 +12800,9 @@ static $data = array (
   'li' => 
   array (
     'blogspot' => 
+    array (
+    ),
+    'caa' => 
     array (
     ),
     'nom' => 
@@ -11989,10 +12880,31 @@ static $data = array (
   ),
   'ls' => 
   array (
+    'ac' => 
+    array (
+    ),
+    'biz' => 
+    array (
+    ),
     'co' => 
     array (
     ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'info' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
     'org' => 
+    array (
+    ),
+    'sc' => 
     array (
     ),
   ),
@@ -12044,6 +12956,9 @@ static $data = array (
     array (
     ),
     'conf' => 
+    array (
+    ),
+    'nom' => 
     array (
     ),
   ),
@@ -12148,7 +13063,52 @@ static $data = array (
       array (
       ),
     ),
+    'edgestack' => 
+    array (
+    ),
+    'couk' => 
+    array (
+    ),
+    'ukco' => 
+    array (
+    ),
     'filegear' => 
+    array (
+    ),
+    'filegear-au' => 
+    array (
+    ),
+    'filegear-de' => 
+    array (
+    ),
+    'filegear-gb' => 
+    array (
+    ),
+    'filegear-ie' => 
+    array (
+    ),
+    'filegear-jp' => 
+    array (
+    ),
+    'filegear-sg' => 
+    array (
+    ),
+    'glitch' => 
+    array (
+    ),
+    'ravendb' => 
+    array (
+    ),
+    'barsy' => 
+    array (
+    ),
+    'nctu' => 
+    array (
+    ),
+    'soundcast' => 
+    array (
+    ),
+    'tcp4' => 
     array (
     ),
     'brasilia' => 
@@ -12194,6 +13154,9 @@ static $data = array (
     array (
     ),
     'yombo' => 
+    array (
+    ),
+    'nohost' => 
     array (
     ),
   ),
@@ -12307,6 +13270,9 @@ static $data = array (
     'nyc' => 
     array (
     ),
+    'nym' => 
+    array (
+    ),
   ),
   'mo' => 
   array (
@@ -12328,6 +13294,9 @@ static $data = array (
   ),
   'mobi' => 
   array (
+    'barsy' => 
+    array (
+    ),
     'dscloud' => 
     array (
     ),
@@ -12362,6 +13331,9 @@ static $data = array (
     array (
     ),
     'org' => 
+    array (
+    ),
+    'lab' => 
     array (
     ),
   ),
@@ -13507,12 +14479,6 @@ static $data = array (
     'nrw' => 
     array (
     ),
-    'nuernberg' => 
-    array (
-    ),
-    'nuremberg' => 
-    array (
-    ),
     'nyc' => 
     array (
     ),
@@ -14296,11 +15262,11 @@ static $data = array (
   ),
   'net' => 
   array (
+    'adobeaemcloud' => 
+    array (
+    ),
     'alwaysdata' => 
     array (
-      '*' => 
-      array (
-      ),
     ),
     'cloudfront' => 
     array (
@@ -14309,6 +15275,9 @@ static $data = array (
     array (
     ),
     'myfritz' => 
+    array (
+    ),
+    'blackbaudcdn' => 
     array (
     ),
     'boomla' => 
@@ -14350,6 +15319,9 @@ static $data = array (
       array (
       ),
     ),
+    'cloudeity' => 
+    array (
+    ),
     'feste-ip' => 
     array (
     ),
@@ -14364,6 +15336,12 @@ static $data = array (
       '*' => 
       array (
       ),
+    ),
+    'dattolocal' => 
+    array (
+    ),
+    'mydatto' => 
+    array (
     ),
     'debian' => 
     array (
@@ -14493,6 +15471,9 @@ static $data = array (
     ),
     'channelsdvr' => 
     array (
+      'u' => 
+      array (
+      ),
     ),
     'fastlylb' => 
     array (
@@ -14539,10 +15520,28 @@ static $data = array (
     'moonscale' => 
     array (
     ),
+    'in-dsl' => 
+    array (
+    ),
+    'in-vpn' => 
+    array (
+    ),
     'ipifony' => 
     array (
     ),
+    'iobb' => 
+    array (
+    ),
+    'kinghost' => 
+    array (
+    ),
+    'uni5' => 
+    array (
+    ),
     'barsy' => 
+    array (
+    ),
+    'memset' => 
     array (
     ),
     'azurewebsites' => 
@@ -14552,6 +15551,21 @@ static $data = array (
     array (
     ),
     'cloudapp' => 
+    array (
+    ),
+    'dnsup' => 
+    array (
+    ),
+    'hicam' => 
+    array (
+    ),
+    'now-dns' => 
+    array (
+    ),
+    'ownip' => 
+    array (
+    ),
+    'vpndns' => 
     array (
     ),
     'eating-organic' => 
@@ -14602,17 +15616,53 @@ static $data = array (
     'sytes' => 
     array (
     ),
+    'cloudycluster' => 
+    array (
+    ),
     'rackmaze' => 
+    array (
+    ),
+    'schokokeks' => 
     array (
     ),
     'firewall-gateway' => 
     array (
+    ),
+    'senseering' => 
+    array (
+    ),
+    'siteleaf' => 
+    array (
+    ),
+    'srcf' => 
+    array (
+      'soc' => 
+      array (
+      ),
+      'user' => 
+      array (
+      ),
     ),
     'dsmynas' => 
     array (
     ),
     'familyds' => 
     array (
+    ),
+    'community-pro' => 
+    array (
+    ),
+    'meinforum' => 
+    array (
+    ),
+    'yandexcloud' => 
+    array (
+      'storage' => 
+      array (
+      ),
+      'website' => 
+      array (
+      ),
     ),
     'za' => 
     array (
@@ -14686,6 +15736,21 @@ static $data = array (
     'sch' => 
     array (
     ),
+    'col' => 
+    array (
+    ),
+    'firm' => 
+    array (
+    ),
+    'gen' => 
+    array (
+    ),
+    'ltd' => 
+    array (
+    ),
+    'ngo' => 
+    array (
+    ),
   ),
   'ni' => 
   array (
@@ -14734,7 +15799,7 @@ static $data = array (
   ),
   'nl' => 
   array (
-    'bv' => 
+    'amsw' => 
     array (
     ),
     'virtueeldomein' => 
@@ -14743,7 +15808,13 @@ static $data = array (
     'co' => 
     array (
     ),
+    'hosting-cluster' => 
+    array (
+    ),
     'blogspot' => 
+    array (
+    ),
+    'khplay' => 
     array (
     ),
     'transurl' => 
@@ -17104,6 +18175,9 @@ static $data = array (
     'nom' => 
     array (
     ),
+    'enterprisecloud' => 
+    array (
+    ),
   ),
   'nz' => 
   array (
@@ -17197,6 +18271,9 @@ static $data = array (
   ),
   'org' => 
   array (
+    'altervista' => 
+    array (
+    ),
     'amune' => 
     array (
       'tele' => 
@@ -17607,14 +18684,56 @@ static $data = array (
       'cloud' => 
       array (
       ),
+      'os' => 
+      array (
+        'app' => 
+        array (
+        ),
+      ),
+      'stg' => 
+      array (
+        'os' => 
+        array (
+          'app' => 
+          array (
+          ),
+        ),
+      ),
+    ),
+    'freedesktop' => 
+    array (
     ),
     'hepforge' => 
+    array (
+    ),
+    'in-dsl' => 
+    array (
+    ),
+    'in-vpn' => 
     array (
     ),
     'js' => 
     array (
     ),
+    'uklugs' => 
+    array (
+    ),
+    'barsy' => 
+    array (
+    ),
+    'mayfirst' => 
+    array (
+    ),
+    'mozilla-iot' => 
+    array (
+    ),
     'bmoattachments' => 
+    array (
+    ),
+    'dynserv' => 
+    array (
+    ),
+    'now-dns' => 
     array (
     ),
     'cable-modem' => 
@@ -17653,6 +18772,9 @@ static $data = array (
     'zapto' => 
     array (
     ),
+    'pubtls' => 
+    array (
+    ),
     'my-firewall' => 
     array (
     ),
@@ -17668,6 +18790,9 @@ static $data = array (
     'familyds' => 
     array (
     ),
+    'edugit' => 
+    array (
+    ),
     'tuxfamily' => 
     array (
     ),
@@ -17678,6 +18803,12 @@ static $data = array (
     array (
     ),
     'wmflabs' => 
+    array (
+    ),
+    'toolforge' => 
+    array (
+    ),
+    'wmcloud' => 
     array (
     ),
     'za' => 
@@ -18445,6 +19576,24 @@ static $data = array (
     'beep' => 
     array (
     ),
+    'krasnik' => 
+    array (
+    ),
+    'leczna' => 
+    array (
+    ),
+    'lubartow' => 
+    array (
+    ),
+    'lublin' => 
+    array (
+    ),
+    'poniatowa' => 
+    array (
+    ),
+    'swidnik' => 
+    array (
+    ),
     'co' => 
     array (
     ),
@@ -18484,6 +19633,9 @@ static $data = array (
   ),
   'pm' => 
   array (
+    'own' => 
+    array (
+    ),
   ),
   'pn' => 
   array (
@@ -18586,6 +19738,15 @@ static $data = array (
     'cloudns' => 
     array (
     ),
+    'dnstrace' => 
+    array (
+      'bci' => 
+      array (
+      ),
+    ),
+    'barsy' => 
+    array (
+    ),
   ),
   'ps' => 
   array (
@@ -18665,6 +19826,9 @@ static $data = array (
     array (
     ),
     'cloudns' => 
+    array (
+    ),
+    'x443' => 
     array (
     ),
     'nom' => 
@@ -18784,6 +19948,9 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'nym' => 
+    array (
+    ),
   ),
   'rs' => 
   array (
@@ -18808,7 +19975,13 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'ua' => 
+    array (
+    ),
     'nom' => 
+    array (
+    ),
+    'ox' => 
     array (
     ),
   ),
@@ -18892,6 +20065,33 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'myjino' => 
+    array (
+      'hosting' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'landing' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'spectrum' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+      'vps' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+    ),
     'cldmail' => 
     array (
       'hb' => 
@@ -18907,34 +20107,31 @@ static $data = array (
     'pp' => 
     array (
     ),
+    'ras' => 
+    array (
+    ),
   ),
   'rw' => 
   array (
-    'gov' => 
-    array (
-    ),
-    'net' => 
-    array (
-    ),
-    'edu' => 
-    array (
-    ),
     'ac' => 
-    array (
-    ),
-    'com' => 
     array (
     ),
     'co' => 
     array (
     ),
-    'int' => 
+    'coop' => 
+    array (
+    ),
+    'gov' => 
     array (
     ),
     'mil' => 
     array (
     ),
-    'gouv' => 
+    'net' => 
+    array (
+    ),
+    'org' => 
     array (
     ),
   ),
@@ -19153,6 +20350,9 @@ static $data = array (
     'blogspot' => 
     array (
     ),
+    'conf' => 
+    array (
+    ),
   ),
   'sg' => 
   array (
@@ -19285,15 +20485,48 @@ static $data = array (
     'com' => 
     array (
     ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'me' => 
+    array (
+    ),
     'net' => 
     array (
     ),
     'org' => 
     array (
     ),
+    'sch' => 
+    array (
+    ),
   ),
   'sr' => 
   array (
+  ),
+  'ss' => 
+  array (
+    'biz' => 
+    array (
+    ),
+    'com' => 
+    array (
+    ),
+    'edu' => 
+    array (
+    ),
+    'gov' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
   ),
   'st' => 
   array (
@@ -19331,6 +20564,12 @@ static $data = array (
     array (
     ),
     'store' => 
+    array (
+    ),
+    'nom' => 
+    array (
+    ),
+    'noho' => 
     array (
     ),
   ),
@@ -19597,6 +20836,12 @@ static $data = array (
     'or' => 
     array (
     ),
+    'online' => 
+    array (
+    ),
+    'shop' => 
+    array (
+    ),
   ),
   'tj' => 
   array (
@@ -19643,6 +20888,9 @@ static $data = array (
     array (
     ),
     'web' => 
+    array (
+    ),
+    'nom' => 
     array (
     ),
   ),
@@ -19765,61 +21013,52 @@ static $data = array (
     'mil' => 
     array (
     ),
+    'oya' => 
+    array (
+    ),
     'vpnplus' => 
     array (
+    ),
+    'quickconnect' => 
+    array (
+      'direct' => 
+      array (
+      ),
     ),
   ),
   'tr' => 
   array (
+    'av' => 
+    array (
+    ),
+    'bbs' => 
+    array (
+    ),
+    'bel' => 
+    array (
+    ),
+    'biz' => 
+    array (
+    ),
     'com' => 
     array (
       'blogspot' => 
       array (
       ),
     ),
-    'info' => 
+    'dr' => 
     array (
     ),
-    'biz' => 
-    array (
-    ),
-    'net' => 
-    array (
-    ),
-    'org' => 
-    array (
-    ),
-    'web' => 
+    'edu' => 
     array (
     ),
     'gen' => 
     array (
     ),
-    'tv' => 
-    array (
-    ),
-    'av' => 
-    array (
-    ),
-    'dr' => 
-    array (
-    ),
-    'bbs' => 
-    array (
-    ),
-    'name' => 
-    array (
-    ),
-    'tel' => 
-    array (
-    ),
     'gov' => 
     array (
     ),
-    'bel' => 
-    array (
-    ),
-    'pol' => 
+    'info' => 
     array (
     ),
     'mil' => 
@@ -19828,10 +21067,31 @@ static $data = array (
     'k12' => 
     array (
     ),
-    'edu' => 
+    'kep' => 
     array (
     ),
-    'kep' => 
+    'name' => 
+    array (
+    ),
+    'net' => 
+    array (
+    ),
+    'org' => 
+    array (
+    ),
+    'pol' => 
+    array (
+    ),
+    'tel' => 
+    array (
+    ),
+    'tsk' => 
+    array (
+    ),
+    'tv' => 
+    array (
+    ),
+    'web' => 
     array (
     ),
     'nc' => 
@@ -19840,9 +21100,6 @@ static $data = array (
       array (
       ),
     ),
-  ),
-  'travel' => 
-  array (
   ),
   'tt' => 
   array (
@@ -20254,6 +21511,9 @@ static $data = array (
     'pp' => 
     array (
     ),
+    'v' => 
+    array (
+    ),
   ),
   'ug' => 
   array (
@@ -20295,13 +21555,34 @@ static $data = array (
     ),
     'co' => 
     array (
+      'bytemark' => 
+      array (
+        'dh' => 
+        array (
+        ),
+        'vm' => 
+        array (
+        ),
+      ),
       'blogspot' => 
+      array (
+      ),
+      'barsy' => 
+      array (
+      ),
+      'barsyonline' => 
+      array (
+      ),
+      'nh-serv' => 
       array (
       ),
       'no-ip' => 
       array (
       ),
       'wellbeingzone' => 
+      array (
+      ),
+      'gwiddle' => 
       array (
       ),
     ),
@@ -20328,6 +21609,15 @@ static $data = array (
     ),
     'org' => 
     array (
+      'glug' => 
+      array (
+      ),
+      'lug' => 
+      array (
+      ),
+      'lugs' => 
+      array (
+      ),
     ),
     'plc' => 
     array (
@@ -20340,6 +21630,15 @@ static $data = array (
       '*' => 
       array (
       ),
+    ),
+    'conn' => 
+    array (
+    ),
+    'copro' => 
+    array (
+    ),
+    'barsy' => 
+    array (
     ),
   ),
   'us' => 
@@ -20892,9 +22191,6 @@ static $data = array (
     ),
     'ri' => 
     array (
-      'k12' => 
-      array (
-      ),
       'cc' => 
       array (
       ),
@@ -21052,6 +22348,12 @@ static $data = array (
     'stuff-4-sale' => 
     array (
     ),
+    'graphox' => 
+    array (
+    ),
+    'freeddns' => 
+    array (
+    ),
     'golffan' => 
     array (
     ),
@@ -21059,6 +22361,9 @@ static $data = array (
     array (
     ),
     'pointto' => 
+    array (
+    ),
+    'platterp' => 
     array (
     ),
   ),
@@ -21125,6 +22430,15 @@ static $data = array (
     array (
     ),
     'edu' => 
+    array (
+    ),
+    'gv' => 
+    array (
+      'd' => 
+      array (
+      ),
+    ),
+    '0e' => 
     array (
     ),
     'nom' => 
@@ -21292,6 +22606,9 @@ static $data = array (
       array (
       ),
     ),
+    'cloud66' => 
+    array (
+    ),
     'dyndns' => 
     array (
     ),
@@ -21332,6 +22649,12 @@ static $data = array (
   'xn--e1a4c' => 
   array (
   ),
+  'xn--qxa6a' => 
+  array (
+  ),
+  'xn--mgbah1a3hjkrd' => 
+  array (
+  ),
   'xn--node' => 
   array (
   ),
@@ -21340,6 +22663,24 @@ static $data = array (
   ),
   'xn--j6w193g' => 
   array (
+    'xn--55qx5d' => 
+    array (
+    ),
+    'xn--wcvs22d' => 
+    array (
+    ),
+    'xn--mxtq1m' => 
+    array (
+    ),
+    'xn--gmqw5a' => 
+    array (
+    ),
+    'xn--od0alg' => 
+    array (
+    ),
+    'xn--uc0atv' => 
+    array (
+    ),
   ),
   'xn--2scrj9c' => 
   array (
@@ -21363,6 +22704,9 @@ static $data = array (
   array (
   ),
   'xn--h2brj9c' => 
+  array (
+  ),
+  'xn--mgbbh1a' => 
   array (
   ),
   'xn--mgbbh1a71e' => 
@@ -21577,6 +22921,9 @@ static $data = array (
     'ngo' => 
     array (
     ),
+    'nic' => 
+    array (
+    ),
     'nis' => 
     array (
     ),
@@ -21682,6 +23029,9 @@ static $data = array (
   ),
   'academy' => 
   array (
+    'official' => 
+    array (
+    ),
   ),
   'accenture' => 
   array (
@@ -21693,9 +23043,6 @@ static $data = array (
   array (
   ),
   'aco' => 
-  array (
-  ),
-  'active' => 
   array (
   ),
   'actor' => 
@@ -21773,6 +23120,9 @@ static $data = array (
   'alstom' => 
   array (
   ),
+  'amazon' => 
+  array (
+  ),
   'americanexpress' => 
   array (
   ),
@@ -21811,6 +23161,27 @@ static $data = array (
   ),
   'app' => 
   array (
+    'wnext' => 
+    array (
+    ),
+    'run' => 
+    array (
+      'a' => 
+      array (
+      ),
+    ),
+    'web' => 
+    array (
+    ),
+    'hasura' => 
+    array (
+    ),
+    'loginline' => 
+    array (
+    ),
+    'telebit' => 
+    array (
+    ),
   ),
   'apple' => 
   array (
@@ -21998,9 +23369,6 @@ static $data = array (
   'blackfriday' => 
   array (
   ),
-  'blanco' => 
-  array (
-  ),
   'blockbuster' => 
   array (
   ),
@@ -22017,9 +23385,6 @@ static $data = array (
   array (
   ),
   'bmw' => 
-  array (
-  ),
-  'bnl' => 
   array (
   ),
   'bnpparibas' => 
@@ -22047,9 +23412,6 @@ static $data = array (
   array (
   ),
   'booking' => 
-  array (
-  ),
-  'boots' => 
   array (
   ),
   'bosch' => 
@@ -22102,6 +23464,9 @@ static $data = array (
   ),
   'business' => 
   array (
+    'co' => 
+    array (
+    ),
   ),
   'buy' => 
   array (
@@ -22172,11 +23537,14 @@ static $data = array (
   'cars' => 
   array (
   ),
-  'cartier' => 
-  array (
-  ),
   'casa' => 
   array (
+    'nabu' => 
+    array (
+      'ui' => 
+      array (
+      ),
+    ),
   ),
   'case' => 
   array (
@@ -22232,6 +23600,9 @@ static $data = array (
   'channel' => 
   array (
   ),
+  'charity' => 
+  array (
+  ),
   'chase' => 
   array (
   ),
@@ -22248,9 +23619,6 @@ static $data = array (
   array (
   ),
   'chrome' => 
-  array (
-  ),
-  'chrysler' => 
   array (
   ),
   'church' => 
@@ -22276,6 +23644,9 @@ static $data = array (
   ),
   'city' => 
   array (
+    'ng' => 
+    array (
+    ),
   ),
   'cityeats' => 
   array (
@@ -22300,14 +23671,14 @@ static $data = array (
   ),
   'cloud' => 
   array (
-    'myfusion' => 
-    array (
-    ),
     'statics' => 
     array (
       '*' => 
       array (
       ),
+    ),
+    'linkyard' => 
+    array (
     ),
     'magentosite' => 
     array (
@@ -22315,8 +23686,17 @@ static $data = array (
       array (
       ),
     ),
+    'perspecta' => 
+    array (
+    ),
     'vapor' => 
     array (
+    ),
+    'on-rancher' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
     'sensiosite' => 
     array (
@@ -22327,10 +23707,22 @@ static $data = array (
     'trafficplex' => 
     array (
     ),
+    'urown' => 
+    array (
+    ),
+    'voorloper' => 
+    array (
+    ),
   ),
   'club' => 
   array (
     'cloudns' => 
+    array (
+    ),
+    'barsy' => 
+    array (
+    ),
+    'pony' => 
     array (
     ),
   ),
@@ -22360,6 +23752,12 @@ static $data = array (
   ),
   'community' => 
   array (
+    'ravendb' => 
+    array (
+    ),
+    'myforum' => 
+    array (
+    ),
   ),
   'company' => 
   array (
@@ -22413,6 +23811,9 @@ static $data = array (
   array (
   ),
   'courses' => 
+  array (
+  ),
+  'cpa' => 
   array (
   ),
   'credit' => 
@@ -22519,9 +23920,42 @@ static $data = array (
   ),
   'design' => 
   array (
+    'bss' => 
+    array (
+    ),
   ),
   'dev' => 
   array (
+    'lcl' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'stg' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
+    'workers' => 
+    array (
+    ),
+    'iserv' => 
+    array (
+    ),
+    'loginline' => 
+    array (
+    ),
+    'platter-app' => 
+    array (
+    ),
+    'webhare' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
   ),
   'dhl' => 
   array (
@@ -22534,9 +23968,18 @@ static $data = array (
   ),
   'digital' => 
   array (
+    'cloudapps' => 
+    array (
+      'london' => 
+      array (
+      ),
+    ),
   ),
   'direct' => 
   array (
+    'fastpanel' => 
+    array (
+    ),
   ),
   'directory' => 
   array (
@@ -22562,13 +24005,7 @@ static $data = array (
   'doctor' => 
   array (
   ),
-  'dodge' => 
-  array (
-  ),
   'dog' => 
-  array (
-  ),
-  'doha' => 
   array (
   ),
   'domains' => 
@@ -22595,9 +24032,6 @@ static $data = array (
   'dunlop' => 
   array (
   ),
-  'duns' => 
-  array (
-  ),
   'dupont' => 
   array (
   ),
@@ -22612,6 +24046,18 @@ static $data = array (
   ),
   'earth' => 
   array (
+    'dapps' => 
+    array (
+      '*' => 
+      array (
+      ),
+      'bzz' => 
+      array (
+        '*' => 
+        array (
+        ),
+      ),
+    ),
   ),
   'eat' => 
   array (
@@ -22624,6 +24070,9 @@ static $data = array (
   ),
   'education' => 
   array (
+    'co' => 
+    array (
+    ),
   ),
   'email' => 
   array (
@@ -22641,9 +24090,6 @@ static $data = array (
   array (
   ),
   'enterprises' => 
-  array (
-  ),
-  'epost' => 
   array (
   ),
   'epson' => 
@@ -22690,9 +24136,9 @@ static $data = array (
   ),
   'events' => 
   array (
-  ),
-  'everbank' => 
-  array (
+    'co' => 
+    array (
+    ),
   ),
   'exchange' => 
   array (
@@ -22744,6 +24190,12 @@ static $data = array (
   ),
   'fashion' => 
   array (
+    'of' => 
+    array (
+    ),
+    'on' => 
+    array (
+    ),
   ),
   'fast' => 
   array (
@@ -22780,6 +24232,9 @@ static $data = array (
   ),
   'financial' => 
   array (
+    'co' => 
+    array (
+    ),
   ),
   'fire' => 
   array (
@@ -22834,6 +24289,9 @@ static $data = array (
   ),
   'football' => 
   array (
+    'of' => 
+    array (
+    ),
   ),
   'ford' => 
   array (
@@ -22919,11 +24377,17 @@ static $data = array (
   'garden' => 
   array (
   ),
+  'gay' => 
+  array (
+  ),
   'gbiz' => 
   array (
   ),
   'gdn' => 
   array (
+    'cnpy' => 
+    array (
+    ),
   ),
   'gea' => 
   array (
@@ -22994,9 +24458,6 @@ static $data = array (
   'goo' => 
   array (
   ),
-  'goodhands' => 
-  array (
-  ),
   'goodyear' => 
   array (
   ),
@@ -23035,6 +24496,9 @@ static $data = array (
   ),
   'group' => 
   array (
+    'discourse' => 
+    array (
+    ),
   ),
   'guardian' => 
   array (
@@ -23135,9 +24599,6 @@ static $data = array (
   'honda' => 
   array (
   ),
-  'honeywell' => 
-  array (
-  ),
   'horse' => 
   array (
   ),
@@ -23150,6 +24611,18 @@ static $data = array (
     array (
     ),
     'freesite' => 
+    array (
+    ),
+    'myfast' => 
+    array (
+    ),
+    'fastvps' => 
+    array (
+    ),
+    'pcloud' => 
+    array (
+    ),
+    'half' => 
     array (
     ),
   ),
@@ -23222,6 +24695,9 @@ static $data = array (
   'immobilien' => 
   array (
   ),
+  'inc' => 
+  array (
+  ),
   'industries' => 
   array (
   ),
@@ -23233,6 +24709,9 @@ static $data = array (
   ),
   'ink' => 
   array (
+    'ng' => 
+    array (
+    ),
   ),
   'institute' => 
   array (
@@ -23261,9 +24740,6 @@ static $data = array (
   'irish' => 
   array (
   ),
-  'iselect' => 
-  array (
-  ),
   'ismaili' => 
   array (
   ),
@@ -23280,9 +24756,6 @@ static $data = array (
   array (
   ),
   'iveco' => 
-  array (
-  ),
-  'iwc' => 
   array (
   ),
   'jaguar' => 
@@ -23307,9 +24780,6 @@ static $data = array (
   array (
   ),
   'jio' => 
-  array (
-  ),
-  'jlc' => 
   array (
   ),
   'jll' => 
@@ -23414,9 +24884,6 @@ static $data = array (
   'lacaixa' => 
   array (
   ),
-  'ladbrokes' => 
-  array (
-  ),
   'lamborghini' => 
   array (
   ),
@@ -23427,9 +24894,6 @@ static $data = array (
   array (
   ),
   'lancia' => 
-  array (
-  ),
-  'lancome' => 
   array (
   ),
   'land' => 
@@ -23492,9 +24956,6 @@ static $data = array (
   'lgbt' => 
   array (
   ),
-  'liaison' => 
-  array (
-  ),
   'lidl' => 
   array (
   ),
@@ -23536,6 +24997,12 @@ static $data = array (
     'mypep' => 
     array (
     ),
+    'dweb' => 
+    array (
+      '*' => 
+      array (
+      ),
+    ),
   ),
   'lipsy' => 
   array (
@@ -23547,6 +25014,12 @@ static $data = array (
   array (
   ),
   'lixil' => 
+  array (
+  ),
+  'llc' => 
+  array (
+  ),
+  'llp' => 
   array (
   ),
   'loan' => 
@@ -23569,6 +25042,12 @@ static $data = array (
   ),
   'london' => 
   array (
+    'in' => 
+    array (
+    ),
+    'of' => 
+    array (
+    ),
   ),
   'lotte' => 
   array (
@@ -23680,12 +25159,15 @@ static $data = array (
   ),
   'men' => 
   array (
+    'for' => 
+    array (
+    ),
   ),
   'menu' => 
   array (
-  ),
-  'meo' => 
-  array (
+    'barsy' => 
+    array (
+    ),
   ),
   'merckmsd' => 
   array (
@@ -23723,9 +25205,6 @@ static $data = array (
   'mobile' => 
   array (
   ),
-  'mobily' => 
-  array (
-  ),
   'moda' => 
   array (
   ),
@@ -23737,6 +25216,12 @@ static $data = array (
   ),
   'mom' => 
   array (
+    'and' => 
+    array (
+    ),
+    'for' => 
+    array (
+    ),
   ),
   'monash' => 
   array (
@@ -23745,9 +25230,6 @@ static $data = array (
   array (
   ),
   'monster' => 
-  array (
-  ),
-  'mopar' => 
   array (
   ),
   'mormon' => 
@@ -23771,16 +25253,10 @@ static $data = array (
   'movie' => 
   array (
   ),
-  'movistar' => 
-  array (
-  ),
   'msd' => 
   array (
   ),
   'mtn' => 
-  array (
-  ),
-  'mtpc' => 
   array (
   ),
   'mtr' => 
@@ -23790,9 +25266,6 @@ static $data = array (
   array (
   ),
   'nab' => 
-  array (
-  ),
-  'nadex' => 
   array (
   ),
   'nagoya' => 
@@ -23826,6 +25299,15 @@ static $data = array (
       '*' => 
       array (
       ),
+    ),
+    'co' => 
+    array (
+    ),
+    'arvo' => 
+    array (
+    ),
+    'azimuth' => 
+    array (
     ),
   ),
   'neustar' => 
@@ -23938,6 +25420,15 @@ static $data = array (
   ),
   'one' => 
   array (
+    'onred' => 
+    array (
+      'staging' => 
+      array (
+      ),
+    ),
+    'for' => 
+    array (
+    ),
     'homelink' => 
     array (
     ),
@@ -23992,11 +25483,11 @@ static $data = array (
   ),
   'page' => 
   array (
+    'prvcy' => 
+    array (
+    ),
   ),
   'panasonic' => 
-  array (
-  ),
-  'panerai' => 
   array (
   ),
   'paris' => 
@@ -24056,9 +25547,6 @@ static $data = array (
   'physio' => 
   array (
   ),
-  'piaget' => 
-  array (
-  ),
   'pics' => 
   array (
   ),
@@ -24091,6 +25579,9 @@ static $data = array (
   ),
   'place' => 
   array (
+    'co' => 
+    array (
+    ),
   ),
   'play' => 
   array (
@@ -24163,6 +25654,9 @@ static $data = array (
   ),
   'pub' => 
   array (
+    'barsy' => 
+    array (
+    ),
   ),
   'pwc' => 
   array (
@@ -24325,6 +25819,18 @@ static $data = array (
   ),
   'run' => 
   array (
+    'hs' => 
+    array (
+    ),
+    'development' => 
+    array (
+    ),
+    'ravendb' => 
+    array (
+    ),
+    'repl' => 
+    array (
+    ),
   ),
   'rwe' => 
   array (
@@ -24346,6 +25852,9 @@ static $data = array (
   ),
   'sale' => 
   array (
+    'for' => 
+    array (
+    ),
   ),
   'salon' => 
   array (
@@ -24366,9 +25875,6 @@ static $data = array (
   array (
   ),
   'sap' => 
-  array (
-  ),
-  'sapo' => 
   array (
   ),
   'sarl' => 
@@ -24406,6 +25912,9 @@ static $data = array (
   ),
   'school' => 
   array (
+    'ng' => 
+    array (
+    ),
   ),
   'schule' => 
   array (
@@ -24427,6 +25936,9 @@ static $data = array (
   ),
   'scot' => 
   array (
+    'gov' => 
+    array (
+    ),
   ),
   'search' => 
   array (
@@ -24451,6 +25963,9 @@ static $data = array (
   ),
   'services' => 
   array (
+    'loginline' => 
+    array (
+    ),
   ),
   'ses' => 
   array (
@@ -24493,6 +26008,9 @@ static $data = array (
   ),
   'shop' => 
   array (
+    'barsy' => 
+    array (
+    ),
   ),
   'shopping' => 
   array (
@@ -24520,7 +26038,22 @@ static $data = array (
   ),
   'site' => 
   array (
+    'cloudera' => 
+    array (
+    ),
     'cyon' => 
+    array (
+    ),
+    'fastvps' => 
+    array (
+    ),
+    'lelux' => 
+    array (
+    ),
+    'loginline' => 
+    array (
+    ),
+    'barsy' => 
     array (
     ),
     'platformsh' => 
@@ -24587,9 +26120,15 @@ static $data = array (
   'soy' => 
   array (
   ),
+  'spa' => 
+  array (
+  ),
   'space' => 
   array (
-    'stackspace' => 
+    'myfast' => 
+    array (
+    ),
+    'linkitools' => 
     array (
     ),
     'uber' => 
@@ -24599,7 +26138,7 @@ static $data = array (
     array (
     ),
   ),
-  'spiegel' => 
+  'sport' => 
   array (
   ),
   'spot' => 
@@ -24611,9 +26150,6 @@ static $data = array (
   'srl' => 
   array (
   ),
-  'srt' => 
-  array (
-  ),
   'stada' => 
   array (
   ),
@@ -24623,16 +26159,10 @@ static $data = array (
   'star' => 
   array (
   ),
-  'starhub' => 
-  array (
-  ),
   'statebank' => 
   array (
   ),
   'statefarm' => 
-  array (
-  ),
-  'statoil' => 
   array (
   ),
   'stc' => 
@@ -24745,18 +26275,18 @@ static $data = array (
   ),
   'team' => 
   array (
+    'discourse' => 
+    array (
+    ),
   ),
   'tech' => 
   array (
   ),
   'technology' => 
   array (
-  ),
-  'telecity' => 
-  array (
-  ),
-  'telefonica' => 
-  array (
+    'co' => 
+    array (
+    ),
   ),
   'temasek' => 
   array (
@@ -24820,6 +26350,12 @@ static $data = array (
   ),
   'top' => 
   array (
+    'now-dns' => 
+    array (
+    ),
+    'ntdll' => 
+    array (
+    ),
   ),
   'toray' => 
   array (
@@ -24852,6 +26388,9 @@ static $data = array (
   array (
   ),
   'training' => 
+  array (
+  ),
+  'travel' => 
   array (
   ),
   'travelchannel' => 
@@ -24888,9 +26427,6 @@ static $data = array (
   array (
   ),
   'ubs' => 
-  array (
-  ),
-  'uconnect' => 
   array (
   ),
   'unicom' => 
@@ -24962,12 +26498,6 @@ static $data = array (
   'vision' => 
   array (
   ),
-  'vista' => 
-  array (
-  ),
-  'vistaprint' => 
-  array (
-  ),
   'viva' => 
   array (
   ),
@@ -25014,9 +26544,6 @@ static $data = array (
   array (
   ),
   'wanggou' => 
-  array (
-  ),
-  'warman' => 
   array (
   ),
   'watch' => 
@@ -25087,6 +26614,12 @@ static $data = array (
   ),
   'work' => 
   array (
+    'of' => 
+    array (
+    ),
+    'to' => 
+    array (
+    ),
   ),
   'works' => 
   array (
@@ -25208,6 +26741,9 @@ static $data = array (
   'xn--cck2b3b' => 
   array (
   ),
+  'xn--cckwcxetd' => 
+  array (
+  ),
   'xn--cg4bki' => 
   array (
   ),
@@ -25227,9 +26763,6 @@ static $data = array (
   array (
   ),
   'xn--efvy88h' => 
-  array (
-  ),
-  'xn--estv75g' => 
   array (
   ),
   'xn--fct429k' => 
@@ -25277,6 +26810,9 @@ static $data = array (
   'xn--j1aef' => 
   array (
   ),
+  'xn--jlq480n2rg' => 
+  array (
+  ),
   'xn--jlq61u9w7b' => 
   array (
   ),
@@ -25302,9 +26838,6 @@ static $data = array (
   array (
   ),
   'xn--mgbab2bd' => 
-  array (
-  ),
-  'xn--mgbb9fbpob' => 
   array (
   ),
   'xn--mgbca7dzdo' => 
@@ -25338,6 +26871,9 @@ static $data = array (
   array (
   ),
   'xn--nyqy26a' => 
+  array (
+  ),
+  'xn--otu796d' => 
   array (
   ),
   'xn--p1acf' => 
@@ -25400,9 +26936,6 @@ static $data = array (
   'xn--zfr164b' => 
   array (
   ),
-  'xperia' => 
-  array (
-  ),
   'xyz' => 
   array (
     'blogsite' => 
@@ -25410,6 +26943,18 @@ static $data = array (
     ),
     'fhapp' => 
     array (
+    ),
+    'crafting' => 
+    array (
+    ),
+    'zapto' => 
+    array (
+    ),
+    'telebit' => 
+    array (
+      '*' => 
+      array (
+      ),
     ),
   ),
   'yachts' => 
@@ -25454,11 +26999,14 @@ static $data = array (
   'zip' => 
   array (
   ),
-  'zippo' => 
-  array (
-  ),
   'zone' => 
   array (
+    'cloud66' => 
+    array (
+    ),
+    'hs' => 
+    array (
+    ),
     'triton' => 
     array (
       '*' => 
@@ -25472,4 +27020,4 @@ static $data = array (
   'zuerich' => 
   array (
   ),
-); $result =& $data; unset($data); return $result;
+);

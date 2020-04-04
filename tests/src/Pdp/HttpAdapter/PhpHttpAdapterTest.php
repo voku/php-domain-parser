@@ -7,29 +7,29 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class PhpHttpAdapterTest
  *
- * @package Pdp\HttpAdapter
+ * @internal
  */
-class PhpHttpAdapterTest extends TestCase
+final class PhpHttpAdapterTest extends TestCase
 {
-  /**
-   * @var HttpAdapterInterface
-   */
-  protected $adapter;
+    /**
+     * @var HttpAdapterInterface
+     */
+    protected $adapter;
 
-  protected function setUp()
-  {
-    $this->adapter = new PhpHttpAdapter();
-  }
+    protected function setUp()
+    {
+        $this->adapter = new PhpHttpAdapter();
+    }
 
-  protected function tearDown()
-  {
-    $this->adapter = null;
-  }
+    protected function tearDown()
+    {
+        $this->adapter = null;
+    }
 
-  public function testGetContent()
-  {
-    $content = $this->adapter->getContent('http://www.google.com');
-    self::assertNotNull($content);
-    self::assertContains('google', $content);
-  }
+    public function testGetContent()
+    {
+        $content = $this->adapter->getContent('http://www.google.com');
+        static::assertNotNull($content);
+        static::assertContains('google', $content);
+    }
 }
